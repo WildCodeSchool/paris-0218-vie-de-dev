@@ -2,8 +2,8 @@
 
 Back to Front
 
-[![Travis master](https://img.shields.io/travis/wildcodeschool/paris-0218-vie-de-dev.svg)](https://travis-ci.org/wildcodeschool/paris-0218-vie-de-dev)
-[![Travis dev](https://img.shields.io/travis/wildcodeschool/paris-0218-vie-de-dev/dev.svg)](https://travis-ci.org/wildcodeschool/paris-0218-vie-de-dev/branches)
+[![Travis master](https://img.shields.io/travis/WildCodeSchool/paris-0218-vie-de-dev.svg)](https://travis-ci.org/WildCodeSchool/paris-0218-vie-de-dev)
+[![Travis dev](https://img.shields.io/travis/WildCodeSchool/paris-0218-vie-de-dev/dev.svg)](https://travis-ci.org/WildCodeSchool/paris-0218-vie-de-dev/branches)
 
 ## Subject
 
