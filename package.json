@@ -1,8 +1,10 @@
 {
   "private": true,
   "scripts": {
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
     "lint:js": "standard | snazzy",
-    "lint:css": "stylelint 'client/style/**/*.css'"
+    "lint:css": "stylelint 'client/style/**/*.css'",
+    "lint:html": "htmllint 'client/**/*.html'"
   },
   "dependencies": {
     "snazzy": "^7.1.1",
