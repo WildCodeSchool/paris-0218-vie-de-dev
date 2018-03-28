@@ -1,0 +1,21 @@
+/*
+-----FONTS------
+font-family: 'commodore';
+*/
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: 'commodore', sans-serif;
+    line-height: 1.5;
+    font-size: 1.6rem;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
