@@ -14,7 +14,7 @@ const users = [ user1, user2, user3, user4 ]
 const posts = [ post1, post2, post3, post4 ]
 const comments = [ comment1, comment2 ]
 
-const app=express()
+const app = express()
 
 app.get('/', (req, res) => {
   res.send('OK')
@@ -31,4 +31,5 @@ app.get('/posts', (req, res) => {
 app.get('/comments', (req, res) => {
   res.json(comments)
 })
+
 app.listen(3000, () => console.log('serveur écoute sur port 3000'))
