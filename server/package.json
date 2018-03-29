@@ -1,0 +1,22 @@
+{
+  "name": "vdd",
+  "version": "1.0.0",
+  "description": "The backend for vdd app ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WildCodeSchool/paris-0218-vie-de-dev.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WildCodeSchool/paris-0218-vie-de-dev/issues"
+  },
+  "homepage": "https://github.com/WildCodeSchool/paris-0218-vie-de-dev#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
