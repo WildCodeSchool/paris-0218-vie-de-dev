@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/WildCodeSchool/paris-0218-vie-de-dev/issues"
   },
-  "homepage": "https://github.com/WildCodeSchool/paris-0218-vie-de-dev#readme"
+  "homepage": "https://github.com/WildCodeSchool/paris-0218-vie-de-dev#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
