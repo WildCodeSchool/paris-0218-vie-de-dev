@@ -1,4 +1,4 @@
-const express = require("express")
+const express = require('express')
 const user1 = require('../mocks/user/1.json')
 const user2 = require('../mocks/user/2.json')
 const user3 = require('../mocks/user/3.json')
@@ -11,7 +11,7 @@ const comment1 = require('../mocks/comment/1.json')
 const comment2 = require('../mocks/comment/2.json')
 
 const users = [ user1, user2, user3, user4 ]
-const posts = [ post1, post2 ,post3, post4 ]
+const posts = [ post1, post2, post3, post4 ]
 const comments = [ comment1, comment2 ]
 
 const app=express()
@@ -31,4 +31,4 @@ app.get('/posts', (req, res) => {
 app.get('/comments', (req, res) => {
   res.json(comments)
 })
-app.listen(3000, () => console.log("serveur a l'écoute sur port 3000" ))
+app.listen(3000, () => console.log('serveur écoute sur port 3000'))
