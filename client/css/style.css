@@ -14,3 +14,14 @@ h1{
   margin-bottom: 50px;
   margin-top: 20px;
 }
+
+.divposts{
+  background-color: blue;
+  color:yellow;
+  margin-left:  400px;
+  margin-right: 400px;
+  padding: 10px;
+  margin-top: 20px;
+  box-shadow: 10px 10px 169px -30px rgba(23,7,237,1);
+  border-radius: 20px;
+}
