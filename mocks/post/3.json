@@ -1,6 +1,7 @@
 {
   "id": 3,
   "userId": 3,
+  "userName": "gaelle fougere",
   "content": "Tu sais que tu es un développeur quand ça te gène pas d'avoir un String dans l'Array...",
   "badVotes": [],
   "saltyVotes": [1,2,3,4],
