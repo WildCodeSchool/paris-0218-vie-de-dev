@@ -44,4 +44,3 @@ saltySortButton.addEventListener('click', (e) => {
       postElements.innerHTML = postSort2.map(newPosts).join('')
     })
 })
-
