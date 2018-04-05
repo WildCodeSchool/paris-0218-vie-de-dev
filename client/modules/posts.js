@@ -8,6 +8,7 @@ export const newPosts = (post) => {
     <div class='boutons'>
       <button>YES</button>
       <button>SALTY</button>
+      <button>BAD</button>
     </div>
     `
 }
