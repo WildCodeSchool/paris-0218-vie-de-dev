@@ -24,7 +24,7 @@ randomBtn.addEventListener('click', () => { // Au click du bouton random
       }
       const postsElements = document.getElementById('posts')
       postsElements.innerHTML = shuffleTab.map(newPosts).join('')
-   })
+    })
 })
 
 // BoutonTop
