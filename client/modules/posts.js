@@ -10,5 +10,7 @@ export const newPosts = (post) => {
       <button>SALTY</button>
       <button>BAD</button>
     </div>
+    <div class='votes'>
+      <p class="compteur">${post.yesVotes.length}</p>
     `
 }
