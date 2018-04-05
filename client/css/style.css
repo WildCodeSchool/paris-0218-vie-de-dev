@@ -35,3 +35,14 @@ h4{
   border-bottom: 1px solid yellow;
   padding-bottom: 5px;
 }
+
+button{
+  background-color: black;
+  color: white;
+box-shadow: 10px 5px 5px grey;
+  margin: 20px;
+}
+.boutons{
+  margin-left:400px;
+  margin-right: 400px;
+}
