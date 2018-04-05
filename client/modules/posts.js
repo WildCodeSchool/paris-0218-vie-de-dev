@@ -13,6 +13,7 @@ export const newPosts = (post) => {
     <div class='votes'>
       <p class="compteur">${post.yesVotes.length}</p>
       <p class="compteur">${post.saltyVotes.length}</p>
+      <p class="compteur">${post.badVotes.length}</p></div>
     </div>
     `
 }
