@@ -46,3 +46,16 @@ box-shadow: 10px 5px 5px grey;
   margin-left:400px;
   margin-right: 400px;
 }
+
+.votes{
+  display: flex;
+  margin-left: 400px;
+  margin-right:400px;
+}
+.compteur{
+  margin-left: 55px;
+  margin-right: 75px;
+  color:black;
+  border: 1px solid black;
+  padding: 5px;
+}
