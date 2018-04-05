@@ -7,6 +7,7 @@ window.fetch('http://localhost:3000/posts')
     postsElements.innerHTML = posts.map(newPosts).join('')
   })
 
+// RandomButton
 
 const randomBtn = document.getElementById('random_btn')
 
