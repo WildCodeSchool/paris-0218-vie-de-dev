@@ -11,7 +11,7 @@ window.fetch('http://localhost:3000/posts')
 const randomBtn = document.getElementById('random_btn')
 
 randomBtn.addEventListener('click', () => { // Au click du bouton random
-  const shuffleTab = [] // tableau qui va stocké le tableau de posts mélangé
+  const shuffleTab = [] // tableau qui va stocker le tableau de posts mélangé
   window.fetch('http://localhost:3000/posts')
     .then(res => res.json())
     .then(posts => {
