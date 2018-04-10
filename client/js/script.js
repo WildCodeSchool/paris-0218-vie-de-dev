@@ -62,7 +62,6 @@ badSortButton.addEventListener('click', (e) => {
       const postsElements = document.getElementById('posts')
       postsElements.innerHTML = postSort.map(newPosts).join('')
     })
-
 })
 
 // BoutonSalty
@@ -83,5 +82,3 @@ saltySortButton.addEventListener('click', (e) => {
       postElements.innerHTML = postSort2.map(newPosts).join('')
     })
 })
-
-
