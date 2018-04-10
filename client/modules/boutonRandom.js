@@ -1,3 +1,4 @@
+import {newPosts} from '../modules/posts.js'
 export const boutonRandom = () => {
   const randomBtn = document.getElementById('random_btn')
 
