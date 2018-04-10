@@ -46,6 +46,25 @@ topSortButton.addEventListener('click', (e) => {
     })
 })
 
+// Bad Button
+const badSortButton = document.getElementById('bad_sort')
+
+badSortButton.addEventListener('click', (e) => {
+  window.fetch('http://localhost:3000/posts')
+    .then(res => res.json())
+    .then(posts => {
+      let postSort = posts.filter((post) => {
+        return post.badVotes.length > 0
+      })
+      postSort = postSort.sort((a, b) => {
+        return (b.badVotes.length - a.badVotes.length)
+      })
+      const postsElements = document.getElementById('posts')
+      postsElements.innerHTML = postSort.map(newPosts).join('')
+    })
+
+})
+
 // BoutonSalty
 
 const saltySortButton = document.getElementById('salty_sort')
@@ -64,3 +83,5 @@ saltySortButton.addEventListener('click', (e) => {
       postElements.innerHTML = postSort2.map(newPosts).join('')
     })
 })
+
+
