@@ -1,61 +1,133 @@
 /** FONTS **/
-@import url(../fonts/stylesheet.css);
 
+@import url(../fonts/stylesheet.css);
 /** CSS **/
+
 @import url(normalize.css);
-@import url(milligram.min.css);
+/*@import url(milligram.min.css);*/
+
 @import url(responsive.css);
 @import url(common.css);
+/* HEADER */
 
-/**titre h1**/
-h1{
+h1 {
   color: black;
-  text-align:center;
+  text-align: center;
   margin-bottom: 50px;
   margin-top: 20px;
 }
 
+#main-menu ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  background-color: #6d214f;
+  margin-top: 0;
+}
+
+#main-menu ul li {
+  width: 20%;
+}
+
+#main-menu ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#main-menu ul li a:hover {
+  color: #00D927;
+}
+
+#main-menu img {
+  height: 200px;
+}
+
+#search-btn {
+  padding: 3px 0;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #fff;
+}
+
+.main-navbar {
+  text-align: center;
+}
+
+.main-navbar button {
+  padding: 10px 80px;
+}
+
 /** posts **/
 
-.divposts{
-  background-color: blue;
-  color:yellow;
-  margin-left:  400px;
-  margin-right: 400px;
+.divposts {
+  background-color: rgba(109, 33, 79, 0.3);
+  border: 2px solid #00D927;
+  color: #00D927;
+  width: 40%;
+  margin: 0 auto;
   padding: 10px;
   margin-top: 20px;
-  box-shadow: 10px 10px 169px -30px rgba(23,7,237,1);
   border-radius: 20px;
 }
 
 /** titre h4 **/
 
-h4{
+h4 {
   text-align: center;
-  border-bottom: 1px solid yellow;
+  border-bottom: 1px solid #00D927;
   padding-bottom: 5px;
 }
 
-button{
+button {
   background-color: black;
   color: white;
-box-shadow: 10px 5px 5px grey;
+  box-shadow: 1px 1px 10px #555;
+  border: 2px solid #00D927;
   margin: 20px;
 }
-.boutons{
-  margin-left:400px;
-  margin-right: 400px;
+
+button:hover {
+  border: 2px solid #fff;
 }
 
-.votes{
-  display: flex;
-  margin-left: 400px;
-  margin-right:400px;
+.boutons {
+  width: 40%;
+  margin: 0 auto;
 }
-.compteur{
+
+.boutons button {
+  padding: 20px 20px;
+}
+
+/*votes*/
+
+.votes {
+  display: flex;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.compteur {
   margin-left: 55px;
   margin-right: 75px;
-  color:black;
-  border: 1px solid black;
+  color: #00D927;
+  border: 1px solid #00D927;
+  box-shadow: 1px 1px 10px #555;
   padding: 5px;
+}
+
+/* animation clignotement */
+.blink {
+  animation: Test 1s infinite;
+}
+
+@keyframes Test {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
