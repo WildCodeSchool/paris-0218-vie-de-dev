@@ -13,9 +13,11 @@ body {
     font-family: 'commodore', sans-serif;
     line-height: 1.5;
     font-size: 1.6rem;
+    background-color: #200917;
 }
 
 a:hover {
     text-decoration: none;
     color: inherit;
 }
+
