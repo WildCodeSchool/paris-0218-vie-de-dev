@@ -10,7 +10,7 @@ const post4 = require('../mocks/post/4.json')
 const comment1 = require('../mocks/comment/1.json')
 const comment2 = require('../mocks/comment/2.json')
 
-//ajout de routes notamment pour le post
+// ajout de routes notamment pour le post
 const routePost = require('./routes/postRoutes')
 
 const users = [ user1, user2, user3, user4 ]
@@ -25,8 +25,8 @@ app.use((req, res, next) => {
   next()
 })
 
-//route permettant de poster les nouveaux votes pour chaque post
-app.use('/postVote',routePost)
+// route permettant de poster les nouveaux votes pour chaque post
+app.use('/postVote', routePost)
 
 app.get('/', (req, res) => {
   res.send('OK')

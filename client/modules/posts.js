@@ -1,5 +1,5 @@
 export const newPosts = (post) => {
-    let idYes=`yesVote_${post.id}`
+  let idYes = `yesVote_${post.id}`
   return `
     <div class='divposts'>
       <h4>VDD</h4>
