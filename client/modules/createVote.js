@@ -12,7 +12,7 @@ export const createVoteYes = () => {
     			body: new URLSearchParams(
     				{ id: idPost,
     				  user: userConnect })
- 			})
+ 			  })
   			.then(res => res.json())
   			.then(res => {
   				console.log(res) // "reponse serveur : renvoi les données du mock modifié
