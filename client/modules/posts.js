@@ -1,4 +1,5 @@
 export const newPosts = (post) => {
+    let idYes=`yesVote_${post.id}`
   return `
     <div class='divposts'>
       <h4>VDD</h4>
@@ -6,7 +7,7 @@ export const newPosts = (post) => {
       <p>${post.content}</p>
     </div>
     <div class='boutons'>
-      <button>YES</button>
+      <button class="yesVote" id=${idYes}>YES</button>
       <button>SALTY</button>
       <button>BAD</button>
     </div>
