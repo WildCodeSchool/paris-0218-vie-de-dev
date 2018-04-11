@@ -2,7 +2,7 @@ export const newPosts = (post) => {
   return `
     <div class='divposts'>
       <h4>VDD</h4>
-      <p>Home/user-VDD:</p>
+      <p>Home/user-VDD<span class="blink">&#9608;</span></p>
       <p>${post.content}</p>
     </div>
     <div class='boutons'>
