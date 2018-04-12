@@ -87,6 +87,7 @@ button {
 
 button:hover {
   border: 2px solid #fff;
+  color: #00D927;
 }
 
 .boutons {
