@@ -3,8 +3,8 @@
   "userId": 3,
   "userName": "gaelle fougere",
   "content": "Tu sais que tu es un développeur quand ça te gène pas d'avoir un String dans l'Array...",
-  "badVotes": [],
+  "badVotes": [5],
   "saltyVotes": [1,2,3,4],
-  "yesVotes": [],
+  "yesVotes": [6],
   "createAt": 1522227409521
 }
