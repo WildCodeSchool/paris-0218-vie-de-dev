@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="Une description de la page..." />
@@ -9,9 +10,32 @@
   <link rel="icon" href="pictures/favicon.ico">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <h1>Vie de dev</h1>
+  <header id="main_menu" class="container">
+    <ul>
+      <li><a href="#">Editer mes VDD</a></li>
+      <li><a href="#">Soumettre mes VDD</a></li>
+      <li><img src="pictures/logo_vdd.png" alt="logo"></li>
+      <li>
+        <form action="#">
+          <input type="text" id="search_btn">
+        </form>
+      </li>
+      <li><a href="#">Log in</a></li>
+    </ul>
+  <nav class="main_navbar">
+    <button type="button" value="news" id="news_sort">News</button>
+    <button type="button" value="top" id="top_sort">Top</button>
+    <button type="button" value="salty" id="salty_sort">Salty</button>
+    <button type="button" value="bad" id="bad_sort">Bad</button>
+    <button type="button" value="random" id="random_btn">Random</button>
+  </nav>
+  </header>
+
   <div id="posts">Loading posts</div>
+
+
 
 
 
@@ -20,4 +44,5 @@
 
   <script type="module" src="js/script.js"></script>
 </body>
+
 </html>
