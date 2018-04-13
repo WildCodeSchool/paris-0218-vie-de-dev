@@ -19,8 +19,7 @@ router.post('/:typeVote', (req, res, next) => {
       console.log('user already present ' + user)
       res.header('Content-Type', 'application/json;charset=utf-8')
       res.end(JSON.stringify(file))
-    }
-    else {
+    } else {
       file[`${req.params.typeVote}`].push(user)
       const data = JSON.stringify(file, null, 2)
       fs.writeFile(`../mocks/post/${req.body.id}.json`, data, () => {

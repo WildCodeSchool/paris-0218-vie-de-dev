@@ -1,4 +1,5 @@
 export const createVoteYes = () => {
+  /* global URLSearchParams */
   let userConnect = 12 // utilisateur connecté fictif
   const yesVoteClass = document.getElementsByClassName('yesVote')
 
@@ -17,11 +18,8 @@ export const createVoteYes = () => {
         .then(res => res.json())
         .then(res => {
           console.log(res) // reponse serveur : renvoi les données du mock modifié
-
           const yesCompteur = document.getElementById(`yesCompt_${res.id}`)
-          console.log("yesCompteur =" +`yesCompt_${res.id}`)
           yesCompteur.textContent = res.yesVotes.length
-
         })
     })
   }
