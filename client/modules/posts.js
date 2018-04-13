@@ -8,9 +8,9 @@ export const newPosts = (post) => {
       <p>${post.content}</p>
     </div>
     <div class='boutons'>
-      <button class="yesVote" id=${idYes}>YES</button>
-      <button>SALTY</button>
-      <button>BAD</button>
+      <button class="yesVote yesBtn" id=${idYes}>YES</button>
+      <button class="saltyBtn">SALTY</button>
+      <button class="badBtn">BAD</button>
     </div>
     <div class='votes'>
       <p class="compteur" id=${idYesCompteur}>${post.yesVotes.length}</p>

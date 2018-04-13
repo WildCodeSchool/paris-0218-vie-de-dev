@@ -4,7 +4,7 @@
   "userName" : "bogdan ceu",
   "content": "Que fait un développeur s'il veut se marier ? Une fille en C ...",
   "badVotes": [],
-  "saltyVotes": [1],
-  "yesVotes": [3,4,2],
+  "saltyVotes": [1,6],
+  "yesVotes": [3,4,2,5],
   "createAt": 1522227406191
 }
