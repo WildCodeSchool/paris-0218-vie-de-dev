@@ -1,5 +1,5 @@
 export const createVoteYes = () => {
-  let userConnect = 8 // utilisateur connecté fictif
+  let userConnect = 12 // utilisateur connecté fictif
   const yesVoteClass = document.getElementsByClassName('yesVote')
 
   for (let butt of yesVoteClass) {
@@ -20,6 +20,7 @@ export const createVoteYes = () => {
 
           const yesCompteur = document.getElementById(`yesCompt_${res.id}`)
           console.log("yesCompteur =" +`yesCompt_${res.id}`)
+          yesCompteur.textContent = res.yesVotes.length
 
         })
     })
