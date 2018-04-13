@@ -6,9 +6,9 @@ export const newPosts = (post) => {
       <p>${post.content}</p>
     </div>
     <div class='boutons'>
-      <button>YES</button>
-      <button>SALTY</button>
-      <button>BAD</button>
+      <button id="yesBtn">YES</button>
+      <button id="saltyBtn">SALTY</button>
+      <button id="badBtn">BAD</button>
     </div>
     <div class='votes'>
       <p class="compteur">${post.yesVotes.length}</p>

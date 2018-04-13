@@ -44,8 +44,8 @@ h1 {
 
 #search_btn {
   padding: 3px 0;
+  max-width: 80%;
   border-radius: 10px;
-  box-shadow: 2px 2px 10px #fff;
 }
 
 .main_navbar {
@@ -54,6 +54,7 @@ h1 {
 
 .main_navbar button {
   padding: 10px 80px;
+  border-radius: 5px;
 }
 
 /** posts **/
@@ -80,14 +81,38 @@ h4 {
 button {
   background-color: black;
   color: white;
-  box-shadow: 1px 1px 10px #555;
   border: 2px solid #00D927;
   margin: 20px;
 }
 
 button:hover {
   border: 2px solid #fff;
+  box-shadow: 1px 1px 10px #555;
   color: #00D927;
+}
+
+#yesBtn:hover {
+  color: rgb(0, 217, 39);
+  border: 2px solid rgb(255, 234, 42);
+  background-color: rgba(0, 217, 39, 0.2);
+  text-shadow: #fff 1px 1px, #fff -1px 1px, #fff -1px -1px, #fff 1px -1px;
+
+}
+
+#saltyBtn:hover {
+  color: #FE36DD;
+  border: 2px solid rgb(255, 234, 42);
+  background-color: rgba(254, 54, 221, 0.2);
+  text-shadow: #fff 1px 1px, #fff -1px 1px, #fff -1px -1px, #fff 1px -1px;
+
+}
+
+#badBtn:hover {
+  color: #f00;
+  border: 2px solid rgb(255, 234, 42);
+  background-color: rgba(240, 15, 0, 0.2);
+  text-shadow: #fff 1px 1px, #fff -1px 1px, #fff -1px -1px, #fff 1px -1px;
+
 }
 
 .boutons {
@@ -97,6 +122,7 @@ button:hover {
 
 .boutons button {
   padding: 20px 20px;
+  border-radius: 5px;
 }
 
 /*votes*/
@@ -112,8 +138,9 @@ button:hover {
   margin-right: 75px;
   color: #00D927;
   border: 1px solid #00D927;
-  box-shadow: 1px 1px 10px #555;
+  box-shadow: 1px 1px 2px #555;
   padding: 5px;
+  background-color: black;
 }
 
 /* animation clignotement */
