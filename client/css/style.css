@@ -92,7 +92,7 @@ button:hover {
   color: #00D927;
 }
 
-#yesBtn:hover {
+.yesBtn:hover {
   color: rgb(0, 217, 39);
   border: 2px solid rgb(255, 234, 42);
   background-color: rgba(0, 217, 39, 0.2);
@@ -100,7 +100,7 @@ button:hover {
 
 }
 
-#saltyBtn:hover {
+.saltyBtn:hover {
   color: #FE36DD;
   border: 2px solid rgb(255, 234, 42);
   background-color: rgba(254, 54, 221, 0.2);
@@ -108,7 +108,7 @@ button:hover {
 
 }
 
-#badBtn:hover {
+.badBtn:hover {
   color: #f00;
   border: 2px solid rgb(255, 234, 42);
   background-color: rgba(240, 15, 0, 0.2);
