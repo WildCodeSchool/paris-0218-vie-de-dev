@@ -13,7 +13,7 @@ export const newPosts = (post) => {
       <button>BAD</button>
     </div>
     <div class='votes'>
-      <p class="compteur" id=${idyesCompteur}>${post.yesVotes.length}</p>
+      <p class="compteur" id=${idYesCompteur}>${post.yesVotes.length}</p>
       <p class="compteur">${post.saltyVotes.length}</p>
       <p class="compteur">${post.badVotes.length}</p></div>
     </div>

@@ -1,6 +1,7 @@
 export const createVoteYes = () => {
   let userConnect = 8 // utilisateur connecté fictif
   const yesVoteClass = document.getElementsByClassName('yesVote')
+
   for (let butt of yesVoteClass) {
     butt.addEventListener('click', (e) => {
       // recupération id post
@@ -16,6 +17,10 @@ export const createVoteYes = () => {
         .then(res => res.json())
         .then(res => {
           console.log(res) // reponse serveur : renvoi les données du mock modifié
+
+          const yesCompteur = document.getElementById(`yesCompt_${res.id}`)
+          console.log("yesCompteur =" +`yesCompt_${res.id}`)
+
         })
     })
   }
