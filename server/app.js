@@ -10,6 +10,9 @@ const post4 = require('../mocks/post/4.json')
 const comment1 = require('../mocks/comment/1.json')
 const comment2 = require('../mocks/comment/2.json')
 
+// ajout de routes notamment pour le post
+const routePost = require('./routes/postRoutes')
+
 const users = [ user1, user2, user3, user4 ]
 const posts = [ post1, post2, post3, post4 ]
 const comments = [ comment1, comment2 ]
@@ -21,6 +24,9 @@ app.use((req, res, next) => {
   res.header('Acces-Control-Allow-Header', 'Origin, X-Requested-With, Content-Type, Accept')
   next()
 })
+
+// route permettant de poster les nouveaux votes pour chaque post
+app.use('/postVote', routePost)
 
 app.get('/', (req, res) => {
   res.send('OK')
