@@ -1,7 +1,6 @@
 {
   "id": 1,
   "userId": 1,
-  "userName" : "mikael verdu",
   "content": "Que fait un dev quand il va aux toilettes?  Il git push...",
   "badVotes": [4],
   "saltyVotes": [2],
