@@ -8,7 +8,7 @@ router.use(bodyParser.urlencoded({extended: true}))
 
 router.post('/:typeVote', (req, res, next) => {
   console.log('parametre URL POST:' + req.params.typeVote)
-  const user = +req.body.user
+  const user = Number(req.body.user)
   // il faut ajouter le user au tableau :typeVote
   fs.readFile(`../mocks/post/${req.body.id}.json`, 'utf8', (err, data) => {
     if (err) {
