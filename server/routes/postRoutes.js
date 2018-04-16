@@ -10,7 +10,7 @@ router.use(bodyParser.urlencoded({extended: true}))
 router.post('/:typeVote', (req, res, next) => {
   console.log('parametre URL POST:' + req.params.typeVote)
   const user = Number(req.body.user)
-  const filePath = path.join(__dirname,`../../mocks/post/${req.body.id}.json`)
+  const filePath = path.join(__dirname, `../../mocks/post/${req.body.id}.json`)
   // il faut ajouter le user au tableau :typeVote
   fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
