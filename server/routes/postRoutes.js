@@ -25,8 +25,8 @@ router.post('/:typeVote', (req, res, next) => {
       file[`${req.params.typeVote}`].push(user)
       const data = JSON.stringify(file, null, 2)
 
-      fs.writeFile(filePath, data, () => {
-        // traiter erreur?
+      fs.writeFile(filePath, data, (err) => {
+        if (err) throw err
         console.log('OK MaJ jsonPost num :' + req.body.id)
         res.header('Content-Type', 'application/json;charset=utf-8')
         res.end(data)
