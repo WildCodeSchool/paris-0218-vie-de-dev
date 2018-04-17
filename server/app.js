@@ -1,4 +1,7 @@
 const express = require('express')
+const fs = require('fs')
+const util = require ('util')
+const path = require('path')
 const user1 = require('../mocks/user/1.json')
 const user2 = require('../mocks/user/2.json')
 const user3 = require('../mocks/user/3.json')
@@ -11,7 +14,7 @@ const comment2 = require('../mocks/comment/2.json')
 const routePost = require('./routes/postRoutes')
 
 const users = [ user1, user2, user3, user4 ]
-const posts = [ post1, post2, post3, post4, post5, post6, post7 ]
+
 const comments = [ comment1, comment2 ]
 
 const app = express()
