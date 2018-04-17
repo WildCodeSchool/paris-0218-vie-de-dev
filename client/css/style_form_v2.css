@@ -9,33 +9,39 @@ body {
 h1 {
   color: #fff;
   text-align: center;
-  margin-bottom: 50px;
-  margin-top: 20px;
+  margin-bottom: 10%;
+  margin-top: 5%;
   text-decoration: underline wavy;
 }
 
 form {
   position: relative;
+  background: no-repeat url("../pictures/formPost_background.png");
+  padding-right: 30%;
+  padding-bottom: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-size: 100%;
+
+
   /*border: 1px solid green;*/
 }
 
-  img{
-
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-
   #new_post{
     position: absolute;
-    width: 64%;
-    height: 45%;
-    top: 12%;
-    left: 17%;
-    background-color: #000;
-    border: none;
+    background-color: transparent;
     color: #fff;
+    min-width: 65%;
+    max-width: 65%;
     outline: none;
+    margin-left: 15%;
+    margin-top: 15%;
+    padding-right: 60%;
+    padding-bottom: 47%;
+    border: none;
+    font-size: 18px;
+    font-family: 'commodore', sans-serif;
+
   }
 
   button{
