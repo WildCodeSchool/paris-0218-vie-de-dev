@@ -45,7 +45,7 @@ app.get('/posts', (req, res) => {
     .map(file => path.join(postsDir, file))
     .map(filepath => readFile(filepath, 'utf8'))))
   .then(allFilesValues => res.json(allFilesValues.map(JSON.parse)))
-
+  .catch(err => res.status(500).end(err.message))
 })
 
 app.get('/comments', (req, res) => {
