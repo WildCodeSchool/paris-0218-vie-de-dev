@@ -41,6 +41,11 @@ app.get('/users', (req, res) => {
 app.get('/posts', (req, res) => {
   const postsDir = path.join(__dirname, '../mocks/post/')
   readdir(postsDir)
+  .then(files =>Promise.all(files
+    .map(file => path.join(postsDir, file))
+    .map(filepath => readFile(filepath, 'utf8'))))
+  .then(allFilesValues => res.json(allFilesValues.map(JSON.parse)))
+
 })
 
 app.get('/comments', (req, res) => {
