@@ -7,7 +7,7 @@ const path = require('path')
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({extended: true}))
 
-router.post('/:typeVote', (req, res, next) => {
+router.post('/vote/:typeVote', (req, res, next) => {
   console.log('parametre URL POST:' + req.params.typeVote)
   const user = Number(req.body.user)
   const filePath = path.join(__dirname, `../../mocks/post/${req.body.id}.json`)
@@ -33,6 +33,12 @@ router.post('/:typeVote', (req, res, next) => {
       })
     }
   })
+})
+
+router.post('/soumettre',(req,res,next) => {
+  console.log('post/soumettre'+req.body.idUsers)
+
+
 })
 
 module.exports = router
