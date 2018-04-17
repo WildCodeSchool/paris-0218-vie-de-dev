@@ -38,11 +38,9 @@ router.post('/vote/:typeVote', (req, res, next) => {
   })
 })
 
-
-
-router.post('/soumettre',(req,res,next) => {
-  console.log('post/soumettre'+req.body)
-  //nom fichier aleatoire : test sur nom ?
+router.post('/soumettre', (req, res, next) => {
+  console.log('post/soumettre' + req.body)
+  // nom fichier aleatoire
   const id = Math.random().toString(36).slice(2).padEnd(11, '0').slice(0, 5)
   const filename = `${id}.json`
   const filepath = path.join(__dirname, '../../mocks/post/', filename)
@@ -56,10 +54,10 @@ router.post('/soumettre',(req,res,next) => {
     saltyVotes: [],
     createdAt: Date.now()
   }
-  //write (promisify)
-  writeFile(filepath, JSON.stringify(contentPost),'utf-8')
+  // write (promisify)
+  writeFile(filepath, JSON.stringify(contentPost), 'utf-8')
     .then(() => res.json('OK'))
-    .catch(err => next())
-  })
+    .catch(next)
+})
 
 module.exports = router
