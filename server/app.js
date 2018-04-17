@@ -39,7 +39,8 @@ app.get('/users', (req, res) => {
 })
 
 app.get('/posts', (req, res) => {
-  res.json(posts)
+  const postsDir = path.join(__dirname, '../mocks/post/')
+  readdir(postsDir)
 })
 
 app.get('/comments', (req, res) => {
