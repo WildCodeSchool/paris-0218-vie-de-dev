@@ -1,6 +1,6 @@
 const express = require('express')
 const fs = require('fs')
-const util = require ('util')
+const util = require('util')
 const path = require('path')
 const readFile = util.promisify(fs.readFile)
 const readdir = util.promisify(fs.readdir)
@@ -41,11 +41,11 @@ app.get('/users', (req, res) => {
 app.get('/posts', (req, res) => {
   const postsDir = path.join(__dirname, '../mocks/post/')
   readdir(postsDir)
-  .then(files =>Promise.all(files
-    .map(file => path.join(postsDir, file))
-    .map(filepath => readFile(filepath, 'utf8'))))
-  .then(allFilesValues => res.json(allFilesValues.map(JSON.parse)))
-  .catch(err => res.status(500).end(err.message))
+    .then(files => Promise.all(files
+      .map(file => path.join(postsDir, file))
+      .map(filepath => readFile(filepath, 'utf8'))))
+    .then(allFilesValues => res.json(allFilesValues.map(JSON.parse)))
+    .catch(err => res.status(500).end(err.message))
 })
 
 app.get('/comments', (req, res) => {
