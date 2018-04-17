@@ -9,7 +9,7 @@ export const createVoteYes = () => {
       console.log('idPost : ' + e.target.id)
       let idPost = (e.target.id).split('_')[1]
       // envoi au serveur 'http://localhost:3000/postVote/:voteType'
-      window.fetch('http://localhost:3000/postVote/yesVotes', {
+      window.fetch('http://localhost:3000/post/vote/yesVotes', {
         method: 'post',
         body: new URLSearchParams(
           { id: idPost,
