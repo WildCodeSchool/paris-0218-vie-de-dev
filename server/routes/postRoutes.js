@@ -6,6 +6,7 @@ const path = require('path')
 const util = require('util')
 
 const writeFile = util.promisify(fs.writeFile)
+const readdir = util.promisify(fs.readdir)
 
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({extended: true}))
@@ -38,9 +39,15 @@ router.post('/vote/:typeVote', (req, res, next) => {
   })
 })
 
+//fonction readdir
+const readdirContent = (dirpath) => readreaddir(path.join(__dirname, '../../mocks/post/'))
+    .then(filenames => return Promise.all(filenames)) //promises
+
+
 router.post('/soumettre', (req, res, next) => {
   console.log('post/soumettre' + req.body)
   // nom fichier aleatoire
+  
   const id = Math.random().toString(36).slice(2).padEnd(11, '0').slice(0, 5)
   const filename = `${id}.json`
   const filepath = path.join(__dirname, '../../mocks/post/', filename)
