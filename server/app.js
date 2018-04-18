@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 })
 
 // route permettant de poster les nouveaux votes pour chaque post
-app.use('/postVote', routePost)
+app.use('/post', routePost)
 
 app.get('/', (req, res) => {
   res.send('OK')
