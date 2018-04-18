@@ -6,7 +6,7 @@ const path = require('path')
 const util = require('util')
 
 const writeFile = util.promisify(fs.writeFile)
-const readdir = util.promisify(fs.readdir)
+const stat = util.promisify(fs.stat)
 
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({extended: true}))
@@ -39,50 +39,41 @@ router.post('/vote/:typeVote', (req, res, next) => {
   })
 })
 
+// nom fichier aleatoire avec test id unique
+const testId = (id) =>
+  stat(getPathFromId(id))
+    .then(() => testId(getNewId()))
+    .catch(err => {
+      if (err.code === 'ENOENT') {
+        return id
+      }
+      throw err
+    })
 
+const getNewId = () => Math.random().toString(36).slice(2).padEnd(11, '0').slice(0, 5)
+const getPathFromId = id => path.join(__dirname, '../../mocks/post/', `${id}.json`)
 
 router.post('/soumettre', (req, res, next) => {
-  console.log('post/soumettre' + req.body)
-  //fonction write file
-  const createJSON = () => {
-    const filename = `${id}.json`
-    const filepath = path.join(__dirname, '../../mocks/post/', filename)
-    console.log("createJSON : " + filepath)
-    const contentPost = {
-      id: id,
-      userId: req.body.userId,
-      content: req.body.content,
-      badVotes: [],
-      yesVotes: [],
-      saltyVotes: [],
-      createdAt: Date.now()
-    }
-    // write (promisify)
-    writeFile(filepath, JSON.stringify(contentPost), 'utf-8')
-      .then(() => res.json('OK'))
-      .catch(next)
-  }
-
-    // let id = '4'
-  let id = Math.random().toString(36).slice(2).padEnd(11, '0').slice(0, 5)
-  const filePath = path.join(__dirname, '../../mocks/post/',`${id}.json`)
-
-    // nom fichier aleatoire avec test id unique
-  const testId = () => {
-    fs.stat(filePath, (err,stats) => {
-      if (err) {
-        console.log("testId : " + id)
-        createJSON()
+  console.log('post/soumettre', req.body)
+  //  write file executé si erreur ENOENT
+  testId(getNewId())
+    .then(id => {
+      const filepath = getPathFromId(id)
+      console.log('createJSON : ', filepath)
+      const contentPost = {
+        id: id,
+        userId: req.body.userId,
+        content: req.body.content,
+        badVotes: [],
+        yesVotes: [],
+        saltyVotes: [],
+        createdAt: Date.now()
       }
-     else {
-      let id = Math.random().toString(36).slice(2).padEnd(11, '0').slice(0, 5)
-      // let id = '4'
-      const filePath = path.join(__dirname, '../../mocks/post/',`${id}.json`)
-      testId()
-     }
+      // write (promisify)
+      return writeFile(filepath, JSON.stringify(contentPost), 'utf-8')
     })
-  }
-  testId()
+    .then(() => res.json('OK'))
+    .catch(next)
 })
 
 module.exports = router
