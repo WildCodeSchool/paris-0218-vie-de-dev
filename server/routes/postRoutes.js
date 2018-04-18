@@ -39,32 +39,50 @@ router.post('/vote/:typeVote', (req, res, next) => {
   })
 })
 
-//fonction readdir
-const readdirContent = (dirpath) => readreaddir(path.join(__dirname, '../../mocks/post/'))
-    .then(filenames => return Promise.all(filenames)) //promises
 
 
 router.post('/soumettre', (req, res, next) => {
   console.log('post/soumettre' + req.body)
-  // nom fichier aleatoire
-  
-  const id = Math.random().toString(36).slice(2).padEnd(11, '0').slice(0, 5)
-  const filename = `${id}.json`
-  const filepath = path.join(__dirname, '../../mocks/post/', filename)
-
-  const contentPost = {
-    id: id,
-    userId: req.body.userId,
-    content: req.body.content,
-    badVotes: [],
-    yesVotes: [],
-    saltyVotes: [],
-    createdAt: Date.now()
+  //fonction write file
+  const createJSON = () => {
+    const filename = `${id}.json`
+    const filepath = path.join(__dirname, '../../mocks/post/', filename)
+    console.log("createJSON : " + filepath)
+    const contentPost = {
+      id: id,
+      userId: req.body.userId,
+      content: req.body.content,
+      badVotes: [],
+      yesVotes: [],
+      saltyVotes: [],
+      createdAt: Date.now()
+    }
+    // write (promisify)
+    writeFile(filepath, JSON.stringify(contentPost), 'utf-8')
+      .then(() => res.json('OK'))
+      .catch(next)
   }
-  // write (promisify)
-  writeFile(filepath, JSON.stringify(contentPost), 'utf-8')
-    .then(() => res.json('OK'))
-    .catch(next)
+
+    // let id = '4'
+  let id = Math.random().toString(36).slice(2).padEnd(11, '0').slice(0, 5)
+  const filePath = path.join(__dirname, '../../mocks/post/',`${id}.json`)
+
+    // nom fichier aleatoire avec test id unique
+  const testId = () => {
+    fs.stat(filePath, (err,stats) => {
+      if (err) {
+        console.log("testId : " + id)
+        createJSON()
+      }
+     else {
+      let id = Math.random().toString(36).slice(2).padEnd(11, '0').slice(0, 5)
+      // let id = '4'
+      const filePath = path.join(__dirname, '../../mocks/post/',`${id}.json`)
+      testId()
+     }
+    })
+  }
+  testId()
 })
 
 module.exports = router
