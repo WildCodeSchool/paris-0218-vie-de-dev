@@ -31,14 +31,14 @@ form {
     position: absolute;
     background-color: transparent;
     color: #fff;
-    min-width: 65%;
-    max-width: 65%;
+    min-width: 60%;
+    max-width: 60%;
     outline: none;
-    margin-left: 15%;
-    margin-top: 15%;
-    padding-right: 60%;
-    padding-bottom: 47%;
-    border: none;
+    margin-left: 20%;
+    margin-top: 20%;
+    min-height: 30%;
+    max-height: 30%;
+    border: 1px solid red;
     font-size: 18px;
     font-family: 'commodore', sans-serif;
 
