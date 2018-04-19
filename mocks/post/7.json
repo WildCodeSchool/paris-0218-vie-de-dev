@@ -2,10 +2,16 @@
   "id": 7,
   "userId": 1,
   "content": "Quelle est l’insulte préférée des devs de mountain view ? Ta mère c’est < input > ...",
-  "badVotes": [3],
-  "saltyVotes": [2,4,5,6],
-  "yesVotes": [],
+  "badVotes": [
+    3
+  ],
+  "saltyVotes": [
+    2,
+    4,
+    5,
+    6
+  ],
+  "yesVotes": [
+  ],
   "createAt": 1523606433371
 }
-
-

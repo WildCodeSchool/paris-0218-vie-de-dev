@@ -2,8 +2,17 @@
   "id": 4,
   "userId": 4,
   "content": "Combien de développeurs faut-il pour remplacer une ampoule grillée? Aucun, c'est un problème Hardware...",
-  "badVotes": [4,5],
-  "saltyVotes": [],
-  "yesVotes": [1,3,6,2],
+  "badVotes": [
+    4,
+    5
+  ],
+  "saltyVotes": [
+  ],
+  "yesVotes": [
+    1,
+    3,
+    6,
+    2
+  ],
   "createAt": 1522227436128
 }

@@ -4,6 +4,12 @@
   "content": "A quoi sert Internet Explorer ? A télécharger Google Chrome...",
   "badVotes": [],
   "saltyVotes": [],
-  "yesVotes": [1,2,3,4,5],
+  "yesVotes": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
   "createAt": 1523609469287
 }
