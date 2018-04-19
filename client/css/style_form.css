@@ -1,0 +1,70 @@
+/** FONTS **/
+@import url(../fonts/stylesheet.css);
+
+body {
+  font-family: 'commodore', sans-serif;
+  background-color: #200917;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  text-decoration: underline wavy;
+}
+
+form {
+  position: relative;
+  /*border: 1px solid green;*/
+}
+
+  img{
+
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  #new_post{
+    position: absolute;
+    width: 64%;
+    height: 45%;
+    top: 12%;
+    left: 17%;
+    background-color: #000;
+    border: none;
+    color: #fff;
+    outline: none;
+  }
+
+  button{
+    position: absolute;
+    font-size: 0.7em;
+    width: 20vw;
+    height: 5vw;
+    top: 67%;
+    left: 36%;
+    background-color: transparent;
+    border: transparent;
+    color: #fff;
+    font-family: 'commodore', sans-serif;
+    
+  }
+
+  button:hover{
+    color: green;
+  }
+
+/* TABLETTE */
+
+@media screen and (min-width: 666px){
+    button{
+      font-size: 1.5em;
+    }
+}
+
+  
+
+
+
