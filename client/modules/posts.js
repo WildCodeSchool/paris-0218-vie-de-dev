@@ -5,7 +5,7 @@ export const newPosts = (post) => {
   let idYesCompteur = `yesCompt_${post.id}`
   let idSaltyCompteur = `saltyCompt_${post.id}`
   let idBadCompteur = `badCompt_${post.id}`
-  
+
   return `
     <div class='divposts'>
       <h4>VDD</h4>
