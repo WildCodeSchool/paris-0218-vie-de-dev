@@ -16,9 +16,9 @@ const comment2 = require('../mocks/comment/2.json')
 // ajout de routes notamment pour le post
 const routePost = require('./routes/postRoutes')
 
-const users = [ user1, user2, user3, user4 ]
-const posts = [ post1, post2, post3, post4, post5, post6, post7 ]
-const comments = [ comment1, comment2 ]
+const users = [user1, user2, user3, user4]
+const posts = [post1, post2, post3, post4, post5, post6, post7]
+const comments = [comment1, comment2]
 
 const app = express()
 
@@ -45,6 +45,52 @@ app.get('/posts', (req, res) => {
 
 app.get('/comments', (req, res) => {
   res.json(comments)
+})
+
+// route permettant de créer un nouveau post via le formulaire
+const util = require('util')
+const fs = require('fs')
+const path = require('path')
+
+const writeFile = util.promisify(fs.writeFile)
+
+app.use((req, res, next) => {
+  if (req.method === 'GET') return next()
+
+  let accumulator = ''
+
+  req.on('data', data => {
+    accumulator += data
+  })
+
+  req.on('end', () => {
+    try {
+      req.body = JSON.parse(accumulator)
+      next()
+    } catch (err) {
+      next(err)
+    }
+  })
+})
+
+app.post('/posts', (req, res, next) => {
+  const id = Math.random().toString(36).slice(2).padEnd(11, '0')
+  const filename = `${id}.json`
+  const filepath = path.join(__dirname, '../mocks/post/', filename)
+
+  const postContent = {
+    id: id,
+    userId: '',
+    content: req.body.content,
+    badVotes: [],
+    saltyVotes: [],
+    yesVotes: [],
+    createAt: Date.now()
+  }
+
+  writeFile(filepath, JSON.stringify(postContent), 'utf8')
+    .then(() => res.json('OK'))
+    .catch(next)
 })
 
 app.listen(3000, () => console.log('serveur écoute sur port 3000'))
