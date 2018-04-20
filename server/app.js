@@ -16,9 +16,9 @@ const comment2 = require('../mocks/comment/2.json')
 // ajout de routes notamment pour le post
 const routePost = require('./routes/postRoutes')
 
-const users = [user1, user2, user3, user4]
+const users = [ user1, user2, user3, user4 ]
 const posts = [post1, post2, post3, post4, post5, post6, post7]
-const comments = [comment1, comment2]
+const comments = [ comment1, comment2 ]
 
 const app = express()
 
