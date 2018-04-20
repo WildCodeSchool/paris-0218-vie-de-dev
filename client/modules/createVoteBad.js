@@ -9,7 +9,7 @@ export const createVoteBad = () => {
       console.log('idPost : ' + e.target.id)
       let idPost = (e.target.id).split('_')[1]
       // envoi au serveur 'http://localhost:3000/postVote/:voteType'
-      window.fetch('http://localhost:3000/postVote/badVotes', {
+      window.fetch('http://localhost:3000/post/vote/badVotes', {
         method: 'post',
         body: new URLSearchParams(
           { id: idPost,
