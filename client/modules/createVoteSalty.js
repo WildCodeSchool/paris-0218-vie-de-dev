@@ -9,7 +9,7 @@ export const createVoteSalty = () => {
       console.log('idPost : ' + e.target.id)
       let idPost = (e.target.id).split('_')[1]
       // envoi au serveur 'http://localhost:3000/postVote/:voteType'
-      window.fetch('http://localhost:3000/postVote/saltyVotes', {
+      window.fetch('http://localhost:3000/post/vote/saltyVotes', {
         method: 'post',
         body: new URLSearchParams(
           { id: idPost,
