@@ -39,7 +39,7 @@ router.post('/vote/:typeVote', (req, res, next) => {
 })
 
 router.post('/soumettre', (req, res, next) => {
-  console.log('post/soumettre' + req.body)
+  console.log('post/soumettre', req.body)
   // nom fichier aleatoire
   const id = Math.random().toString(36).slice(2).padEnd(11, '0').slice(0, 5)
   const filename = `${id}.json`
