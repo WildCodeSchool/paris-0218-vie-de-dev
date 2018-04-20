@@ -6,63 +6,84 @@ body {
   background-color: #200917;
 }
 
-h1 {
-  color: #fff;
-  text-align: center;
-  margin-bottom: 50px;
-  margin-top: 20px;
-  text-decoration: underline wavy;
-}
-
 form {
+  background: no-repeat url("../pictures/formPost_background.png");
   position: relative;
+  padding-bottom: 100%;
+  background-size: 50%;
+  left: 25%;
+  right: 25%;
   /*border: 1px solid green;*/
 }
 
-  img{
-
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-
-  #new_post{
-    position: absolute;
-    width: 64%;
-    height: 45%;
-    top: 12%;
-    left: 17%;
-    background-color: #000;
-    border: none;
-    color: #fff;
-    outline: none;
-  }
-
-  button{
-    position: absolute;
-    font-size: 0.7em;
-    width: 20vw;
-    height: 5vw;
-    top: 67%;
-    left: 36%;
-    background-color: transparent;
-    border: transparent;
-    color: #fff;
-    font-family: 'commodore', sans-serif;
-    
-  }
-
-  button:hover{
-    color: green;
-  }
-
-/* TABLETTE */
-
-@media screen and (min-width: 666px){
-    button{
-      font-size: 1.5em;
-    }
+#new_post {
+  position: absolute;
+  background-color: transparent;
+  color: green;
+  height: 24%;
+  width: 33%;
+  top: 7%;
+  left: 8%;
+  outline: none;
+  resize: none;
+  /*border: 1px solid red;*/
+  border: transparent;
+  font-size: 1.5vw;
+  font-family: 'commodore', sans-serif;
 }
+
+button {
+  position: absolute;
+  top: 38%;
+  left: 17.5%;
+  background-color: transparent;
+  border: transparent;
+  /*border: 1px solid green;*/
+  color: grey;
+  font-family: 'commodore', sans-serif;
+  font-size: 1vw;
+  padding: 0.7% 3% 0.7% 3%;
+}
+
+button:hover {
+  color: green;
+}
+
+/* SMARTPHONE S  */
+@media screen and (max-width: 321px) {
+  button {
+    top: 36.3%;
+  }
+}
+
+/* SMARTPHONE M  */
+@media screen and (min-width: 321px) and (max-width: 376px) {
+  button {
+    top: 36.5%;
+  }
+}
+
+/* SMARTPHONE L  */
+@media screen and (min-width: 376px) and (max-width: 426px) {
+  button {
+    top: 36.8%;
+  }
+}
+
+/* TABLET  */
+@media screen and (min-width: 426px) and (max-width: 769px) {
+  button {
+    top: 37.5%;
+  }
+}
+
+/* TABLET L  */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  button {
+    top: 37.8%;
+  }
+}
+
 
   
 
