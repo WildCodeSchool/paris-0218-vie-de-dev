@@ -86,6 +86,9 @@ h1 {
   margin-top: 20px;
   border-radius: 20px;
 }
+.divposts p {
+  white-space: pre-wrap;
+}
 
 /** titre h4 **/
 
