@@ -21,6 +21,7 @@ h1 {
   list-style: none;
   display: flex;
   align-items: center;
+  /*justify-content: space-between;*/
   background-color: #6d214f;
   margin-top: 0;
 }
@@ -30,6 +31,7 @@ h1 {
 }
 #main_menu ul li {
   width: 20%;
+  padding: 5px;
 }
 
 #main_menu ul li a {
@@ -204,4 +206,29 @@ button:hover {
   .compteur {
     margin: auto;
   }
+
+  /*mise en forme du menu sur tel*/
+  #menuOrdi {
+    display:none;
+  }
+  #menuTel {
+    display:flex;
+    background-color: #6d214f;
+  }
+  #menuTel ul {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-left: 0px;
+  }
+  #menuTel ul li {
+    margin: auto;
+    width: 100%;
+    padding-left: 5px;
+    margin-left: 0px;
+  }
+
 }
+
+
+
