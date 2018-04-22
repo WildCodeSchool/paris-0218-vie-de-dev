@@ -25,6 +25,9 @@ h1 {
   margin-top: 0;
 }
 
+#menuTel {
+  display:none;
+}
 #main_menu ul li {
   width: 20%;
 }
