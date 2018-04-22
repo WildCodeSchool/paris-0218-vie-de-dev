@@ -61,7 +61,7 @@ router.post('/soumettre', (req, res, next) => {
   testId(getNewId())
     .then(id => {
       const filePath = getPathFromId(id)
-      console.log('createJSON : ', filepath)
+      console.log('createJSON : ', filePath)
       const contentPost = {
         id: id,
         userId: req.body.userId,
@@ -71,12 +71,16 @@ router.post('/soumettre', (req, res, next) => {
         saltyVotes: [],
         createdAt: Date.now()
       }
+      // write (promisify)
+      return writeFile(filePath, JSON.stringify(contentPost), 'utf-8')
     })
-
-  // write (promisify)
-  writeFile(filepath, JSON.stringify(contentPost), 'utf-8')
     .then(() => res.json('OK'))
     .catch(next)
+
+  // write (promisify)
+  /*writeFile(filePath, JSON.stringify(contentPost), 'utf-8')
+    .then(() => res.json('OK'))
+    .catch(next)*/
 })
 
 module.exports = router
