@@ -50,12 +50,18 @@ h1 {
 }
 
 .main_navbar {
+  display:flex;
   text-align: center;
+  justify-content: space-around ;
+  border : 1px solid blue;
+  padding : 20px 10px 20px 10px;
 }
 
 .main_navbar button {
-  padding: 10px 80px;
+  padding: 5px;
+  margin : auto;
   border-radius: 5px;
+  width: 12vw;
 }
 
 /** posts **/
@@ -159,4 +165,18 @@ button:hover {
   100% {
     opacity: 1;
   }
+}
+
+/*media queries bouton menu*/
+@media screen and (max-width:720px){
+
+  .main_navbar button {
+    padding: 2px;
+    margin : 0px;
+    font-size: 0.5em;
+  }
+
+
+  /*suppression marge sur tel
+  
 }
