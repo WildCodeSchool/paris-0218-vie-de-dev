@@ -123,6 +123,7 @@ button:hover {
 
 .boutons {
   display : flex;
+  justify-content: space-around;
   width: 50%;
   margin: auto;
 }
@@ -136,6 +137,7 @@ button:hover {
 
 .votes {
   display: flex;
+  justify-content: space-around;
   width: 50%;
   margin: 0 auto;
 }
