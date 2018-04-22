@@ -53,7 +53,6 @@ h1 {
   display:flex;
   text-align: center;
   justify-content: space-around ;
-  border : 1px solid blue;
   padding : 20px 10px 20px 10px;
 }
 
@@ -70,7 +69,7 @@ h1 {
   background-color: rgba(109, 33, 79, 0.3);
   border: 2px solid #00D927;
   color: #00D927;
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
   padding: 10px;
   margin-top: 20px;
@@ -123,8 +122,9 @@ button:hover {
 }
 
 .boutons {
-  width: 40%;
-  margin: 0 auto;
+  display : flex;
+  width: 50%;
+  margin: auto;
 }
 
 .boutons button {
@@ -136,7 +136,7 @@ button:hover {
 
 .votes {
   display: flex;
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
 }
 
@@ -175,10 +175,28 @@ button:hover {
     margin : 0px;
     font-size: 0.5em;
   }
+  .main_navbar {
+    padding : 10px 5px 10px 5px;
+  }
 
-
-  /*suppression marge sur tel*/
+  /*suppression marge des posts sur tel*/
   .divposts {
     width: 90%;
+  }
+  .boutons {
+    width: 100%;
+  }
+  .boutons button {
+      padding: 10px 10px;
+
+      margin: auto;
+      margin-top:10px;
+      margin-bottom:10px ;
+  }
+  .votes {
+    width: 100%;
+  }
+  .compteur {
+    margin: auto;
   }
 }
