@@ -26,7 +26,7 @@ h1 {
   margin-top: 0;
 }
 
-#menuTel {
+#menu_tel {
   display:none;
 }
 #main_menu ul li {
@@ -49,6 +49,12 @@ h1 {
 }
 
 #search_btn {
+  padding: 3px 0;
+  max-width: 80%;
+  border-radius: 10px;
+}
+
+#search_btn_tel {
   padding: 3px 0;
   max-width: 80%;
   border-radius: 10px;
@@ -208,20 +214,20 @@ button:hover {
   }
 
   /*mise en forme du menu sur tel*/
-  #menuOrdi {
+  #menu_ordi {
     display:none;
   }
-  #menuTel {
+  #menu_tel {
     display:flex;
     background-color: #6d214f;
   }
-  #menuTel ul {
+  #menu_tel ul {
     display: flex;
     flex-direction: column;
     margin: auto;
     padding-left: 0px;
   }
-  #menuTel ul li {
+  #menu_tel ul li {
     margin: auto;
     width: 100%;
     padding-left: 5px;
@@ -229,6 +235,16 @@ button:hover {
   }
 
 }
+
+/*ajout de quelques regles  supplémentaire sur le menu pour petit tel */
+@media screen and (max-width:600px){
+  #menu_tel img{
+    height: 30vw;
+  }
+}
+
+
+
 
 
 
