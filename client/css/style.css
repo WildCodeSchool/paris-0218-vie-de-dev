@@ -177,6 +177,8 @@ button:hover {
   }
 
 
-  /*suppression marge sur tel
-  
+  /*suppression marge sur tel*/
+  .divposts {
+    width: 90%;
+  }
 }
