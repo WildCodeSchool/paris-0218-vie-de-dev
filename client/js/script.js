@@ -5,6 +5,7 @@ import {boutonsYBS} from '../modules/boutonYesBadSalty.js'
 import {createVoteYes} from '../modules/createVote.js'
 import {createVoteSalty} from '../modules/createVoteSalty.js'
 import {createVoteBad} from '../modules/createVoteBad.js'
+import {createSearch} from '../modules/createSearch.js'
 
 window.fetch('http://localhost:3000/posts')
   .then(res => res.json())
@@ -17,29 +18,9 @@ window.fetch('http://localhost:3000/posts')
     createVoteYes()
     createVoteSalty()
     createVoteBad()
+    createSearch('search_btn')
+    createSearch('search_btn_tel')
   })
 boutonNews()
 boutonRandom()
 boutonsYBS()
-
-
-// test pour searchBar
-
-document.getElementById('search_btn').addEventListener('keyup', e => {
-  //console.log("test search")
-  if(event.keyCode === 13){
-    const recherche = document.getElementById('search_btn').value.toLowerCase()
-    console.log(recherche)
-    window.fetch('http://localhost:3000/posts')
-      .then(res => res.json())
-      .then(posts => {
-      console.log(posts)
-      const reg = new RegExp(recherche,"g")
-      let postTri = posts.filter(post => (post.content.toLowerCase()).match(reg))
-      const postElements = document.getElementById('posts')
-      postElements.innerHTML = postTri.map(newPosts).join('')
-      
-    })
-  }
-
-})
