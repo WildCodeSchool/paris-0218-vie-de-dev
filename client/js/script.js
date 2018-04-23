@@ -5,6 +5,7 @@ import {boutonsYBS} from '../modules/boutonYesBadSalty.js'
 import {createVoteYes} from '../modules/createVote.js'
 import {createVoteSalty} from '../modules/createVoteSalty.js'
 import {createVoteBad} from '../modules/createVoteBad.js'
+import {menuburger} from '../modules/menuburger.js'
 
 window.fetch('http://localhost:3000/posts')
   .then(res => res.json())
@@ -21,3 +22,4 @@ window.fetch('http://localhost:3000/posts')
 boutonNews()
 boutonRandom()
 boutonsYBS()
+menuburger()

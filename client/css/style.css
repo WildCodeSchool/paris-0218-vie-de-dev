@@ -30,8 +30,9 @@ h1 {
   display:none;
 }
 #main_menu ul li {
-  width: 20%;
+  width: 100%;
   padding: 5px;
+  
 }
 
 #main_menu ul li a {
@@ -184,7 +185,7 @@ button:hover {
 }
 
 /*media queries bouton menu*/
-@media screen and (max-width:720px){
+@media screen and (max-width:900px){
 
   .main_navbar button {
     padding: 2px;
@@ -222,13 +223,21 @@ button:hover {
   }
   #menu_tel {
     display:flex;
+    justify-content: space-around;
     background-color: #6d214f;
+  }
+  #burger{
+    height:30px;
+    margin-top: 10%;
+    margin-left: 100px;
   }
   #menu_tel ul {
     display: flex;
     flex-direction: column;
     margin: auto;
     padding-left: 0px;
+    margin-left: 50px;
+
   }
   #menu_tel ul li {
     margin: auto;
@@ -237,6 +246,12 @@ button:hover {
     margin-left: 0px;
   }
 
+  .nodisplay{
+    display:none;
+  }
+  .logo{
+    margin-right: 100px;
+  }
 }
 
 /*ajout de quelques regles  supplémentaire sur le menu pour petit tel */
@@ -244,6 +259,12 @@ button:hover {
   #menu_tel img{
     height: 30vw;
   }
+  #menu_tel ul {
+    font-size: 15px;
+    margin-left: 0px;
+}
+#menu_tel ul li {
+  font-size: 12px;
 }
 
 
