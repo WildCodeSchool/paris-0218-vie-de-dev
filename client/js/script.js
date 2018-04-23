@@ -35,14 +35,11 @@ document.getElementById('search_btn').addEventListener('keyup', e => {
       .then(posts => {
       console.log(posts)
       const reg = new RegExp(recherche,"g")
-      let postTri = posts.map(post => post.content.toLowerCase())
-      .filter(post=>post.match(reg))
-      console.log(postTri)
+      let postTri = posts.filter(post => (post.content.toLowerCase()).match(reg))
+      const postElements = document.getElementById('posts')
+      postElements.innerHTML = postTri.map(newPosts).join('')
+      
     })
-
-    //const postElements = document.getElementById('posts')
-    //postElements.innerHTML = postSort.map(newPosts).join('')
-
   }
 
 })
