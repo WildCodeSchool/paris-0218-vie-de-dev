@@ -13,5 +13,5 @@ document.getElementById('add_post').addEventListener('submit', event => {
     })
   })
     .then(res => console.log(res.status))
-    .then(res => window.location.replace('http://localhost:5000/'))
+    .then(res => window.location.replace('http://localhost:8080/'))
 })
