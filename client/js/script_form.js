@@ -8,7 +8,7 @@ document.getElementById('add_post').addEventListener('submit', event => {
     method: 'post',
 
     body: new URLSearchParams({
-      userID: 8,
+      userId: 8,
       content: content
     })
   })
