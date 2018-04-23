@@ -21,3 +21,28 @@ window.fetch('http://localhost:3000/posts')
 boutonNews()
 boutonRandom()
 boutonsYBS()
+
+
+// test pour searchBar
+
+document.getElementById('search_btn').addEventListener('keyup', e => {
+  //console.log("test search")
+  if(event.keyCode === 13){
+    const recherche = document.getElementById('search_btn').value.toLowerCase()
+    console.log(recherche)
+    window.fetch('http://localhost:3000/posts')
+      .then(res => res.json())
+      .then(posts => {
+      console.log(posts)
+      const reg = new RegExp(recherche,"g")
+      let postTri = posts.map(post => post.content.toLowerCase())
+      .filter(post=>post.match(reg))
+      console.log(postTri)
+    })
+
+    //const postElements = document.getElementById('posts')
+    //postElements.innerHTML = postSort.map(newPosts).join('')
+
+  }
+
+})
