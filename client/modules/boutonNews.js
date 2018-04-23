@@ -6,7 +6,7 @@ export const boutonNews = () => {
       .then(res => res.json())
       .then(posts => {
         let postSort = posts.sort((a, b) => {
-          return (b.createdAt - a.createdAt)
+          return (b.createAt - a.createAt)
         })
         const buttonElements = document.getElementById('posts')
         buttonElements.innerHTML = postSort.map(newPosts).join('')
