@@ -9,8 +9,11 @@ import {createVoteBad} from '../modules/createVoteBad.js'
 window.fetch('http://localhost:3000/posts')
   .then(res => res.json())
   .then(posts => {
-    const postsElements = document.getElementById('posts')
-    postsElements.innerHTML = posts.map(newPosts).reverse().join('')
+    let postSort = posts.sort((a, b) => {
+      return (b.createdAt - a.createdAt)
+    })
+    const postElements = document.getElementById('posts')
+    postElements.innerHTML = postSort.map(newPosts).join('')
     createVoteYes()
     createVoteSalty()
     createVoteBad()

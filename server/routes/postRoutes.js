@@ -68,7 +68,7 @@ router.post('/soumettre', (req, res, next) => {
         badVotes: [],
         yesVotes: [],
         saltyVotes: [],
-        createdAt: Date.now()
+        createAt: Date.now()
       }
       // write (promisify)
       return writeFile(filePath, JSON.stringify(contentPost), 'utf-8')
