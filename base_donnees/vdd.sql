@@ -26,3 +26,11 @@ CREATE TABLE yesVotes (
   FOREIGN KEY (userId) REFERENCES user(id),
   FOREIGN KEY (postId) REFERENCES post(id)
 ) ENGINE=INNODB;
+
+CREATE TABLE saltyVotes (
+  userId INT NOT NULL,
+  postId INT NOT NULL,
+  PRIMARY KEY (userId,postId),
+  FOREIGN KEY (userId) REFERENCES user(id),
+  FOREIGN KEY (postId) REFERENCES post(id)
+) ENGINE=INNODB;
