@@ -8,7 +8,6 @@ import {createVoteBad} from '../modules/createVoteBad.js'
 import {createSearch} from '../modules/createSearch.js'
 import {menuburger} from '../modules/menuburger.js'
 
-
 window.fetch('http://localhost:3000/posts')
   .then(res => res.json())
   .then(posts => {
