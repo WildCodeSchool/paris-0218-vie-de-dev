@@ -104,3 +104,67 @@ INSERT INTO comment (userId, postId, content)
 INSERT INTO comment (userId, postId, content)
   VALUES ("1", "3","Il y en a d'autre dans le genre? haha !");
 
+/*......AJOUTER DE YESVOTES POUR TEST......*/
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("1","1");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("3","1");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("5","1");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("6","1");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("3","2");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("2","2");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("5","2");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("4","2");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("6","3");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("6","4");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("3","4");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("1","4");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("5","5");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("2","5");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("1","5");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("1","6");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("2","6");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("3","6");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("4","6");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("5","6");
+
+INSERT INTO yesVotes (userId, postId)
+  VALUES ("6","6");
