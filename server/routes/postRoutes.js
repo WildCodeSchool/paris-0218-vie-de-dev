@@ -8,7 +8,7 @@ const db = require('./../db')
 
 const writeFile = util.promisify(fs.writeFile)
 const readFile = util.promisify(fs.readFile)
-const stat = util.promisify(fs.stat)
+// const stat = util.promisify(fs.stat)
 
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({extended: true}))
@@ -41,7 +41,7 @@ router.post('/vote/:typeVote', (req, res, next) => {
 })
 
 // nom fichier aleatoire avec test id unique
-const testId = (id) =>
+/* const testId = (id) =>
   stat(getPathFromId(id))
     .then(() => testId(getNewId()))
     .catch(err => {
@@ -52,14 +52,14 @@ const testId = (id) =>
     })
 
 const getNewId = () => Math.random().toString(36).slice(2).padEnd(11, '0').slice(0, 5)
-const getPathFromId = id => path.join(__dirname, '../../mocks/post/', `${id}.json`)
+const getPathFromId = id => path.join(__dirname, '../../mocks/post/', `${id}.json`) */
 
 router.post('/soumettre', (req, res, next) => {
   console.log('post/soumettre', req.body)
   // nom fichier aleatoire
-  testId(getNewId())
-    // recuperation des donnees de la requete
-    /*.then(id => {
+  // testId(getNewId())
+  // recuperation des donnees de la requete
+  /* .then(id => {
       const filePath = getPathFromId(id)
       console.log('createJSON : ', filePath)
       const contentPost = {
@@ -73,8 +73,8 @@ router.post('/soumettre', (req, res, next) => {
       }
       // write (promisify)
       return writeFile(filePath, JSON.stringify(contentPost), 'utf-8')
-    })*/
-    .then(db.addPost(req.body))
+    }) */
+  db.addPost(req.body)
     .then(() => res.json('OK'))
     .catch(next)
 })
