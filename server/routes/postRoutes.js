@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const fs = require('fs')
 const path = require('path')
 const util = require('util')
+const db = require('./../db')
 
 const writeFile = util.promisify(fs.writeFile)
 const readFile = util.promisify(fs.readFile)
@@ -58,7 +59,7 @@ router.post('/soumettre', (req, res, next) => {
   // nom fichier aleatoire
   testId(getNewId())
     // recuperation des donnees de la requete
-    .then(id => {
+    /*.then(id => {
       const filePath = getPathFromId(id)
       console.log('createJSON : ', filePath)
       const contentPost = {
@@ -72,7 +73,8 @@ router.post('/soumettre', (req, res, next) => {
       }
       // write (promisify)
       return writeFile(filePath, JSON.stringify(contentPost), 'utf-8')
-    })
+    })*/
+    .then(db.addPost(req.body))
     .then(() => res.json('OK'))
     .catch(next)
 })
