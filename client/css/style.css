@@ -227,16 +227,14 @@ button:hover {
     background-color: #6d214f;
   }
   #burger{
-    height:30px;
-    margin-top: 10%;
-    margin-left: 100px;
+    display :none;
   }
   #menu_tel ul {
     display: flex;
     flex-direction: column;
     margin: auto;
     padding-left: 0px;
-    margin-left: 50px;
+    margin-left: 120px;
 
   }
   #menu_tel ul li {
@@ -245,17 +243,14 @@ button:hover {
     padding-left: 5px;
     margin-left: 0px;
   }
+.logo{
+  margin-right: 120px;
+}
 
-  .nodisplay{
-    display:none;
-  }
-  .logo{
-    margin-right: 100px;
-  }
 }
 
 /*ajout de quelques regles  supplémentaire sur le menu pour petit tel */
-@media screen and (max-width:600px){
+@media screen and (max-width:500px){
   #menu_tel img{
     height: 30vw;
   }
@@ -267,7 +262,18 @@ button:hover {
   font-size: 12px;
 }
 
-
+.nodisplay{
+  display:none;
+}
+#burger{
+  height:30px;
+  margin-top: 10%;
+  margin-left: 80px;
+  display: block;
+}
+.logo{
+  margin-right: 80px;
+}
 
 
 
