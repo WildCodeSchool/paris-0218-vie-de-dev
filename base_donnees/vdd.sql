@@ -189,6 +189,29 @@ INSERT INTO saltyVotes (userId, postId)
 INSERT INTO saltyVotes (userId, postId)
   VALUES ("4","3");
 
+/*......AJOUTER DES BADVOTES POUR TEST.....*/
+
+INSERT INTO badVotes (userId, postId)
+  VALUES ("4","1");
+
+INSERT INTO badVotes (userId, postId)
+  VALUES ("5","3");
+
+INSERT INTO badVotes (userId, postId)
+  VALUES ("3","4");
+
+INSERT INTO badVotes (userId, postId)
+  VALUES ("5","4");
+
+INSERT INTO badVotes (userId, postId)
+  VALUES ("4","5");
+
+INSERT INTO badVotes (userId, postId)
+  VALUES ("3","5");
+
+INSERT INTO badVotes (userId, postId)
+  VALUES ("6","5");
+
 
 
 
