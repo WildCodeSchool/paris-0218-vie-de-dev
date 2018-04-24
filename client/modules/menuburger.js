@@ -27,7 +27,6 @@ export const menuburger = () => {
         <li class="nodisplay"><a href="#">Log in</a></li>
         `
       i = 0
-      
     }
   })
 }

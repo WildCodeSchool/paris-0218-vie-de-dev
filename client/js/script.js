@@ -26,4 +26,3 @@ boutonNews()
 boutonRandom()
 boutonsYBS()
 menuburger()
-
