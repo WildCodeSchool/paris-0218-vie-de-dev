@@ -73,3 +73,7 @@ INSERT INTO user (name, email, password)
 
 INSERT INTO user (name, email, password)
   VALUES ("Carlos Facchin", "carlossss@gmail.com","carl64");
+
+/*........Modifier email d'un user.....*/
+
+UPDATE user SET email="gloomiz@gmail.com" WHERE id=3;
