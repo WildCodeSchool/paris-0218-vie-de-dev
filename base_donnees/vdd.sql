@@ -96,4 +96,11 @@ INSERT INTO post (userId, content)
   VALUES ("6","Il y a deux sortes de gens : ceux qui comprennent la notion de récursivité et ceux qui ne comprennent pas qu’il y a deux sortes de gens : ceux qui comprennent la notion de récursivité et ceux qui ne comprennent pas qu’il y a deux sortes de gens : ceux qui comprennent la notion de récursivité et ceux qui ne comprennent pas qu’il y a deux sortes de gens...");
 
 
+/*.....AJOUTER DE COMMENTAIRE POUR TEST........*/
+
+INSERT INTO comment (userId, postId, content)
+  VALUES ("2", "1","Pas mal celle là !");
+
+INSERT INTO comment (userId, postId, content)
+  VALUES ("1", "3","Il y en a d'autre dans le genre? haha !");
 
