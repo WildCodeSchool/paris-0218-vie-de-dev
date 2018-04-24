@@ -1,15 +1,15 @@
-export const createVoteYes = () => {
+export const createVoteBad = () => {
   /* global URLSearchParams */
   let userConnect = 12 // utilisateur connecté fictif
-  const yesVoteClass = document.getElementsByClassName('yesVote')
+  const badVoteClass = document.getElementsByClassName('badVote')
 
-  for (let butt of yesVoteClass) {
+  for (let butt of badVoteClass) {
     butt.addEventListener('click', (e) => {
       // recupération id post
       console.log('idPost : ' + e.target.id)
       let idPost = (e.target.id).split('_')[1]
       // envoi au serveur 'http://localhost:3000/postVote/:voteType'
-      window.fetch('http://localhost:3000/post/vote/yesVotes', {
+      window.fetch('http://localhost:3000/post/vote/badVotes', {
         method: 'post',
         body: new URLSearchParams(
           { id: idPost,
@@ -18,8 +18,8 @@ export const createVoteYes = () => {
         .then(res => res.json())
         .then(res => {
           console.log(res) // reponse serveur : renvoi les données du mock modifié
-          const yesCompteur = document.getElementById(`yesCompt_${res.id}`)
-          yesCompteur.textContent = res.yesVotes.length
+          const badCompteur = document.getElementById(`badCompt_${res.id}`)
+          badCompteur.textContent = res.badVotes.length
         })
     })
   }
