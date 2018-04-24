@@ -77,3 +77,23 @@ INSERT INTO user (name, email, password)
 /*........Modifier email d'un user.....*/
 
 UPDATE user SET email="gloomiz@gmail.com" WHERE id=3;
+
+/*.......AJOUTER DES POSTS POUR TEST.....*/
+
+INSERT INTO post (userId, content)
+  VALUES ("1","Que fait un dev quand il va aux toilettes?  Il git push...");
+
+INSERT INTO post (userId, content)
+  VALUES ("2","Que fait un développeur s'il veut se marier ? Une fille en C ...");
+
+INSERT INTO post (userId, content)
+  VALUES ("5","Tu sais que tu es un développeur quand ça te gène pas d'avoir un String dans l'Array...");
+
+INSERT INTO post (userId, content)
+  VALUES ("3","Combien de développeurs faut-il pour remplacer une ampoule grillée? Aucun, c'est un problème Hardware...");
+
+INSERT INTO post (userId, content)
+  VALUES ("6","Il y a deux sortes de gens : ceux qui comprennent la notion de récursivité et ceux qui ne comprennent pas qu’il y a deux sortes de gens : ceux qui comprennent la notion de récursivité et ceux qui ne comprennent pas qu’il y a deux sortes de gens : ceux qui comprennent la notion de récursivité et ceux qui ne comprennent pas qu’il y a deux sortes de gens...");
+
+
+
