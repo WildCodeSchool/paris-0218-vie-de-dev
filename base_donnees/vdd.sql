@@ -168,3 +168,27 @@ INSERT INTO yesVotes (userId, postId)
 
 INSERT INTO yesVotes (userId, postId)
   VALUES ("6","6");
+
+/*........AJOUTER DES SALTYVOTES POUR TEST.......*/
+
+INSERT INTO saltyVotes (userId, postId)
+  VALUES ("1","2");
+
+INSERT INTO saltyVotes (userId, postId)
+  VALUES ("6","2");
+
+INSERT INTO saltyVotes (userId, postId)
+  VALUES ("1","3");
+
+INSERT INTO saltyVotes (userId, postId)
+  VALUES ("2","3");
+
+INSERT INTO saltyVotes (userId, postId)
+  VALUES ("5","3");
+
+INSERT INTO saltyVotes (userId, postId)
+  VALUES ("4","3");
+
+
+
+
