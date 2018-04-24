@@ -46,6 +46,7 @@ CREATE TABLE `badVotes` (
 
 LOCK TABLES `badVotes` WRITE;
 /*!40000 ALTER TABLE `badVotes` DISABLE KEYS */;
+INSERT INTO `badVotes` VALUES (4,1),(5,3),(3,4),(5,4),(3,5),(4,5),(6,5);
 /*!40000 ALTER TABLE `badVotes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -67,7 +68,7 @@ CREATE TABLE `comment` (
   KEY `userId` (`userId`),
   CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`postId`) REFERENCES `post` (`id`),
   CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -76,6 +77,7 @@ CREATE TABLE `comment` (
 
 LOCK TABLES `comment` WRITE;
 /*!40000 ALTER TABLE `comment` DISABLE KEYS */;
+INSERT INTO `comment` VALUES (1,1,2,'Pas mal celle là !','2018-04-24 13:27:38'),(2,3,1,'Il y en a d\'autre dans le genre? haha !','2018-04-24 13:27:57');
 /*!40000 ALTER TABLE `comment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,7 +96,7 @@ CREATE TABLE `post` (
   PRIMARY KEY (`id`),
   KEY `userId` (`userId`),
   CONSTRAINT `post_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,6 +105,7 @@ CREATE TABLE `post` (
 
 LOCK TABLES `post` WRITE;
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
+INSERT INTO `post` VALUES (1,1,'Que fait un dev quand il va aux toilettes?  Il git push...','2018-04-24 13:18:02'),(2,2,'Que fait un développeur s\'il veut se marier ? Une fille en C ...','2018-04-24 13:18:22'),(3,5,'Tu sais que tu es un développeur quand ça te gène pas d\'avoir un String dans l\'Array...','2018-04-24 13:18:39'),(4,3,'Combien de développeurs faut-il pour remplacer une ampoule grillée? Aucun, c\'est un problème Hardware...','2018-04-24 13:18:54'),(5,6,'Il y a deux sortes de gens : ceux qui comprennent la notion de récursivité et ceux qui ne comprennent pas qu’il y a deux sortes de gens : ceux qui comprennent la notion de récursivité et ceux qui ne comprennent pas qu’il y a deux sortes de gens : ceux qui comprennent la notion de récursivité et ceux qui ne comprennent pas qu’il y a deux sortes de gens...','2018-04-24 13:19:10'),(6,4,'A quoi sert Internet Explorer ? A télécharger Google Chrome...','2018-04-24 13:19:24');
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,6 +132,7 @@ CREATE TABLE `saltyVotes` (
 
 LOCK TABLES `saltyVotes` WRITE;
 /*!40000 ALTER TABLE `saltyVotes` DISABLE KEYS */;
+INSERT INTO `saltyVotes` VALUES (1,2),(6,2),(1,3),(2,3),(4,3),(5,3);
 /*!40000 ALTER TABLE `saltyVotes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -146,7 +150,7 @@ CREATE TABLE `user` (
   `password` varchar(254) DEFAULT NULL,
   `createAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -155,6 +159,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'Mikael Verdu','mikael.verdu@gmail.com','azerty94','2018-04-24 12:38:58'),(2,'Bogdan Ceu','bogdanceu@yahoo.com','yolostyle93','2018-04-24 12:56:13'),(3,'gloomiz','gloomiz@gmail.com','gggg56','2018-04-24 12:56:13'),(4,'Pierre Poretti','pierreporetti@gmail.com','fhdsh22','2018-04-24 12:56:13'),(5,'Alexis Theyssier','alety@gmail.com','alal94','2018-04-24 12:56:13'),(6,'Carlos Facchin','carlossss@gmail.com','carl64','2018-04-24 12:56:15');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -181,6 +186,7 @@ CREATE TABLE `yesVotes` (
 
 LOCK TABLES `yesVotes` WRITE;
 /*!40000 ALTER TABLE `yesVotes` DISABLE KEYS */;
+INSERT INTO `yesVotes` VALUES (1,1),(3,1),(5,1),(6,1),(2,2),(3,2),(4,2),(5,2),(6,3),(1,4),(3,4),(6,4),(1,5),(2,5),(5,5),(1,6),(2,6),(3,6),(4,6),(5,6),(6,6);
 /*!40000 ALTER TABLE `yesVotes` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -193,4 +199,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-24 12:24:32
+-- Dump completed on 2018-04-24 16:15:02
