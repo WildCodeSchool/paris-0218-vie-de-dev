@@ -5,6 +5,7 @@ import {boutonsYBS} from '../modules/boutonYesBadSalty.js'
 import {createVoteYes} from '../modules/createVote.js'
 import {createVoteSalty} from '../modules/createVoteSalty.js'
 import {createVoteBad} from '../modules/createVoteBad.js'
+import {createSearch} from '../modules/createSearch.js'
 import {menuburger} from '../modules/menuburger.js'
 
 window.fetch('http://localhost:3000/posts')
@@ -18,6 +19,8 @@ window.fetch('http://localhost:3000/posts')
     createVoteYes()
     createVoteSalty()
     createVoteBad()
+    createSearch('search_btn')
+    createSearch('search_btn_tel')
   })
 boutonNews()
 boutonRandom()
