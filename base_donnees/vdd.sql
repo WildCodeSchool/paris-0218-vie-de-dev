@@ -18,3 +18,11 @@ CREATE TABLE post (
   FOREIGN KEY (userId)
     REFERENCES user(id)
 ) ENGINE=INNODB;
+
+CREATE TABLE yesVotes (
+  userId INT NOT NULL,
+  postId INT NOT NULL,
+  PRIMARY KEY (userId,postId),
+  FOREIGN KEY (userId) REFERENCES user(id),
+  FOREIGN KEY (postId) REFERENCES post(id)
+) ENGINE=INNODB;
