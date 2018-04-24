@@ -53,3 +53,23 @@ CREATE TABLE comment (
   FOREIGN KEY (postId) REFERENCES post(id),
   FOREIGN KEY (userId) REFERENCES user(id)
 ) ENGINE=INNODB;
+
+/*.......AJOUTER DES USERS POUR TEST.........*/
+
+INSERT INTO user (name, email, password)
+  VALUES ("Mikael Verdu", "mikael.verdu@gmail.com","azerty94"); 
+
+INSERT INTO user (name, email, password)
+  VALUES ("Bogdan Ceu", "bogdanceu@yahoo.com","yolostyle93");
+
+INSERT INTO user (name, email, password)
+  VALUES ("gloomiz", "gloomiz@.com","gggg56");
+
+INSERT INTO user (name, email, password)
+  VALUES ("Pierre Poretti", "pierreporetti@gmail.com","fhdsh22");
+
+INSERT INTO user (name, email, password)
+  VALUES ("Alexis Theyssier", "alety@gmail.com","alal94");
+
+INSERT INTO user (name, email, password)
+  VALUES ("Carlos Facchin", "carlossss@gmail.com","carl64");
