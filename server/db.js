@@ -1,20 +1,39 @@
 const mysql = require('mysql2/promise')
 const co = mysql.createConnection({
-  host: 'localHost'
-  user: 'root'
+  host: 'localHost',
+  user: 'root',
+  password: 'root',
   database: 'VDD'
 })
-const getPosts = () => {
-  return co.then(connection => {
-    return connection.execute('SELECT * FROM post')
-      .then((result) => result[0])
-  })
+const exec = async (query, params) => {
+  const connection = await co
+  const result = await connection.execute(query, params)
+  return result[0]
 }
-
-
-
-
-
-module.export = {
+const getPosts = () => exec(`
+  SELECT * FROM (
+    SELECT * FROM (
+      SELECT * FROM post
+      LEFT JOIN (
+        SELECT postId AS postIdyes, COUNT(userId) AS yes
+        FROM yesVotes
+        GROUP BY postId
+      ) t2
+      ON post.id = t2.postIdyes) t3
+    LEFT JOIN (
+      SELECT postId AS postIdsalty, COUNT(userId) AS salty
+      FROM saltyVotes
+      GROUP BY postId
+    ) t4
+    ON t3.id = t4.postIdsalty) t5
+  LEFT JOIN (
+    SELECT postId as postIdbad , COUNT(userId) AS bad
+    FROM badVotes
+    GROUP BY postId
+  ) t6
+  ON t5.id = t6.postIdbad
+`)
+  
+module.exports = {
   getPosts
 }
