@@ -15,37 +15,24 @@ router.use(bodyParser.urlencoded({extended: true}))
 router.post('/vote/:typeVote', (req, res, next) => {
   console.log('parametre URL POST:' + req.params.typeVote)
   const user = Number(req.body.user)
+  // test si user deja present dans array Vote (yes, bad ou salty)
   db.selectVote(req.body, req.params.typeVote)
     .then(result => {
       if (result.length === 0) {
-         console.log('resultat SELECTVote : ', result)
-
-      }
-
-    })
-
-  /*const filePath = path.join(__dirname, `../../mocks/post/${req.body.id}.json`)
-  // il faut ajouter le user au tableau :typeVote
-  // d'abord lire le fichier (readFile)
-  // puis write file si user non présent dans tableau
-  readFile(filePath, 'utf-8')
-    .then(JSON.parse)
-    .then(file => {
-      // test si user deja present dans array Vote (yes, bad ou salty)
-      if (file[`${req.params.typeVote}`].includes(user)) {
-        // user deja dans array Vote : on renvoit le post sans write user
+        // user non present : addVote user dans table typeVote puis countVote sur table type Vote (mise à jour)
+        console.log('resultat SELECTVote : ', result)
         res.header('Content-Type', 'application/json;charset=utf-8')
-        res.end(JSON.stringify(file))
+        db.addVote(req.body, req.params.typeVote)
+          .then(result => db.countVote(req.body, req.params.typeVote)
+                            .then(result => res.end(JSON.stringify(result)) ))
+          .catch(next) 
       } else {
-        // user non present : write user dans array Vote puis renvoye post mis a jour
-        file[`${req.params.typeVote}`].push(user)
-        const data = JSON.stringify(file, null, 2)
+        // user deja dans array Vote : on renvoit le resultat de la requete countVote
         res.header('Content-Type', 'application/json;charset=utf-8')
-        res.end(data)
-        return writeFile(filePath, data, 'utf8')
+        db.countVote(req.body, req.params.typeVote)
+          .then(result => res.end(JSON.stringify(result))) /*console.log("resultat countVote deja present", result)*/
       }
-    })*/
-    .catch(next)
+    })
 })
 
 // nom fichier aleatoire avec test id unique
