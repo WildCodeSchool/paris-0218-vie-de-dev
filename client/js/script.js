@@ -12,7 +12,7 @@ window.fetch('http://localhost:3000/posts')
   .then(res => res.json())
   .then(posts => {
     let postSort = posts.sort((a, b) => {
-      return (b.createAt - a.createAt)
+      return (new Date(b.createAt) - new Date(a.createAt))
     })
     const postElements = document.getElementById('posts')
     postElements.innerHTML = postSort.map(newPosts).join('')
