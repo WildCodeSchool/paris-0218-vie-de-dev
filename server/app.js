@@ -1,9 +1,10 @@
 const express = require('express')
-const fs = require('fs')
-const util = require('util')
-const path = require('path')
-const readFile = util.promisify(fs.readFile)
-const readdir = util.promisify(fs.readdir)
+// const fs = require('fs')
+// const util = require('util')
+// const path = require('path')
+// const readFile = util.promisify(fs.readFile)
+// const readdir = util.promisify(fs.readdir)
+const db = require('./db.js')
 const user1 = require('../mocks/user/1.json')
 const user2 = require('../mocks/user/2.json')
 const user3 = require('../mocks/user/3.json')
@@ -39,13 +40,8 @@ app.get('/users', (req, res) => {
 })
 
 app.get('/posts', (req, res) => {
-  const postsDir = path.join(__dirname, '../mocks/post/')
-  readdir(postsDir)
-    .then(files => Promise.all(files
-      .map(file => path.join(postsDir, file))
-      .map(filepath => readFile(filepath, 'utf8'))))
-    .then(allFilesValues => res.json(allFilesValues.map(JSON.parse)))
-    .catch(err => res.status(500).end(err.message))
+  db.getPosts()
+    .then(posts => res.json(posts))
 })
 
 app.get('/comments', (req, res) => {

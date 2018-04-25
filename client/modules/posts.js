@@ -5,10 +5,18 @@ export const newPosts = (post) => {
   let idYesCompteur = `yesCompt_${post.id}`
   let idSaltyCompteur = `saltyCompt_${post.id}`
   let idBadCompteur = `badCompt_${post.id}`
-
+  const zeroVotes = (vote) => {
+    if (post[vote] === null) {
+      post[vote] = 0
+      return post[vote]
+    }
+  }
+  zeroVotes('yes')
+  zeroVotes('salty')
+  zeroVotes('bad')
   return `
     <div class='divposts'>
-      <h4>VDD</h4>
+      <h4>VDD</h4>git merge 
       <p>Home/user-VDD<span class="blink">&#9608;</span></p>
       <p>${post.content}</p>
     </div>
@@ -18,9 +26,10 @@ export const newPosts = (post) => {
       <button class="badVote badBtn" id=${idBad}>BAD</button>
     </div>
     <div class='votes'>
-      <p class="compteur" id=${idYesCompteur}>${post.yesVotes.length}</p>
-      <p class="compteur" id=${idSaltyCompteur}>${post.saltyVotes.length}</p>
-      <p class="compteur" id=${idBadCompteur}>${post.badVotes.length}</p></div>
+      <p class="compteur" id=${idYesCompteur}>${post.yes}</p>
+      <p class="compteur" id=${idSaltyCompteur}>${post.salty}</p>
+      <p class="compteur" id=${idBadCompteur}>${post.bad}</p></div>
     </div>
+    
     `
 }
