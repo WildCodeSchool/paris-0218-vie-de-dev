@@ -33,7 +33,6 @@ const getPosts = () => exec(`
   ) t6
   ON t5.id = t6.postIdbad
 `)
-  
 // requete SQL pour ajouter un post
 const addPost = (params) =>
   exec('INSERT INTO post (userId, content) VALUES (?, ?)',
@@ -48,4 +47,3 @@ module.exports = {
   getPosts,
   addPost
 }
-

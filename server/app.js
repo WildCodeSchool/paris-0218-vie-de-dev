@@ -1,10 +1,9 @@
 const express = require('express')
-//const fs = require('fs')
-const util = require('util')
-//const path = require('path')
-//const readFile = util.promisify(fs.readFile)
-//const readdir = util.promisify(fs.readdir)
-//const mysql = require('mysql2/promise')
+// const fs = require('fs')
+// const util = require('util')
+// const path = require('path')
+// const readFile = util.promisify(fs.readFile)
+// const readdir = util.promisify(fs.readdir)
 const db = require('./db.js')
 const user1 = require('../mocks/user/1.json')
 const user2 = require('../mocks/user/2.json')
@@ -43,7 +42,6 @@ app.get('/users', (req, res) => {
 app.get('/posts', (req, res) => {
   db.getPosts()
     .then(posts => res.json(posts))
-    
 })
 
 app.get('/comments', (req, res) => {
