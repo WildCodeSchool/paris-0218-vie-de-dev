@@ -1,6 +1,6 @@
 export const createVoteYes = () => {
   /* global URLSearchParams */
-  let userConnect = 12 // utilisateur connecté fictif
+  let userConnect = 1 // utilisateur connecté fictif
   const yesVoteClass = document.getElementsByClassName('yesVote')
 
   for (let butt of yesVoteClass) {
@@ -17,9 +17,9 @@ export const createVoteYes = () => {
       })
         .then(res => res.json())
         .then(res => {
-          console.log(res) // reponse serveur : renvoi les données du mock modifié
-          const yesCompteur = document.getElementById(`yesCompt_${res.id}`)
-          yesCompteur.textContent = res.yesVotes.length
+          console.log("response createVOte", res[0].nbVotes) // res.idreponse serveur : renvoi les données du mock modifié
+          const yesCompteur = document.getElementById(`yesCompt_${idPost}`)
+          yesCompteur.textContent = res[0].nbVotes
         })
     })
   }
