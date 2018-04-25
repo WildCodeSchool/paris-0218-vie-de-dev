@@ -12,11 +12,11 @@ import {menuburger} from '../modules/menuburger.js'
 window.fetch('http://localhost:3000/posts')
   .then(res => res.json())
   .then(posts => {
-    let postSort = posts.sort((a, b) => {
+    posts.sort((a, b) => {
       return (new Date(b.createAt) - new Date(a.createAt))
     })
     const postElements = document.getElementById('posts')
-    postElements.innerHTML = postSort.map(newPosts).join('')
+    postElements.innerHTML = posts.map(newPosts).join('')
     createVoteYes()
     createVoteSalty()
     createVoteBad()
