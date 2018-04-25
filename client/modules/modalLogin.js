@@ -1,22 +1,17 @@
 const modal = document.getElementById('modal')
-const signUp = document.getElementById('signUp')
-const signUpSm = document.getElementById('signUpSm')
+const signup = document.getElementById('signup')
+const signupsm = document.getElementById('signupsm')
 
-
-signUp.addEventListener('click', () => {
+signup.addEventListener('click', () => {
   modal.style.display = 'block'
 })
 
-signUpSm.addEventListener('click', () => {
+signupsm.addEventListener('click', () => {
   modal.style.display = 'block'
 })
-
 
 const closeModal = document.getElementById('closeModal')
 
-closeModal.addEventListener('click', () => {
+close_modal.addEventListener('click', () => {
   modal.style.display = 'none'
 })
-
-
-

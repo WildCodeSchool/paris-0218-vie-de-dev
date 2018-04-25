@@ -255,7 +255,7 @@ button:hover {
   }
 
   /*modal*/
-  #modal-content {
+  #modal_content {
     min-width: 80%;
   }
 
@@ -288,7 +288,7 @@ button:hover {
     display: block;
   }
 
-  #modal-content {
+  #modal_content {
     min-width: 80%;
   }
 }
@@ -306,7 +306,7 @@ button:hover {
   background: rgba(0, 0, 0, 0.5)
 }
 
-#modal-content {
+#modal_content {
   /* display: block; */
   position: relative;
   border: 5px solid #00D927;
@@ -319,7 +319,7 @@ button:hover {
   text-align: center;
 }
 
-#closeModal {
+#close_modal {
   position: absolute;
   font-size: 1.8em;
   right: 15px;
@@ -327,16 +327,16 @@ button:hover {
   cursor: pointer;
 }
 
-#closeModal:hover {
+#close_modal:hover {
   color: #fff;
 }
 
-#submitForm {
+#submit_form {
   padding: 10px 20px;
   color: #fff;
 }
 
-#submitForm:hover {
+#submit_form:hover {
   background-color: #00D927 ;
   color: #000;
 }
@@ -357,7 +357,7 @@ button:hover {
 
 
 
-#userLabel, #passwordLabel {
+#user_label, #password_label {
   font-size: 2rem;
   color: #fff;
 }
@@ -372,6 +372,7 @@ button:hover {
 #subscribe:hover {
   color: #00D927;
   border-bottom: 2px solid #00D927;
+  cursor: pointer;
 }
 
 
