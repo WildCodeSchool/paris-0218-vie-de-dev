@@ -86,32 +86,33 @@ button:hover {
 
 
 /*media queries bouton menu*/
-@media screen and (max-width:720px){
+@media screen and (max-width:720px) {
   form {
     background-size: 90%;
     left :5%;
     right:5%;
   }
-  #new_post {
-  position: absolute;
-  height: 40%;
-  width: 62%;
-  top: 12%;
-  left: 12%;
-  outline: none;
-  resize: none;
-  /*border: 1px solid red;*/
-  border: transparent;
-  font-size: 3vw;
-}
 
-button {
-  position: absolute;
-  top: 67%;
-  left: 35%;
-  /*border: 1px solid green;*/
-  font-size: 2vw;
-}
+  #new_post {
+    position: absolute;
+    height: 40%;
+    width: 62%;
+    top: 12%;
+    left: 12%;
+    outline: none;
+    resize: none;
+    /*border: 1px solid red;*/
+    border: transparent;
+    font-size: 3vw;
+  }
+
+  button {
+    position: absolute;
+    top: 67%;
+    left: 35%;
+    /*border: 1px solid green;*/
+    font-size: 2vw;
+  }
 }
 
 

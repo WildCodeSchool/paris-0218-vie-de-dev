@@ -2,9 +2,9 @@ export const newPosts = (post) => {
   const idYes = `yesVote_${post.id}`
   const idSalty = `saltyVote_${post.id}`
   const idBad = `yesVote_${post.id}`
-  let idYesCompteur = `yesCompt_${post.id}`
-  let idSaltyCompteur = `saltyCompt_${post.id}`
-  let idBadCompteur = `badCompt_${post.id}`
+  const idYesCompteur = `yesCompt_${post.id}`
+  const idSaltyCompteur = `saltyCompt_${post.id}`
+  const idBadCompteur = `badCompt_${post.id}`
   const zeroVotes = (vote) => {
     if (post[vote] === null) {
       post[vote] = 0
