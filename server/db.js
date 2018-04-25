@@ -1,6 +1,6 @@
 const mysql = require('mysql2/promise')
 const co = mysql.createConnection({
-  host: 'localHost',
+  host: 'localhost',
   user: 'root',
   password: 'root',
   database: 'VDD'
@@ -34,6 +34,18 @@ const getPosts = () => exec(`
   ON t5.id = t6.postIdbad
 `)
   
+// requete SQL pour ajouter un post
+const addPost = (params) =>
+  exec('INSERT INTO post (userId, content) VALUES (?, ?)',
+    [params.userId, params.content])
+
+// test pour savoir si addPost fonctionne !
+/* addPost({userId: 6, content: 'blllllllllllllla'})
+  .then(result => console.log('result:', result))
+  .catch(console.error) */
+
 module.exports = {
-  getPosts
+  getPosts,
+  addPost
 }
+
