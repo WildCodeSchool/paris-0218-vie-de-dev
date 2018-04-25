@@ -16,7 +16,16 @@ router.use(bodyParser.urlencoded({extended: true}))
 router.post('/vote/:typeVote', (req, res, next) => {
   console.log('parametre URL POST:' + req.params.typeVote)
   const user = Number(req.body.user)
-  const filePath = path.join(__dirname, `../../mocks/post/${req.body.id}.json`)
+  db.selectVote(req.body, req.params.typeVote)
+    .then(result => {
+      if (result.length === 0) {
+         console.log('resultat SELECTVote : ', result)
+
+      }
+
+    })
+
+  /*const filePath = path.join(__dirname, `../../mocks/post/${req.body.id}.json`)
   // il faut ajouter le user au tableau :typeVote
   // d'abord lire le fichier (readFile)
   // puis write file si user non présent dans tableau
@@ -36,7 +45,7 @@ router.post('/vote/:typeVote', (req, res, next) => {
         res.end(data)
         return writeFile(filePath, data, 'utf8')
       }
-    })
+    })*/
     .catch(next)
 })
 

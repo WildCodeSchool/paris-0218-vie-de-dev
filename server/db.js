@@ -35,6 +35,7 @@ const selectVote = (params, table) =>
     .then(result => console.log('result:', result))
     .catch(console.error)*/
 
+
 module.exports = {
   addPost,
   addVote,
