@@ -16,7 +16,7 @@ export const newPosts = (post) => {
   zeroVotes('bad')
   return `
     <div class='divposts'>
-      <h4>VDD</h4>
+      <h4 class='line'>VDD</h4>
       <p>Home/user-VDD<span class="blink">&#9608;</span></p>
       <p>${post.content}</p>
     </div>
