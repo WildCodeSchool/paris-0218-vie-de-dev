@@ -5,6 +5,14 @@ export const newPosts = (post) => {
   let idYesCompteur = `yesCompt_${post.id}`
   let idSaltyCompteur = `saltyCompt_${post.id}`
   let idBadCompteur = `badCompt_${post.id}`
+  const zeroVotes = (vote) => {
+    if (post[vote] === null)
+    return post[vote] = 0
+  }
+  zeroVotes('yes')
+  zeroVotes('salty')
+  zeroVotes('bad')
+  
 
   return `
     <div class='divposts'>
