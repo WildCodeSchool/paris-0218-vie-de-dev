@@ -48,8 +48,17 @@ app.get('/posts', (req, res) => {
     .catch(err => res.status(500).end(err.message))
 })
 
-app.get('/comments', (req, res) => {
-  res.json(comments)
+// route permettant d'afficher le formulaire des commentaires
+
+app.get('/comments/:id', (req, res) => {
+
+  const id = Number(req.params.id)
+  const comment = comments.find(comment => comment.id === id)
+
+  console.log('fetching comments', id, comment)
+  res.json(comment)
+
 })
+
 
 app.listen(3000, () => console.log('serveur écoute sur port 3000'))
