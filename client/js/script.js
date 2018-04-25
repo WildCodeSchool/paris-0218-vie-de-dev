@@ -1,4 +1,5 @@
 import {newPosts} from '../modules/posts.js'
+import {backgroundChange} from '../modules/backgroundChange.js'
 import {boutonNews} from '../modules/boutonNews.js'
 import {boutonRandom} from '../modules/boutonRandom.js'
 import {boutonsYBS} from '../modules/boutonYesBadSalty.js'
@@ -22,6 +23,7 @@ window.fetch('http://localhost:3000/posts')
     createSearch('search_btn')
     createSearch('search_btn_tel')
   })
+backgroundChange()
 boutonNews()
 boutonRandom()
 boutonsYBS()
