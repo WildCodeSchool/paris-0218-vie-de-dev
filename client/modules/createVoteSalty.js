@@ -1,6 +1,6 @@
 export const createVoteSalty = () => {
   /* global URLSearchParams */
-  let userConnect = 12 // utilisateur connecté fictif
+  let userConnect = 1 // utilisateur connecté fictif
   const saltyVoteClass = document.getElementsByClassName('saltyVote')
 
   for (let butt of saltyVoteClass) {
@@ -18,8 +18,8 @@ export const createVoteSalty = () => {
         .then(res => res.json())
         .then(res => {
           console.log(res) // reponse serveur : renvoi les données du mock modifié
-          const saltyCompteur = document.getElementById(`saltyCompt_${res.id}`)
-          saltyCompteur.textContent = res.saltyVotes.length
+          const saltyCompteur = document.getElementById(`saltyCompt_${idPost}`)
+          saltyCompteur.textContent = res[0].nbVotes
         })
     })
   }

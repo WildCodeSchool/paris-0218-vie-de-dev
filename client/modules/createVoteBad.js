@@ -1,6 +1,6 @@
 export const createVoteBad = () => {
   /* global URLSearchParams */
-  let userConnect = 12 // utilisateur connecté fictif
+  let userConnect = 3 // utilisateur connecté fictif
   const badVoteClass = document.getElementsByClassName('badVote')
 
   for (let butt of badVoteClass) {
@@ -18,8 +18,8 @@ export const createVoteBad = () => {
         .then(res => res.json())
         .then(res => {
           console.log(res) // reponse serveur : renvoi les données du mock modifié
-          const badCompteur = document.getElementById(`badCompt_${res.id}`)
-          badCompteur.textContent = res.badVotes.length
+          const badCompteur = document.getElementById(`badCompt_${idPost}`)
+          badCompteur.textContent = res[0].nbVotes
         })
     })
   }

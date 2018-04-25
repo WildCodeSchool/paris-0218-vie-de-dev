@@ -43,7 +43,26 @@ const addPost = (params) =>
   .then(result => console.log('result:', result))
   .catch(console.error) */
 
+const addVote = (params, table) =>
+  exec(`INSERT INTO ${table} (userId, postId) VALUES (?, ?)`,
+    [params.user, params.id])
+
+const selectVote = (params, table) =>
+  exec(`SELECT * FROM ${table} WHERE userId = ? AND postId = ?`,
+    [params.user, params.id])
+
+const countVote = (params, table) =>
+  exec(`SELECT postId as id, COUNT(userId) as nbVotes FROM ${table} WHERE postId = ? GROUP BY id `,
+    [params.id])
+
+/* selectVote({user: 2, idPost:1},'yesVotes')
+    .then(result => console.log('result:', result))
+    .catch(console.error) */
+
 module.exports = {
+  addPost,
+  addVote,
+  selectVote,
   getPosts,
-  addPost
+  countVote
 }
