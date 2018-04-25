@@ -27,12 +27,12 @@ h1 {
 }
 
 #menu_tel {
-  display:none;
+  display: none;
 }
+
 #main_menu ul li {
   width: 100%;
   padding: 5px;
-  
 }
 
 #main_menu ul li a {
@@ -62,15 +62,15 @@ h1 {
 }
 
 .main_navbar {
-  display:flex;
+  display: flex;
   text-align: center;
-  justify-content: space-around ;
-  padding : 20px 10px 20px 10px;
+  justify-content: space-around;
+  padding: 20px 10px 20px 10px;
 }
 
 .main_navbar button {
   padding: 5px;
-  margin : auto;
+  margin: auto;
   border-radius: 5px;
   width: 12vw;
 }
@@ -87,6 +87,7 @@ h1 {
   margin-top: 20px;
   border-radius: 20px;
 }
+
 .divposts p {
   white-space: pre-wrap;
 }
@@ -117,7 +118,6 @@ button:hover {
   border: 2px solid rgb(255, 234, 42);
   background-color: rgba(0, 217, 39, 0.2);
   text-shadow: #fff 1px 1px, #fff -1px 1px, #fff -1px -1px, #fff 1px -1px;
-
 }
 
 .saltyBtn:hover {
@@ -125,7 +125,6 @@ button:hover {
   border: 2px solid rgb(255, 234, 42);
   background-color: rgba(254, 54, 221, 0.2);
   text-shadow: #fff 1px 1px, #fff -1px 1px, #fff -1px -1px, #fff 1px -1px;
-
 }
 
 .badBtn:hover {
@@ -133,11 +132,10 @@ button:hover {
   border: 2px solid rgb(255, 234, 42);
   background-color: rgba(240, 15, 0, 0.2);
   text-shadow: #fff 1px 1px, #fff -1px 1px, #fff -1px -1px, #fff 1px -1px;
-
 }
 
 .boutons {
-  display : flex;
+  display: flex;
   justify-content: space-around;
   width: 50%;
   margin: auto;
@@ -168,6 +166,7 @@ button:hover {
 }
 
 /* animation clignotement */
+
 .blink {
   animation: Test 1s infinite;
 }
@@ -185,96 +184,196 @@ button:hover {
 }
 
 /*media queries bouton menu*/
-@media screen and (max-width:900px){
 
+@media screen and (max-width:900px) {
   .main_navbar button {
     padding: 2px;
-    margin : 0px;
+    margin: 0px;
     font-size: 0.5em;
   }
+  
   .main_navbar {
-    padding : 10px 5px 10px 5px;
+    padding: 10px 5px 10px 5px;
   }
 
   /*suppression marge des posts sur tel*/
   .divposts {
     width: 90%;
   }
+
   .boutons {
     width: 100%;
   }
-  .boutons button {
-      padding: 10px 10px;
 
-      margin: auto;
-      margin-top:10px;
-      margin-bottom:10px ;
+  .boutons button {
+    padding: 10px 10px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
+
   .votes {
     width: 100%;
   }
+
   .compteur {
     margin: auto;
   }
 
   /*mise en forme du menu sur tel*/
   #menu_ordi {
-    display:none;
+    display: none;
   }
+
   #menu_tel {
-    display:flex;
+    display: flex;
     justify-content: space-around;
     background-color: #6d214f;
   }
-  #burger{
-    display :none;
+
+  #burger {
+    display: none;
   }
+
   #menu_tel ul {
     display: flex;
     flex-direction: column;
     margin: auto;
     padding-left: 0px;
     margin-left: 120px;
-
   }
+
   #menu_tel ul li {
     margin: auto;
     width: 100%;
     padding-left: 5px;
     margin-left: 0px;
   }
-.logo{
-  margin-right: 120px;
-}
+
+  .logo {
+    margin-right: 120px;
+  }
+
+  /*modal*/
+  #modal-content {
+    min-width: 80%;
+  }
 
 }
 
 /*ajout de quelques regles  supplémentaire sur le menu pour petit tel */
-@media screen and (max-width:500px){
-  #menu_tel img{
+
+@media screen and (max-width:500px) {
+  #menu_tel img {
     height: 30vw;
   }
+
   #menu_tel ul {
     font-size: 15px;
     margin-left: 0px;
-}
-#menu_tel ul li {
-  font-size: 12px;
+  }
+
+  #menu_tel ul li {
+    font-size: 12px;
+  }
+
+  .nodisplay {
+    display: none;
+  }
+
+  #burger {
+    height: 30px;
+    margin-top: 10%;
+    margin-left: 80px;
+    display: block;
+  }
+
+  #modal-content {
+    min-width: 80%;
+  }
 }
 
-.nodisplay{
-  display:none;
+/*Modal Login*/
+
+#modal {
+  z-index: 999;
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5)
 }
-#burger{
-  height:30px;
-  margin-top: 10%;
-  margin-left: 80px;
-  display: block;
+
+#modal-content {
+  /* display: block; */
+  position: relative;
+  border: 5px solid #00D927;
+  border-radius: 5px;
+  background-color: #000;
+  width: 40%;
+  margin: 10% auto;
+  padding: 80px 20px 20px 20px;
+  color: #fff;
+  text-align: center;
 }
-.logo{
-  margin-right: 80px;
+
+#closeModal {
+  position: absolute;
+  font-size: 1.8em;
+  right: 15px;
+  top: -25px;
+  cursor: pointer;
 }
+
+#closeModal:hover {
+  color: #fff;
 }
+
+#submitForm {
+  padding: 10px 20px;
+  color: #fff;
+}
+
+#submitForm:hover {
+  background-color: #00D927 ;
+  color: #000;
+}
+
+#username, #password {
+  margin: 20px 0px;
+  padding: 10px 0px;
+  border-radius: 5px;
+  border-color: #00D927;
+  background-color: #222;
+  color: #00D927;
+  font-size: 2rem;
+}
+
+#username {
+  margin-bottom: 40px;
+}
+
+
+
+#userLabel, #passwordLabel {
+  font-size: 2rem;
+  color: #fff;
+}
+
+#subscribe {
+  font-size: 2rem;
+  font-style: italic;
+  padding-bottom: 3px;
+  border-bottom: 2px solid #fff;
+}
+
+#subscribe:hover {
+  color: #00D927;
+  border-bottom: 2px solid #00D927;
+}
+
 
 
 
