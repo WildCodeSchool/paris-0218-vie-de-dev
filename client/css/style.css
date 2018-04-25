@@ -114,7 +114,7 @@ button:hover {
 
 /* BOUTON COMMIT */
 .commitBtn {
-  width: 100px;
+  width: 120px;
   height: 60px;
   background: green;
   position: relative;
@@ -136,6 +136,12 @@ button:hover {
   border-bottom: 13px solid transparent;
 }
 
+.commitBtn:hover {
+  border: none;
+  color: yellow;
+}
+
+/* ////// */
 
 .yesBtn:hover {
   color: rgb(0, 217, 39);
