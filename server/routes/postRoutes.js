@@ -5,8 +5,6 @@ const fs = require('fs')
 const path = require('path')
 const util = require('util')
 const db = require('../db.js')
-const writeFile = util.promisify(fs.writeFile)
-const readFile = util.promisify(fs.readFile)
 const stat = util.promisify(fs.stat)
 
 router.use(bodyParser.json())
@@ -14,7 +12,6 @@ router.use(bodyParser.urlencoded({extended: true}))
 
 router.post('/vote/:typeVote', (req, res, next) => {
   console.log('parametre URL POST:' + req.params.typeVote)
-  const user = Number(req.body.user)
   // test si user deja present dans array Vote (yes, bad ou salty)
   db.selectVote(req.body, req.params.typeVote)
     .then(result => {
@@ -24,13 +21,13 @@ router.post('/vote/:typeVote', (req, res, next) => {
         res.header('Content-Type', 'application/json;charset=utf-8')
         db.addVote(req.body, req.params.typeVote)
           .then(result => db.countVote(req.body, req.params.typeVote)
-                            .then(result => res.end(JSON.stringify(result)) ))
-          .catch(next) 
+            .then(result => res.end(JSON.stringify(result))))
+          .catch(next)
       } else {
         // user deja dans array Vote : on renvoit le resultat de la requete countVote
         res.header('Content-Type', 'application/json;charset=utf-8')
         db.countVote(req.body, req.params.typeVote)
-          .then(result => res.end(JSON.stringify(result))) /*console.log("resultat countVote deja present", result)*/
+          .then(result => res.end(JSON.stringify(result)))
       }
     })
 })
