@@ -11,14 +11,18 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body id="site">
   <header id="main_menu" class="container">
     <div id= "menu_ordi">
     <ul>
       <li><a href="#">Editer mes VDD</a></li>
       <li><a href="formulaire_post.html">Soumettre mes VDD</a></li>
       <li><img id="logo" src="pictures/logo_vdd.png" alt="logo"></li>
-      <li><input type="text" id="search_btn"></li>
+      <li>
+        <form action="#">
+          <input type="text" id="search_btn">
+        </form>
+      </li>
       <li><a href="#" id="signup">Log in</a></li>
     </ul>
     
@@ -29,7 +33,11 @@
     <ul id="burger_menu" >
       <li class="nodisplay"><a href="#">Editer mes VDD</a></li>
       <li class="nodisplay"><a href="formulaire_post.html">Soumettre mes VDD</a></li>
-      <li class="nodisplay"><input type="text" id="search_btn_tel"></li>
+      <li class="nodisplay">
+        <form action="#">
+          <input type="text" id="search_btn_tel">
+        </form>
+      </li>
       <li class="nodisplay"><a href="#" id="signupsm">Log in</a></li>
     </ul>
     <img src="pictures/logo_vdd.png" alt="logo" class="logo" id="minilogo">
@@ -63,12 +71,12 @@
 
   <div id="posts">Loading posts</div>
 
+  <!-- MAIN FOR FIXED FOOTER-->
+  <main class="site-content"></main>
 
-
-
-
-
-
+  <footer>
+    <p>Tous droits réservés : Wild Code School</p>
+  </footer>
 
   <script type="module" src="js/script.js"></script>
 </body>
