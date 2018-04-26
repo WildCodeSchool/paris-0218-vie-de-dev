@@ -1,4 +1,5 @@
 import {newPosts} from '../modules/posts.js'
+import {backgroundChange} from '../modules/backgroundChange.js'
 import {boutonNews} from '../modules/boutonNews.js'
 import {boutonRandom} from '../modules/boutonRandom.js'
 import {boutonsYBS} from '../modules/boutonYesBadSalty.js'
@@ -7,22 +8,25 @@ import {createVoteSalty} from '../modules/createVoteSalty.js'
 import {createVoteBad} from '../modules/createVoteBad.js'
 import {createSearch} from '../modules/createSearch.js'
 import {menuburger} from '../modules/menuburger.js'
+import {modalLogin} from '../modules/modalLogin.js'
 
 window.fetch('http://localhost:3000/posts')
   .then(res => res.json())
   .then(posts => {
-    let postSort = posts.sort((a, b) => {
-      return (b.createAt - a.createAt)
+    posts.sort((a, b) => {
+      return (new Date(b.createAt) - new Date(a.createAt))
     })
     const postElements = document.getElementById('posts')
-    postElements.innerHTML = postSort.map(newPosts).join('')
+    postElements.innerHTML = posts.map(newPosts).join('')
     createVoteYes()
     createVoteSalty()
     createVoteBad()
     createSearch('search_btn')
     createSearch('search_btn_tel')
   })
+backgroundChange()
 boutonNews()
 boutonRandom()
 boutonsYBS()
 menuburger()
+modalLogin()
