@@ -9,7 +9,8 @@ const exec = async (query, params) => {
   const connection = await co
   const result = await connection.execute(query, params)
   return result[0]
-} /**/
+}
+
 const getPosts = () => exec(`
   SELECT * FROM (
     SELECT * FROM (
@@ -40,8 +41,6 @@ const getPosts = () => exec(`
   ON t7.userId = t8.userId
   `)
 
-/*) t6
-    */
 // requete SQL pour ajouter un post
 const addPost = (params) =>
   exec('INSERT INTO post (userId, content) VALUES (?, ?)',
