@@ -23,6 +23,8 @@ const users = [ user1, user2, user3, user4 ]
 
 const comments = [ comment1, comment2 ]
 
+const secret = 'vdd is great'
+
 const app = express()
 
 app.use(bodyParser.json())
@@ -31,8 +33,17 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Acces-Control-Allow-Header', 'Origin, X-Requested-With, Content-Type, Accept')
+  res.header('Access-Control-Allow-Credentials', 'true')
   next()
 })
+
+// Setup session handler
+app.use(session({
+  secret,
+  saveUninitialized: true,
+  resave: true,
+  store: new FileStore({ secret }),
+}))
 
 // route permettant de poster les nouveaux votes pour chaque post
 app.use('/post', routePost)
