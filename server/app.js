@@ -55,7 +55,8 @@ app.use((req, res, next) => {
 app.use('/post', routePost)
 
 app.get('/', (req, res) => {
-  res.send('OK')
+  const user = req.session.user || {}
+  res.json(user)
 })
 
 app.get('/users', (req, res) => {
@@ -70,5 +71,25 @@ app.get('/posts', (req, res) => {
 app.get('/comments', (req, res) => {
   res.json(comments)
 })
+
+app.post('/sign-in', (req, res, next) => {
+  // does user exists ?
+  const user = users.find(u => req.body.login === u.login)
+
+  // Error handling
+  if (!user) {
+    return res.json({ error: 'User not found' })
+  }
+
+  if (user.password !== req.body.password) {
+    return res.json({ error: 'Wrong password' })
+  }
+
+  // else, set the user into the session
+  req.session.user = user
+
+  res.json(user)
+})
+
 
 app.listen(3000, () => console.log('serveur écoute sur port 3000'))
