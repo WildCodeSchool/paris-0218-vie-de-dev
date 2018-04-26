@@ -45,6 +45,12 @@ app.use(session({
   store: new FileStore({ secret }),
 }))
 
+// Logger middleware
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`, { user: req.session.user, cookie: req.headers.cookie })
+  next()
+})
+
 // route permettant de poster les nouveaux votes pour chaque post
 app.use('/post', routePost)
 
