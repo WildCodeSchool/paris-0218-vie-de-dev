@@ -203,7 +203,9 @@ button:hover {
   background-color: black;
 }
 
-.site-content {
+
+/*Sert à fixed le footer en bas de la page en mode "flexbox time"*/
+.site_content {
   flex: 1 0 auto;
 }
 
