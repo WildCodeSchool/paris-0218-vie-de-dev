@@ -19,7 +19,8 @@ const comment2 = require('../mocks/comment/2.json')
 // ajout de routes notamment pour le post
 const routePost = require('./routes/postRoutes')
 
-const users = [ user1, user2, user3, user4 ]
+const users = [user1, user2, user3, user4
+]
 
 const comments = [ comment1, comment2 ]
 
@@ -31,8 +32,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*')
-  res.header('Acces-Control-Allow-Header', 'Origin, X-Requested-With, Content-Type, Accept')
+  res.header('Access-Control-Allow-Origin', req.headers.origin) // Clever, not a good practise though..
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
   res.header('Access-Control-Allow-Credentials', 'true')
   next()
 })
@@ -40,7 +41,7 @@ app.use((req, res, next) => {
 // Setup session handler
 app.use(session({
   secret,
-  saveUninitialized: true,
+  saveUninitialized: false,
   resave: true,
   store: new FileStore({ secret }),
 }))
@@ -74,7 +75,7 @@ app.get('/comments', (req, res) => {
 
 app.post('/sign-in', (req, res, next) => {
   // does user exists ?
-  const user = users.find(u => req.body.login === u.login)
+  const user = users.find(u => req.body.name === u.name)
 
   // Error handling
   if (!user) {
@@ -95,6 +96,15 @@ app.get('/sign-out', (req, res, next) => {
   req.session.user = {}
 
   res.json('ok')
+})
+
+app.use((err, req, res, next) => {
+  if (err) {
+    res.json({ message: err.message })
+    console.error(err)
+  }
+
+  next(err)
 })
 
 

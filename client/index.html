@@ -20,6 +20,11 @@
       <li><img id="logo" src="pictures/logo_vdd.png" alt="logo"></li>
       <li><input type="text" id="search_btn"></li>
       <li><a href="#" id="signup">Log in</a></li>
+      <li><div id="auth2" style="color :white"></div>
+          <form id="sign_out_form" style="display: none">
+              <input type="submit" value="logout">
+            </form>
+      </li>
     </ul>
     
   </div>
@@ -31,23 +36,33 @@
       <li class="nodisplay"><a href="formulaire_post.html">Soumettre mes VDD</a></li>
       <li class="nodisplay"><input type="text" id="search_btn_tel"></li>
       <li class="nodisplay"><a href="#" id="signupsm">Log in</a></li>
+      <li class="nodisplay"><div id="auth" style="color :white"></div>
+        <form id="sign_out_form2" style="display: none">
+            <input type="submit" value="logout">
+          </form>
+    </li>
     </ul>
     <img src="pictures/logo_vdd.png" alt="logo" class="logo" id="minilogo">
   </div>
 
   <!--MODAL-->
   <div id="modal">
+    
     <div id="modal_content">
       <p id="close_modal">X</p>
-      <form action="POST">
+      
+      <form  id="sign_in_form" style="display: none">
         <label for="username" id="user_label">Nom d'utilisateur:</label><br>
-        <input type="text" name="username" id="username"><br>
+        <input type="text" name="name" id="username"><br>
         <label for="password" id="password_label">Mot de passe:</label><br>
         <input type="password" name="password" id="password"><br>
         <button type="submit" id="submit_form">Envoyer</button>
         <p>nouveau ici?<span id="subscribe"> Rejoins-nous !</span></p>
       </form>
+      
+      <div id="message" style="color: red"></div>
     </div>
+    
   </div>
   <!--END MODAL-->
 

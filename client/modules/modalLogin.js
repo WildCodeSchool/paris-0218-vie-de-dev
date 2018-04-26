@@ -5,10 +5,12 @@ export const modalLogin = () => {
 
   signup.addEventListener('click', () => {
     modal.style.display = 'block'
+    
   })
 
   signupsm.addEventListener('click', () => {
     modal.style.display = 'block'
+    
   })
 
   const closeModal = document.getElementById('close_modal')
