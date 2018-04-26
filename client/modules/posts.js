@@ -14,6 +14,7 @@ export const newPosts = (post) => {
   zeroVotes('yes')
   zeroVotes('salty')
   zeroVotes('bad')
+
   return `
     <div class='divposts'>
       <h4 class='line'>VDD</h4>
@@ -22,14 +23,14 @@ export const newPosts = (post) => {
     </div>
     <div class='boutons'>
       <button class="yesVote yesBtn" id=${idYes}>YES</button>
-      <button class="saltyVote saltyBtn" id=${idSalty}>SALTY</button>
-      <button class="badVote badBtn" id=${idBad}>BAD</button>
+      <button class="saltyBtn">SALTY</button>
+      <button class="badBtn">BAD</button>
+      <button class="commitBtn">COMMIT</button>
     </div>
     <div class='votes'>
       <p class="compteur" id=${idYesCompteur}>${post.yes}</p>
       <p class="compteur" id=${idSaltyCompteur}>${post.salty}</p>
       <p class="compteur" id=${idBadCompteur}>${post.bad}</p></div>
-    </div>
-    
+    </div>    
     `
 }

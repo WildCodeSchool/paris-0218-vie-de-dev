@@ -145,6 +145,37 @@ button:hover {
   color: #00D927;
 }
 
+/* BOUTON COMMIT */
+.commitBtn {
+  width: 120px;
+  height: 60px;
+  background: green;
+  position: relative;
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+  border-style: none;
+}
+
+.commitBtn:before {
+  content:"";
+  position: absolute;
+  right: 100%;
+  top: 18px;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-right: 26px solid green;
+  border-bottom: 13px solid transparent;
+}
+
+.commitBtn:hover {
+  border: none;
+  color: yellow;
+}
+
+/* ////// */
+
 .yesBtn:hover {
   color: rgb(0, 217, 39);
   border: 2px solid rgb(255, 234, 42);
