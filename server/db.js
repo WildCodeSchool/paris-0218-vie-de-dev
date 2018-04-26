@@ -55,7 +55,7 @@ const countVote = (params, table) =>
   exec(`SELECT postId as id, COUNT(userId) as nbVotes FROM ${table} WHERE postId = ? GROUP BY id `,
     [params.id])
 
-const getUsers = () =>exec('SELECT * FROM user)
+const getUsers = () =>exec('SELECT * FROM user')
 
 /* selectVote({user: 2, idPost:1},'yesVotes')
     .then(result => console.log('result:', result))
