@@ -381,6 +381,7 @@ button:hover {
   background-color: #222;
   color: #00D927;
   font-size: 2rem;
+  max-width: 100%;
 }
 
 #username {
