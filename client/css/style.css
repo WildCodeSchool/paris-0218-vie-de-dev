@@ -10,12 +10,6 @@
 @import url(common.css);
 /* HEADER */
 
-#site {
-  display: flex;
-  min-height: calc(100vh - 70px);
-  flex-direction: column;
-}
-
 h1 {
   color: black;
   text-align: center;
@@ -90,7 +84,7 @@ h1 {
   width: 40%;
   margin: 0 auto;
   padding: 10px;
-  margin-top: 30px;
+  margin-top: 20px;
   border-radius: 20px;
 }
 
@@ -201,26 +195,6 @@ button:hover {
   box-shadow: 1px 1px 2px #555;
   padding: 5px;
   background-color: black;
-}
-
-
-/*Sert à fixed le footer en bas de la page en mode "flexbox time"*/
-.site_content {
-  flex: 1 0 auto;
-}
-
-/* footer */
-
-footer{
-  margin-top: 40px;
-  height: 55px;
-  display: flex;
-  flex-shrink: 0;
-  flex-direction: inline;
-  justify-content: center;
-
-  background-color: black;
-  color: white;
 }
 
 /* animation clignotement */
@@ -348,20 +322,6 @@ footer{
 
   #modal_content {
     min-width: 80%;
-  }
-
-  footer{
-    margin-top: 30px;
-    height: 30px;
-  
-    font-size: 1.0rem;
-  
-    display: flex;
-    flex-direction: inline;
-    justify-content: center;
-  
-    background-color: black;
-    color: white;
   }
 }
 
