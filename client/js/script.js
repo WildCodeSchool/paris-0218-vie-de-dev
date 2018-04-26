@@ -8,6 +8,7 @@ import {createVoteSalty} from '../modules/createVoteSalty.js'
 import {createVoteBad} from '../modules/createVoteBad.js'
 import {createSearch} from '../modules/createSearch.js'
 import {menuburger} from '../modules/menuburger.js'
+import {modalLogin} from '../modules/modalLogin.js'
 
 window.fetch('http://localhost:3000/posts')
   .then(res => res.json())
@@ -28,3 +29,4 @@ boutonNews()
 boutonRandom()
 boutonsYBS()
 menuburger()
+modalLogin()
