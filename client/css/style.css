@@ -61,6 +61,26 @@ h1 {
   border-radius: 10px;
 }
 
+/*.......CSS AUTHENTIFICATION....*/
+#auth2 {
+  color:white;
+}
+#auth {
+  color:white;
+}
+#sign_out_form {
+  display: none;
+}
+#sign_out_form2 {
+  display: none;
+}
+#sign_in_form {
+  display : none;
+}
+#message {
+  color: red;
+}
+
 .main_navbar {
   display: flex;
   text-align: center;
