@@ -10,6 +10,7 @@
     "lint:html": "htmllint 'client/**/*.html'"
   },
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "htmllint-cli": "0.0.6",

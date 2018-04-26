@@ -5,6 +5,7 @@ const express = require('express')
 // const readFile = util.promisify(fs.readFile)
 // const readdir = util.promisify(fs.readdir)
 const db = require('./db.js')
+const bodyParser = require('body-parser')
 const session = require('express-session')
 const FileStore = require('session-file-store')(session)
 const user1 = require('../mocks/user/1.json')
@@ -23,6 +24,9 @@ const users = [ user1, user2, user3, user4 ]
 const comments = [ comment1, comment2 ]
 
 const app = express()
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
