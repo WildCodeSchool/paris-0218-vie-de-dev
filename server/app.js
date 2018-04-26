@@ -91,5 +91,11 @@ app.post('/sign-in', (req, res, next) => {
   res.json(user)
 })
 
+app.get('/sign-out', (req, res, next) => {
+  req.session.user = {}
+
+  res.json('ok')
+})
+
 
 app.listen(3000, () => console.log('serveur écoute sur port 3000'))
