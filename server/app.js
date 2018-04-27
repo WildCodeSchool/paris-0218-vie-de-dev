@@ -92,6 +92,19 @@ app.get('/sign-out', (req, res, next) => {
   res.json('ok')
 })
 
+// route pour page comment
+app.get('/postComment/:id', (req, res, next) => {
+  db.getPost(req.params.id)
+    .then(post => res.json(post))
+    .catch(next)
+})
+
+app.get('/comments/:postId', (req, res, next) => {
+  db.getCommentsOfPost(req.params.postId)
+    .then(comments => res.json(comments))
+    .catch(next)
+})
+
 app.use((err, req, res, next) => {
   if (err) {
     res.json({ message: err.message })

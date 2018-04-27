@@ -165,6 +165,38 @@ button:hover {
   color: #00D927;
 }
 
+/* BOUTON COMMIT */
+.commitBtn {
+  width: 120px;
+  height: 60px;
+  background: green;
+  position: relative;
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+  border-style: none;
+  outline: none;
+}
+
+.commitBtn:before {
+  content:"";
+  position: absolute;
+  right: 100%;
+  top: 18px;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-right: 26px solid green;
+  border-bottom: 13px solid transparent;
+}
+
+.commitBtn:hover {
+  border: none;
+  color: yellow;
+}
+
+/* ////// */
+
 .yesBtn:hover {
   color: rgb(0, 217, 39);
   border: 2px solid rgb(255, 234, 42);
@@ -221,6 +253,36 @@ button:hover {
 
 .blink {
   animation: Test 1s infinite;
+}
+
+/* titre commentaires */
+#commit_title {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+
+
+/* background commentaires */
+
+#comment {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+.comment_form {
+  display: flex;
+  justify-content: center;
+  background-color: #6d214f;
+  left: 25%;
+  right: 25%;
+  margin-right: 25%;
+  margin-left: 25%;
+  color: #fff !important; 
+}
+
+.comment_form:hover {
+  color: #fff;
 }
 
 @keyframes Test {

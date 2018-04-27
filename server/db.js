@@ -69,11 +69,22 @@ const getUsers = () => exec('SELECT * FROM user')
     .then(result => console.log('result:', result))
     .catch(console.error) */
 
+// requete SQL pour comment
+
+const getPost = id => exec('SELECT * FROM post WHERE id=?', [id])
+const getCommentsOfPost = id => exec('SELECT * FROM comment WHERE postId = ? ORDER BY createAt DESC', [ id ])
+const addComment = params => exec('INSERT INTO comment (userId, postId, content) VALUES (?, ?, ?)', [ params.userId, params.postId, params.content ])
+const updateComment = params => exec('UPDATE comment SET userId=?, postId=?, content=? WHERE id=?', [ params.userId, params.postId, params.content, params.id ])
+
 module.exports = {
   addPost,
   addVote,
   selectVote,
   getPosts,
   countVote,
-  getUsers
+  getUsers,
+  getCommentsOfPost,
+  addComment,
+  updateComment,
+  getPost
 }
