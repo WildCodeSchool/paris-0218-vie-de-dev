@@ -6,9 +6,9 @@ const id = params.get('id')
 
 fetch(`http://localhost:3000/comments/${id}`)
   .then(res => res.json())
-  .then(comment => {
+  .then(comments => {
     const commentElement = document.getElementById('comment')
-  	commentElement.innerHTML = createCommentElement(comment)
-  	console.log(comment)
+  	commentElement.innerHTML = comments.map(createCommentElement).join('')
+  	console.log('comment res :', comments)
   	
   })
