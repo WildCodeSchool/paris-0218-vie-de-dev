@@ -256,7 +256,7 @@ button:hover {
 }
 
 /* titre commentaires */
-#commitTitle {
+#commit_title {
   display: flex;
   justify-content: center;
   color: #fff;

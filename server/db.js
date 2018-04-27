@@ -69,7 +69,7 @@ const getUsers = () => exec('SELECT * FROM user')
     .then(result => console.log('result:', result))
     .catch(console.error) */
 
-// requete SQL pour comment 
+// requete SQL pour comment
 
 const getPost = id => exec('SELECT * FROM post WHERE id=?', [id])
 const getCommentsOfPost = id => exec('SELECT * FROM comment WHERE postId = ? ORDER BY createAt DESC', [ id ])
