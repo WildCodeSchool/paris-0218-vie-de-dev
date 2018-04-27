@@ -1,0 +1,38 @@
+.votes, .boutons {
+  display:none;
+}
+
+#add_com {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#new_com {
+  width: 60%;
+}
+
+/* background commentaires */
+
+#comment {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+.comment_form {
+  display: flex;
+  justify-content: center;
+  background-color: #6d214f;
+  padding: 5px;
+  margin-top:20px;
+  left: 20%;
+  right: 20%;
+  margin-right: 25%;
+  margin-left: 25%;
+  color: #fff !important; 
+}
+
+.comment_form:hover {
+  color: #fff;
+}
