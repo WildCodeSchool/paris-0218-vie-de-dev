@@ -73,7 +73,9 @@ const getUsers = () => exec('SELECT * FROM user')
 
 const getPost = id => exec('SELECT * FROM post WHERE id=?', [id])
 const getCommentsOfPost = id => exec('SELECT * FROM comment WHERE postId = ? ORDER BY createAt DESC', [ id ])
-const addComment = params => exec('INSERT INTO comment (userId, postId, content) VALUES (?, ?, ?)', [ params.userId, params.postId, params.content ])
+const addComment = params => 
+  exec('INSERT INTO comment (userId, postId, content) VALUES (?, ?, ?)', 
+  [ params.userId, params.postId, params.content ])
 const updateComment = params => exec('UPDATE comment SET userId=?, postId=?, content=? WHERE id=?', [ params.userId, params.postId, params.content, params.id ])
 
 module.exports = {
