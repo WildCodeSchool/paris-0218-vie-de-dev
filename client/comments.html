@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Une description de la page..." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vie de Dev</title>
+  <link rel="icon" href="pictures/favicon.ico">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <header id="main_menu" class="container">
+    <div id= "menu_ordi">
+    <ul>
+      <li><a href="#">Editer mes VDD</a></li>
+      <li><a href="formulaire_post.html">Soumettre mes VDD</a></li>
+      <li><img id="logo" src="pictures/logo_vdd.png" alt="logo"></li>
+      <li><input type="text" id="search_btn"></li>
+      <li><a href="#" id="signup">Log in</a></li>
+      <li><div id="auth2"></div>
+          <form id="sign_out_form">
+              <input type="submit" value="logout">
+            </form>
+      </li>
+    </ul>
+    
+  </div>
+  <div id= "menu_tel">
+    
+    <button id="burger">&#9776;</button>
+    <ul id="burger_menu" >
+      <li class="nodisplay"><a href="#">Editer mes VDD</a></li>
+      <li class="nodisplay"><a href="formulaire_post.html">Soumettre mes VDD</a></li>
+      <li class="nodisplay"><input type="text" id="search_btn_tel"></li>
+      <li class="nodisplay"><a href="#" id="signupsm">Log in</a></li>
+      <li class="nodisplay"><div id="auth"></div>
+        <form id="sign_out_form2">
+            <input type="submit" value="logout">
+          </form>
+    </li>
+    </ul>
+    <img src="pictures/logo_vdd.png" alt="logo" class="logo" id="minilogo">
+  </div>
+
+  <!--MODAL-->
+  <div id="modal">
+    
+    <div id="modal_content">
+      <p id="close_modal">X</p>
+      
+      <form  id="sign_in_form">
+        <label for="username" id="user_label">Nom d'utilisateur:</label><br>
+        <input type="text" name="name" id="username"><br>
+        <label for="password" id="password_label">Mot de passe:</label><br>
+        <input type="password" name="password" id="password"><br>
+        <button type="submit" id="submit_form">Envoyer</button>
+        <p>nouveau ici?<span id="subscribe"><a href="subscription.html">Rejoins-nous !</a></span></p>
+      </form>
+      
+      <div id="message"></div>
+    </div>
+    
+  </div>
+  <!--END MODAL-->
+
+
+  <nav class="main_navbar">
+    <button type="button" value="news" id="news_sort">News</button>
+    <button type="button" value="top" id="top_sort">Top</button>
+    <button type="button" value="salty" id="salty_sort">Salty</button>
+    <button type="button" value="bad" id="bad_sort">Bad</button>
+    <button type="button" value="random" id="random_btn">Random</button>
+  </nav>
+  </header>
+    <!-- FORMULAIRE POUR LES COMMENTAIRES -->
+    <h2 id="commitTitle"> Tu peux laisser un commentaire ici </h2>
+
+  <div id="comment">Chargement du formulaire...</div>
+
+  <!-- <script type="module" src="js/script.js"></script> -->
+  <script type="module" src="modules/detailsComment.js"></script>
+</body>
+
+</html>
