@@ -4,6 +4,8 @@ import {createVoteYes} from '../modules/createVote.js'
 import {createVoteSalty} from '../modules/createVoteSalty.js'
 import {createVoteBad} from '../modules/createVoteBad.js'
 import {createSearch} from '../modules/createSearch.js'
+import { askComment } from '../modules/askComment.js'
+import { addCom } from '../modules/addCom.js'
 
 /* global URLSearchParams */
 
@@ -23,28 +25,8 @@ window.fetch(`http://localhost:3000/postComment/${id}`)
     createSearch('search_btn_tel')
   })
 
-window.fetch(`http://localhost:3000/comments/${id}`)
-  .then(res => res.json())
-  .then(comments => {
-    const commentElement = document.getElementById('comment')
-    commentElement.innerHTML = comments.map(createCommentElement).join('')
-    console.log('comment res :', comments)
-  })
+//recupere les com lié au post dans la db
+askComment(id)
 
- /* global URLSearchParams */
-document.getElementById('add_com').addEventListener('submit', event => {
-  event.preventDefault()
-
-  const content = document.getElementById('new_com').value
-  console.log(content)
-  window.fetch('http://localhost:3000/addComments', {
-    method: 'post',
-    body: new URLSearchParams({
-      userId: 4,
-      postId: id,
-      content: content
-    })
-  })
-    .then(res => console.log(res.status))
-})
-
+//click sur valider = envoi le com dans la db et recupere tous les com de la db(lié au post)
+addCom(id)
