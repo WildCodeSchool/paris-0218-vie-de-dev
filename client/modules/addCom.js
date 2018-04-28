@@ -1,5 +1,7 @@
 import { askComment } from '../modules/askComment.js'
 
+/* global URLSearchParams */
+
 export const addCom = (idPost) => {
   document.getElementById('add_com').addEventListener('submit', event => {
     event.preventDefault()

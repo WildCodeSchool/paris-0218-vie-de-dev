@@ -17,12 +17,13 @@
 
 #comment {
   display: flex;
+  flex-direction:column;
   justify-content: center;
   color: #fff;
 }
 .comment_form {
-  display: flex;
-  justify-content: center;
+  /*display: flex;
+  justify-content: center;*/
   background-color: #6d214f;
   padding: 5px;
   margin-top:20px;
@@ -31,6 +32,7 @@
   margin-right: 25%;
   margin-left: 25%;
   color: #fff !important; 
+  /*white-space: pre-wrap;*/
 }
 
 .comment_form:hover {

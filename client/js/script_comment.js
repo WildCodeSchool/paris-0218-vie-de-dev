@@ -1,4 +1,3 @@
-import { createCommentElement } from '../modules/createComment.js'
 import {newPosts} from '../modules/posts.js'
 import {createVoteYes} from '../modules/createVote.js'
 import {createVoteSalty} from '../modules/createVoteSalty.js'
@@ -12,6 +11,7 @@ import { addCom } from '../modules/addCom.js'
 const params = new URLSearchParams(window.location.search)
 const id = params.get('id')
 
+// recupere le post dans la db
 window.fetch(`http://localhost:3000/postComment/${id}`)
   .then(res => res.json())
   .then(post => {
@@ -25,8 +25,8 @@ window.fetch(`http://localhost:3000/postComment/${id}`)
     createSearch('search_btn_tel')
   })
 
-//recupere les com lié au post dans la db
+// recupere les com lié au post dans la db
 askComment(id)
 
-//click sur valider = envoi le com dans la db et recupere tous les com de la db(lié au post)
+// click sur valider = envoi le com dans la db et recupere tous les com de la db(lié au post)
 addCom(id)
