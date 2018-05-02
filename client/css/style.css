@@ -80,6 +80,9 @@ h1 {
 #message {
   color: red;
 }
+#message2 {
+  color: red;
+}
 
 .main_navbar {
   display: flex;

@@ -64,6 +64,7 @@ const countVote = (params, table) =>
     [params.id])
 
 const getUsers = () => exec('SELECT * FROM user')
+const addUser = (params) => exec(`INSERT INTO user (name, email, password) VALUES (?, ?, ?)`, [params.name, params.email, params.password])
 
 /* selectVote({user: 2, idPost:1},'yesVotes')
     .then(result => console.log('result:', result))
@@ -89,5 +90,6 @@ module.exports = {
   getCommentsOfPost,
   addComment,
   updateComment,
-  getPost
+  getPost,
+  addUser
 }
