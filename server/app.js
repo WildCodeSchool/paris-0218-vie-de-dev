@@ -105,6 +105,13 @@ app.get('/comments/:postId', (req, res, next) => {
     .catch(next)
 })
 
+app.post('/addComments', (req, res, next) => {
+  db.addComment(req.body)
+    .then(() => db.getCommentsOfPost(req.body.postId)
+      .then(res => res.end(JSON.stringify(res))))
+    .catch(next)
+})
+
 app.use((err, req, res, next) => {
   if (err) {
     res.json({ message: err.message })
@@ -113,4 +120,5 @@ app.use((err, req, res, next) => {
 
   next(err)
 })
+
 app.listen(3000, () => console.log('serveur écoute sur port 3000'))

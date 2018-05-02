@@ -9,6 +9,7 @@
   <title>Vie de Dev</title>
   <link rel="icon" href="pictures/favicon.ico">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style_comment.css">
 </head>
 
 <body>
@@ -71,9 +72,12 @@
   <div id="post_detail">Loading Post</div>
 
     <!-- FORMULAIRE POUR LES COMMENTAIRES -->
-    <h2 id="commit_title"> Tu peux laisser un commentaire ici </h2>
+    <form id="add_com">
+      <textarea id="new_com" name="new_com" placeholder="Lâche ton com ici !"></textarea>
+      <button id="bouton" type="submit">VALIDER</button>
+    </form>
 
-  <div id="comment">Chargement du formulaire...</div>
+  <div id="comment"></div>
 
   <!-- <script type="module" src="js/script.js"></script> -->
   <script type="module" src="js/script_comment.js"></script>

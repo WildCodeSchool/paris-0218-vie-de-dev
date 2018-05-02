@@ -255,35 +255,6 @@ button:hover {
   animation: Test 1s infinite;
 }
 
-/* titre commentaires */
-#commit_title {
-  display: flex;
-  justify-content: center;
-  color: #fff;
-}
-
-
-/* background commentaires */
-
-#comment {
-  display: flex;
-  justify-content: center;
-  color: #fff;
-}
-.comment_form {
-  display: flex;
-  justify-content: center;
-  background-color: #6d214f;
-  left: 25%;
-  right: 25%;
-  margin-right: 25%;
-  margin-left: 25%;
-  color: #fff !important; 
-}
-
-.comment_form:hover {
-  color: #fff;
-}
 
 @keyframes Test {
   0% {
