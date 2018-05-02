@@ -38,3 +38,25 @@
 .comment_form:hover {
   color: #fff;
 }
+
+@media screen and (max-width:720px) {
+  .comment_form {
+    left: 5%;
+    right: 5%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+  #new_com {
+    width:100%;
+  }
+  #add_com {
+    flex-direction: column;
+  }
+
+  #bouton {
+    margin:auto;
+    margin-top: 10px;
+  }
+
+
+}
