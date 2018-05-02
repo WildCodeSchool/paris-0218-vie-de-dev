@@ -123,6 +123,8 @@ app.post('/addUser', (req, res, next) => {
         return res.json({ error: 'Le nom existe deja' })
       } else if (usersEmails.includes(req.body.email)) {
         return res.json({ error: `L'email existe deja` })
+      } else if (req.body.email === '' || req.body.name === '' || req.body.password === '') {
+        return res.json({ error: 'Un ou plusieurs champs non remplis' })
       } else {
         db.addUser(req.body)
           .then(() => res.json('ok'))
