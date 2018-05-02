@@ -6,7 +6,7 @@ import { askComment } from '../modules/askComment.js'
 import { addCom } from '../modules/addCom.js'
 import {authentification} from '../modules/authentification.js'
 import {modalLogin} from '../modules/modalLogin.js'
-import {menuburger} from '../modules/menuburger.js'
+import {menuburgerCom} from '../modules/menuburger.js'
 
 /* global URLSearchParams */
 
@@ -23,10 +23,9 @@ window.fetch(`http://localhost:3000/postComment/${id}`)
     createVoteYes()
     createVoteSalty()
     createVoteBad()
-
     authentification()
     modalLogin()
-    menuburger()
+    menuburgerCom()
   })
 
 // recupere les com lié au post dans la db
