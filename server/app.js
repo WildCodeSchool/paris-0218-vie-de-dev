@@ -1,7 +1,7 @@
 const express = require('express')
 // const fs = require('fs')
 // const util = require('util')
-// const path = require('path')
+const path = require('path')
 // const readFile = util.promisify(fs.readFile)
 // const readdir = util.promisify(fs.readdir)
 const db = require('./db.js')
@@ -34,9 +34,8 @@ app.use(session({
   secret,
   saveUninitialized: false,
   resave: true,
-  store: new FileStore({ secret })
+  store: new FileStore({ secret, path: path.join(__dirname, 'sessions') })
 }))
-
 // Logger middleware
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.url}`, { user: req.session.user, cookie: req.headers.cookie })

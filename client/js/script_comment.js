@@ -7,6 +7,7 @@ import { askComment } from '../modules/askComment.js'
 import { addCom } from '../modules/addCom.js'
 import {authentification} from '../modules/authentification.js'
 import {modalLogin} from '../modules/modalLogin.js'
+import {menuburger} from '../modules/menuburger.js'
 
 /* global URLSearchParams */
 
@@ -27,6 +28,7 @@ window.fetch(`http://localhost:3000/postComment/${id}`)
     createSearch('search_btn_tel')
     authentification()
     modalLogin()
+    menuburger()
   })
 
 // recupere les com lié au post dans la db
