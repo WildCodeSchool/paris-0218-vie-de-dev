@@ -16,6 +16,6 @@ document.getElementById('add_post').addEventListener('submit', event => {
           content: content
         })
       })
-        .then(res => window.location.replace('http://localhost:8080/'))
+        .then(res => window.location.replace('/'))
     })
 })
