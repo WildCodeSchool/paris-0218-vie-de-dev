@@ -1,14 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const bodyParser = require('body-parser')
-const fs = require('fs')
-const path = require('path')
-const util = require('util')
 const db = require('../db.js')
-const stat = util.promisify(fs.stat)
 const session = require('express-session')
 const FileStore = require('session-file-store')(session)
-const secret ='vdd is great'
+const secret = 'vdd is great'
 router.use(session({
   secret,
   saveUninitialized: false,
@@ -44,7 +40,5 @@ router.post('/soumettre', (req, res, next) => {
   db.addPost(req.body)
     .then(() => res.json('ok'))
     .catch(next)
-    
 })
-
 module.exports = router

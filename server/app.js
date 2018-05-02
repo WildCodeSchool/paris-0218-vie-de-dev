@@ -34,7 +34,7 @@ app.use(session({
   secret,
   saveUninitialized: false,
   resave: true,
-  store: new FileStore({  secret })
+  store: new FileStore({ secret })
 }))
 
 // Logger middleware
@@ -48,11 +48,8 @@ app.use('/post', routePost)
 
 app.get('/', (req, res) => {
   const user = req.session.user || {}
-  console.log('object is ',user)
   res.json(user)
-  console.log('object is ',user)
 })
-
 
 app.get('/users', (req, res) => {
   db.getUsers()
@@ -69,7 +66,6 @@ app.get('/comments', (req, res) => {
 })
 
 app.post('/sign-in', (req, res, next) => {
-  // does user exists ?
   db.getUsers()
     .then(users => {
       const user = users.find(u => req.body.name === u.name)
@@ -84,10 +80,7 @@ app.post('/sign-in', (req, res, next) => {
 
       // else, set the user into the session
       req.session.user = user
-      
-console.log(req.session.user)
       res.json(user)
-      return res.redirect('/')
     })
 })
 
