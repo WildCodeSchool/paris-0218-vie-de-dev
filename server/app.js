@@ -1,7 +1,7 @@
 const express = require('express')
 // const fs = require('fs')
 // const util = require('util')
-// const path = require('path')
+const path = require('path')
 // const readFile = util.promisify(fs.readFile)
 // const readdir = util.promisify(fs.readdir)
 const db = require('./db.js')
@@ -14,7 +14,8 @@ const comment2 = require('../mocks/comment/2.json')
 const routePost = require('./routes/postRoutes')
 // const users = [user1, user2, user3, user4]
 const comments = [ comment1, comment2 ]
-
+const usersNames = []
+const usersEmails = []
 const secret = 'vdd is great'
 
 const app = express()
@@ -34,9 +35,8 @@ app.use(session({
   secret,
   saveUninitialized: false,
   resave: true,
-  store: new FileStore({ secret })
+  store: new FileStore({ secret, path: path.join(__dirname, 'sessions') })
 }))
-
 // Logger middleware
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.url}`, { user: req.session.user, cookie: req.headers.cookie })
@@ -108,6 +108,29 @@ app.post('/addComments', (req, res, next) => {
     .then(() => db.getCommentsOfPost(req.body.postId)
       .then(res => res.end(JSON.stringify(res))))
     .catch(next)
+})
+
+app.post('/addUser', (req, res, next) => {
+  db.getUsers()
+    .then(users => {
+      for (let elem of users) {
+        usersEmails.push(elem.email)
+      }
+      for (let elem of users) {
+        usersNames.push(elem.name)
+      }
+      if (usersNames.includes(req.body.name)) {
+        return res.json({ error: 'Le nom existe deja' })
+      } else if (usersEmails.includes(req.body.email)) {
+        return res.json({ error: `L'email existe deja` })
+      } else if (req.body.email === '' || req.body.name === '' || req.body.password === '') {
+        return res.json({ error: 'Un ou plusieurs champs non remplis' })
+      } else {
+        db.addUser(req.body)
+          .then(() => res.json('ok'))
+          .catch(next)
+      }
+    })
 })
 
 app.use((err, req, res, next) => {

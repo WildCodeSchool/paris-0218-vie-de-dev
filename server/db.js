@@ -64,6 +64,7 @@ const countVote = (params, table) =>
     [params.id])
 
 const getUsers = () => exec('SELECT * FROM user')
+const addUser = (params) => exec(`INSERT INTO user (name, email, password) VALUES (?, ?, ?)`, [params.name, params.email, params.password])
 
 /* selectVote({user: 2, idPost:1},'yesVotes')
     .then(result => console.log('result:', result))
@@ -71,8 +72,23 @@ const getUsers = () => exec('SELECT * FROM user')
 
 // requete SQL pour comment
 
-const getPost = id => exec('SELECT * FROM post WHERE id=?', [id])
-const getCommentsOfPost = id => exec('SELECT * FROM comment WHERE postId = ? ORDER BY createAt DESC', [ id ])
+const getPost = id =>
+  exec(`SELECT * FROM (SELECT * FROM post WHERE id=${id}) tPost
+        LEFT JOIN (
+          SELECT id as userId , name
+            FROM user
+          ) tUser
+        ON tPost.userId = tUser.userId 
+  `)
+
+const getCommentsOfPost = id =>
+  exec(`SELECT * FROM (SELECT * FROM comment WHERE postId = ? ORDER BY createAt DESC) tCom
+    LEFT JOIN (
+      SELECT id as userId , name
+        FROM user
+        ) tUser
+      ON tCom.userId = tUser.userId `, [ id ])
+
 const addComment = params =>
   exec('INSERT INTO comment (userId, postId, content) VALUES (?, ?, ?)',
     [ params.userId, params.postId, params.content ])
@@ -89,5 +105,6 @@ module.exports = {
   getCommentsOfPost,
   addComment,
   updateComment,
-  getPost
+  getPost,
+  addUser
 }

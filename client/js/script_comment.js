@@ -2,11 +2,11 @@ import {newPosts} from '../modules/posts.js'
 import {createVoteYes} from '../modules/createVote.js'
 import {createVoteSalty} from '../modules/createVoteSalty.js'
 import {createVoteBad} from '../modules/createVoteBad.js'
-import {createSearch} from '../modules/createSearch.js'
 import { askComment } from '../modules/askComment.js'
 import { addCom } from '../modules/addCom.js'
 import {authentification} from '../modules/authentification.js'
 import {modalLogin} from '../modules/modalLogin.js'
+import {menuburgerCom} from '../modules/menuburger.js'
 
 /* global URLSearchParams */
 
@@ -23,10 +23,9 @@ window.fetch(`http://localhost:3000/postComment/${id}`)
     createVoteYes()
     createVoteSalty()
     createVoteBad()
-    createSearch('search_btn')
-    createSearch('search_btn_tel')
     authentification()
     modalLogin()
+    menuburgerCom()
   })
 
 // recupere les com lié au post dans la db
@@ -34,3 +33,15 @@ askComment(id)
 
 // click sur valider = envoi le com dans la db et recupere tous les com de la db(lié au post)
 addCom(id)
+
+// masque le formulaire si non connecté
+const formElt = document.getElementById('add_com')
+window.fetch('http://localhost:3000/', {credentials: 'include'})
+  .then(res => res.json())
+  .then(res => {
+    if (res.id === undefined) {
+      formElt.style.display = 'none'
+    } else {
+      formElt.style.display = 'flex'
+    }
+  })
