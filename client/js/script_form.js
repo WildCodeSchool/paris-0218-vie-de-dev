@@ -1,3 +1,7 @@
+import {menuburger} from '../modules/menuburger.js'
+import {modalLogin} from '../modules/modalLogin.js'
+import {authentification} from '../modules/authentification.js'
+
 /* global URLSearchParams */
 document.getElementById('add_post').addEventListener('submit', event => {
   event.preventDefault()
@@ -19,3 +23,6 @@ document.getElementById('add_post').addEventListener('submit', event => {
         .then(res => window.location.replace('http://localhost:8080/'))
     })
 })
+menuburger()
+modalLogin()
+authentification()
