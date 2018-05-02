@@ -109,6 +109,12 @@ app.post('/addComments', (req, res, next) => {
     .catch(next)
 })
 
+app.post('/addUser', (req, res, next) => {
+  db.addUser(req.body)
+  .then(() => res.json('ok'))
+  .catch(next)
+})
+
 app.use((err, req, res, next) => {
   if (err) {
     res.json({ message: err.message })

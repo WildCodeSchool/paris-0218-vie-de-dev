@@ -94,5 +94,5 @@ module.exports = {
   addComment,
   updateComment,
   getPost,
-  adUser
+  addUser
 }
