@@ -4,7 +4,7 @@ export const createVoteYes = () => {
     .then(user => user.json())
     .then(user => {
       if (user.id) {
-        let userConnect = user.id // utilisateur connecté fictif
+        let userConnect = user.id // utilisateur connecté
         const yesVoteClass = document.getElementsByClassName('yesVote')
         for (let butt of yesVoteClass) {
           butt.addEventListener('click', (e) => {

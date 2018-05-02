@@ -3,7 +3,8 @@ export const createVoteBad = () => {
     .then(user => user.json())
     .then(user => {
       if (user.id) {
-        let userConnect = user.id // utilisateur connecté fictif
+        const URLSearchParams = window.URLSearchParams
+        let userConnect = user.id // utilisateur connecté
         const badVoteClass = document.getElementsByClassName('badVote')
         for (let butt of badVoteClass) {
           butt.addEventListener('click', (e) => {
@@ -27,4 +28,3 @@ export const createVoteBad = () => {
       }
     })
 }
-  

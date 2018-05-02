@@ -3,7 +3,8 @@ export const createVoteSalty = () => {
     .then(user => user.json())
     .then(user => {
       if (user.id) {
-        let userConnect = user.id // utilisateur connecté fictif
+        const URLSearchParams = window.URLSearchParams
+        let userConnect = user.id // utilisateur connecté
         const saltyVoteClass = document.getElementsByClassName('saltyVote')
         for (let butt of saltyVoteClass) {
           butt.addEventListener('click', (e) => {
