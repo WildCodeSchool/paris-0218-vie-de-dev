@@ -66,7 +66,6 @@ app.get('/comments', (req, res) => {
 })
 
 app.post('/sign-in', (req, res, next) => {
-  // does user exists ?
   db.getUsers()
     .then(users => {
       const user = users.find(u => req.body.name === u.name)
@@ -81,7 +80,6 @@ app.post('/sign-in', (req, res, next) => {
 
       // else, set the user into the session
       req.session.user = user
-
       res.json(user)
     })
 })
