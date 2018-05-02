@@ -166,6 +166,7 @@ button:hover {
 }
 
 /* BOUTON COMMIT */
+
 .commitBtn {
   width: 120px;
   height: 60px;
@@ -195,7 +196,37 @@ button:hover {
   color: yellow;
 }
 
-/* ////// */
+@media screen and (max-width:900px) {
+  .commitBtn {
+    width: 70px;
+    right: 6%;
+    font-size: 70%;
+   
+  }
+  .commitBtn:before {
+    top: 22px;
+    border-top: 6.5px solid transparent;
+    border-right: 13px solid green;
+    border-bottom: 6.5px solid transparent;
+  }
+}
+
+
+/* BOUTON RETOUR */
+
+#bouton_retour {
+  position: fixed;
+  bottom: 3%;
+  right: 2%;
+}
+
+@media screen and (max-width:900px) {
+  #bouton_retour {
+    position: fixed;
+    bottom: 0%;
+  }
+}
+
 
 .yesBtn:hover {
   color: rgb(0, 217, 39);
@@ -247,6 +278,16 @@ button:hover {
   box-shadow: 1px 1px 2px #555;
   padding: 5px;
   background-color: black;
+}
+
+.compteurCommit {
+  margin-left: 55px;
+  margin-right: 75px;
+  color: #fff;
+  border: 1px solid #00D927;
+  box-shadow: 1px 1px 2px #555;
+  padding: 5px;
+  background-color: green;
 }
 
 /* animation clignotement */
