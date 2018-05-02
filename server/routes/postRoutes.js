@@ -6,6 +6,15 @@ const path = require('path')
 const util = require('util')
 const db = require('../db.js')
 const stat = util.promisify(fs.stat)
+const session = require('express-session')
+const FileStore = require('session-file-store')(session)
+const secret ='vdd is great'
+router.use(session({
+  secret,
+  saveUninitialized: false,
+  resave: true,
+  store: new FileStore({ secret })
+}))
 
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({extended: true}))
@@ -31,25 +40,11 @@ router.post('/vote/:typeVote', (req, res, next) => {
       }
     })
 })
-
-// nom fichier aleatoire avec test id unique
-const testId = (id) =>
-  stat(getPathFromId(id))
-    .then(() => testId(getNewId()))
-    .catch(err => {
-      if (err.code === 'ENOENT') {
-        return id
-      }
-      throw err
-    })
-
-const getNewId = () => Math.random().toString(36).slice(2).padEnd(11, '0').slice(0, 5)
-const getPathFromId = id => path.join(__dirname, '../../mocks/post/', `${id}.json`)
-
 router.post('/soumettre', (req, res, next) => {
   db.addPost(req.body)
-    .then(() => res.json('OK'))
+    .then(() => res.json('ok'))
     .catch(next)
+    
 })
 
 module.exports = router

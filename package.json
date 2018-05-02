@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "client": "http-server client",
-    "server": "nodemon server --ignore client",
+    "server": "nodemon server --ignore client --ignore server/sessions",
     "test": "echo 'no tests'",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
     "lint:js": "standard | snazzy",
