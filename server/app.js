@@ -90,6 +90,26 @@ app.get('/sign-out', (req, res, next) => {
   res.json('ok')
 })
 
+// route pour page comment
+app.get('/postComment/:id', (req, res, next) => {
+  db.getPost(req.params.id)
+    .then(post => res.json(post))
+    .catch(next)
+})
+
+app.get('/comments/:postId', (req, res, next) => {
+  db.getCommentsOfPost(req.params.postId)
+    .then(comments => res.json(comments))
+    .catch(next)
+})
+
+app.post('/addComments', (req, res, next) => {
+  db.addComment(req.body)
+    .then(() => db.getCommentsOfPost(req.body.postId)
+      .then(res => res.end(JSON.stringify(res))))
+    .catch(next)
+})
+
 app.use((err, req, res, next) => {
   if (err) {
     res.json({ message: err.message })
@@ -98,4 +118,5 @@ app.use((err, req, res, next) => {
 
   next(err)
 })
+
 app.listen(3000, () => console.log('serveur écoute sur port 3000'))

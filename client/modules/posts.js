@@ -24,6 +24,9 @@ export const newPosts = (post) => {
       <button class="yesVote yesBtn" id=${idYes}>YES</button>
       <button class="saltyVote saltyBtn" id=${idSalty}>SALTY</button>
       <button class="badVote badBtn" id=${idBad}>BAD</button>
+      <a href="../comments.html?id=${post.id}">
+        <button class="commitBtn">COMMIT</button>
+      </a>
     </div>
     <div class='votes'>
       <p class="compteur" id=${idYesCompteur}>${post.yes}</p>
