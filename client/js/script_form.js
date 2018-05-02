@@ -1,11 +1,9 @@
 import {menuburger} from '../modules/menuburger.js'
 import {modalLogin} from '../modules/modalLogin.js'
 import {authentification} from '../modules/authentification.js'
-
-/* global URLSearchParams */
 document.getElementById('add_post').addEventListener('submit', event => {
   event.preventDefault()
-
+  const URLSearchParams = window.URLSearchParams
   const content = document.getElementById('new_post').value
   console.log(content)
   window.fetch('http://localhost:3000/', {credentials: 'include'})
@@ -22,14 +20,17 @@ document.getElementById('add_post').addEventListener('submit', event => {
           })
         })
           .then(res => window.location.replace('/'))
+        menuburger()
+        modalLogin()
+        authentification()
       } else {
         document.getElementById('add_post').innerHTML = `
         <textarea id="new_post" name="new_post" placeholder="Tu n'as pas le droit de poster si tu n'est pas connecté !"></textarea><br>
         <button id="bouton" type="submit">VALIDER</button>
       `
+        menuburger()
+        modalLogin()
+        authentification()
       }
     })
 })
-menuburger()
-modalLogin()
-authentification()
