@@ -5,6 +5,8 @@ import {createVoteBad} from '../modules/createVoteBad.js'
 import {createSearch} from '../modules/createSearch.js'
 import { askComment } from '../modules/askComment.js'
 import { addCom } from '../modules/addCom.js'
+import {authentification} from '../modules/authentification.js'
+import {modalLogin} from '../modules/modalLogin.js'
 
 /* global URLSearchParams */
 
@@ -23,6 +25,8 @@ window.fetch(`http://localhost:3000/postComment/${id}`)
     createVoteBad()
     createSearch('search_btn')
     createSearch('search_btn_tel')
+    authentification()
+    modalLogin()
   })
 
 // recupere les com lié au post dans la db
