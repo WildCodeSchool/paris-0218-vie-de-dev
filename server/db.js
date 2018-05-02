@@ -87,7 +87,7 @@ const getCommentsOfPost = id =>
         FROM user
         ) tUser
       ON tCom.userId = tUser.userId `, [ id ])
-  
+
 const addComment = params =>
   exec('INSERT INTO comment (userId, postId, content) VALUES (?, ?, ?)',
     [ params.userId, params.postId, params.content ])

@@ -7,8 +7,4 @@ export const askComment = (idPost) => {
       commentElement.innerHTML = comments.map(createCommentElement).join('')
       console.log('comment res :', comments)
     })
-    .catch(err => {
-          console.log("err comment", err)
-          document.getElementById('add_com').textContent = "you must be connect !"
-     })
 }

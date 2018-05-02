@@ -7,7 +7,7 @@ export const addCom = (idPost) => {
     event.preventDefault()
     const content = document.getElementById('new_com').value
     console.log(content)
-     window.fetch('http://localhost:3000/', {credentials: 'include'})
+    window.fetch('http://localhost:3000/', {credentials: 'include'})
       .then(res => res.json())
       .then(res => {
         console.log(res)
@@ -19,9 +19,7 @@ export const addCom = (idPost) => {
             content: content
           })
         })
-        .then(askComment(idPost))
-
-        })
+          .then(askComment(idPost))
       })
-
+  })
 }
