@@ -63,7 +63,11 @@ const countVote = (params, table) =>
   exec(`SELECT postId as id, COUNT(userId) as nbVotes FROM ${table} WHERE postId = ? GROUP BY id `,
     [params.id])
 
-const getUsers = () => exec('SELECT * FROM user')
+const getUsers = () => exec('SELECT * FROM user') 
+
+const addUser = (params) => 
+  exec(`INSERT INTO user (name, email, password) VALUES (?, ?, ?)`, 
+    [params.name, params.email, params.password])
 
 /* selectVote({user: 2, idPost:1},'yesVotes')
     .then(result => console.log('result:', result))
@@ -89,5 +93,6 @@ module.exports = {
   getCommentsOfPost,
   addComment,
   updateComment,
-  getPost
+  getPost,
+  adUser
 }
