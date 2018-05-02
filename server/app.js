@@ -14,7 +14,8 @@ const comment2 = require('../mocks/comment/2.json')
 const routePost = require('./routes/postRoutes')
 // const users = [user1, user2, user3, user4]
 const comments = [ comment1, comment2 ]
-
+const usersNames = []
+const usersEmails = []
 const secret = 'vdd is great'
 
 const app = express()
@@ -110,9 +111,24 @@ app.post('/addComments', (req, res, next) => {
 })
 
 app.post('/addUser', (req, res, next) => {
-  db.addUser(req.body)
-    .then(() => res.json('ok'))
-    .catch(next)
+  db.getUsers()
+    .then(users => {
+      for (let elem of users) {
+        usersEmails.push(elem.email)
+      }
+      for (let elem of users) {
+        usersNames.push(elem.name)
+      }
+      if (usersNames.includes(req.body.name)) {
+        return res.json({ error: 'Le nom existe deja' })
+      } else if (usersEmails.includes(req.body.email)) {
+        return res.json({ error: `L'email existe deja` })
+      } else {
+        db.addUser(req.body)
+          .then(() => res.json('ok'))
+          .catch(next)
+      }
+    })
 })
 
 app.use((err, req, res, next) => {

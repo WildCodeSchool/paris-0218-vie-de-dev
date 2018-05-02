@@ -1,6 +1,7 @@
 export const addUser = () => {
   document.getElementById('adduser').addEventListener('submit', event => {
     event.preventDefault()
+    const messageElement2 = document.getElementById('message2')
     const URLSearchParams = window.URLSearchParams
     const name = document.getElementById('username_sub').value
     const email = document.getElementById('email_sub').value
@@ -14,6 +15,13 @@ export const addUser = () => {
         password: password
       })
     })
-      .then(res => window.location.replace('/'))
+      .then(res => res.json())
+      .then(res => {
+        if (res.error) {
+          messageElement2.innerHTML = res.error || ''
+        } else {
+          window.location.replace('/')
+        }
+      })
   })
 }
