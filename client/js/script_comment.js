@@ -36,3 +36,17 @@ askComment(id)
 
 // click sur valider = envoi le com dans la db et recupere tous les com de la db(lié au post)
 addCom(id)
+
+//masque le formulaire si non connecté
+const formElt = document.getElementById('add_com')
+window.fetch('http://localhost:3000/', {credentials: 'include'})
+      .then(res => res.json())
+      .then(res => {
+        console.log("test res form com",res.id)
+        if (res.id == undefined) {
+          formElt.style.display = 'none'
+        }
+        else {
+                    formElt.style.display = 'flex'
+        }
+      })
