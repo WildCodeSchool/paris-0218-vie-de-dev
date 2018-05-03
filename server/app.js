@@ -109,24 +109,35 @@ app.post('/addComments', (req, res, next) => {
 
 const i18n = {
   name: 'PSEUDO',
-  email: 'E-MAIL'
+  email: 'E-MAIL',
+  password: 'MOT DE PASSE'
 }
 
-app.post('/addUser', (req, res, next) => {
-  if (!req.body.email || !req.body.name || !req.body.password) {
-    return next(Error('Un ou plusieurs champs non remplis'))
+const checkFields = fields => (req, res, next) => {
+  const missingFields = fields.filter(field => !req.body[field])
+  if (missingFields.length) {
+    const key = missingFields[0]
+    const err = Error(`${i18n[key]} doit etre renseigne`)
+    err.data = { key }
+    return next(err)
   }
-  db.addUser(req.body)
-    .then(() => res.json('ok'))
-    .catch(err => {
-      if (err.code === 'ER_DUP_ENTRY') {
-        const key = err.message.split(/for key '(.+)'/)[1]
-        err.message = `${i18n[key]} déjà pris`
-        err.data = { key }
-      }
-      next(err)
-    })
-})
+  next()
+}
+
+app.post('/addUser',
+  checkFields([ 'email', 'name', 'password' ]),
+  (req, res, next) => {
+    db.addUser(req.body)
+      .then(() => res.json('ok'))
+      .catch(err => {
+        if (err.code === 'ER_DUP_ENTRY') {
+          const key = err.message.split(/for key '(.+)'/)[1]
+          err.message = `${i18n[key]} déjà pris`
+          err.data = { key }
+        }
+        next(err)
+      })
+  })
 
 app.use((err, req, res, next) => {
   if (err) {
