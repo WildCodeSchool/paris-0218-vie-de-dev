@@ -9,16 +9,17 @@
   <title>Vie de Dev</title>
   <link rel="icon" href="pictures/favicon.ico">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style_comment.css">
 </head>
 
 <body>
   <header id="main_menu" class="container">
     <div id= "menu_ordi">
     <ul>
-      <li><a href="http://localhost:5000/index.html">Accueil</a></li>
+      <li><a href="/index.html">Accueil</a></li>
       <li><a href="formulaire_post.html">Soumettre mes VDD</a></li>
-      <li><img id="logo" src="pictures/logo_vdd.png" alt="logo"></li>
-      <li><input type="text" id="search_btn"></li>
+      <li><img id="logo" src="../pictures/logo_vdd.png" alt="logo"></li>
+
       <li><a href="#" id="signup">Log in</a></li>
       <li><div id="auth2"></div>
           <form id="sign_out_form">
@@ -32,9 +33,9 @@
     
     <button id="burger">&#9776;</button>
     <ul id="burger_menu" >
-      <li class="nodisplay"><a href="#">Editer mes VDD</a></li>
+      <li class="nodisplay"><a href="/index.html">Accueil</a></li>
       <li class="nodisplay"><a href="formulaire_post.html">Soumettre mes VDD</a></li>
-      <li class="nodisplay"><input type="text" id="search_btn_tel"></li>
+
       <li class="nodisplay"><a href="#" id="signupsm">Log in</a></li>
       <li class="nodisplay"><div id="auth"></div>
         <form id="sign_out_form2">
@@ -66,21 +67,20 @@
   </div>
   <!--END MODAL-->
 
-
-  <nav class="main_navbar">
-    <button type="button" value="news" id="news_sort">News</button>
-    <button type="button" value="top" id="top_sort">Top</button>
-    <button type="button" value="salty" id="salty_sort">Salty</button>
-    <button type="button" value="bad" id="bad_sort">Bad</button>
-    <button type="button" value="random" id="random_btn">Random</button>
-  </nav>
   </header>
 
-  <div id="posts">Loading posts</div>
+  <div id="post_detail">Loading Post</div>
 
-    <a href="#main_menu" id="bouton_retour"><img src="pictures/thumbsup.png" alt="thumbsup"/></a>
-    
-  <script type="module" src="js/script.js"></script>
+    <!-- FORMULAIRE POUR LES COMMENTAIRES -->
+    <form id="add_com">
+      <textarea id="new_com" name="new_com" placeholder="Lâche ton com ici !"></textarea>
+      <button id="bouton" type="submit">VALIDER</button>
+    </form>
+
+  <div id="comment"></div>
+
+  <!-- <script type="module" src="js/script.js"></script> -->
+  <script type="module" src="js/script_comment.js"></script>
 </body>
 
 </html>

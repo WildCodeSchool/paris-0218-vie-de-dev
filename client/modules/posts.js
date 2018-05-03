@@ -5,6 +5,7 @@ export const newPosts = (post) => {
   const idYesCompteur = `yesCompt_${post.id}`
   const idSaltyCompteur = `saltyCompt_${post.id}`
   const idBadCompteur = `badCompt_${post.id}`
+  const idCommitCompteur = `commitCompteur_${post.id}`
   const zeroVotes = (vote) => {
     if (post[vote] === null) {
       post[vote] = 0
@@ -14,21 +15,26 @@ export const newPosts = (post) => {
   zeroVotes('yes')
   zeroVotes('salty')
   zeroVotes('bad')
+  zeroVotes('commit')
   return `
     <div class='divposts'>
       <h4 class='line'>VDD</h4>
-      <p>Home/user-VDD<span class="blink">&#9608;</span></p>
+      <p>Home/${post.name}-VDD<span class="blink">&#9608;</span></p>
       <p>${post.content}</p>
     </div>
     <div class='boutons'>
       <button class="yesVote yesBtn" id=${idYes}>YES</button>
       <button class="saltyVote saltyBtn" id=${idSalty}>SALTY</button>
       <button class="badVote badBtn" id=${idBad}>BAD</button>
+      <a href="../comments.html?id=${post.id}">
+        <button class="commitBtn">COMMIT</button>
+      </a>
     </div>
     <div class='votes'>
       <p class="compteur" id=${idYesCompteur}>${post.yes}</p>
       <p class="compteur" id=${idSaltyCompteur}>${post.salty}</p>
-      <p class="compteur" id=${idBadCompteur}>${post.bad}</p></div>
+      <p class="compteur" id=${idBadCompteur}>${post.bad}</p>
+      <p class="compteurCommit" id=${idCommitCompteur}>${post.commit}</p></div>
     </div>
     
     `
