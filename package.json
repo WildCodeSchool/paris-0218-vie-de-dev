@@ -7,7 +7,8 @@
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
     "lint:js": "standard | snazzy",
     "lint:css": "stylelint 'client/style/**/*.css'",
-    "lint:html": "htmllint 'client/**/*.html'"
+    "lint:html": "htmllint 'client/**/*.html'",
+    "postinstall": "cd server && npm install && echo 'You must init mysql (ex `mysql -u root < base_donnees/VDD_DUMP.sql`)'"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
