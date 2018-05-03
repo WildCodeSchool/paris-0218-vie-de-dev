@@ -1,6 +1,7 @@
 import {createSearch} from '../modules/createSearch.js'
 import {modalLogin} from '../modules/modalLogin.js'
 import {authentification} from '../modules/authentification.js'
+import {refreshPage} from '../modules/refreshPage.js'
 export const menuburger = () => {
   let i = 0
   document.getElementById('burger').addEventListener('click', () => {
@@ -20,6 +21,7 @@ export const menuburger = () => {
       createSearch('search_btn_tel')
       modalLogin()
       authentification()
+      refreshPage()
     } else {
       document.getElementById('burger_menu').innerHTML = `
         <li class="nodisplay"><a href="/index.html">Accueil</a></li>
@@ -35,6 +37,7 @@ export const menuburger = () => {
       i = 0
       modalLogin()
       authentification()
+      refreshPage()
     }
   })
 }
@@ -56,6 +59,7 @@ export const menuburgerCom = () => {
       i = 1
       modalLogin()
       authentification()
+      refreshPage()
     } else {
       document.getElementById('burger_menu').innerHTML = `
         <li class="nodisplay"><a href="/index.html">Accueil</a></li>
@@ -70,6 +74,7 @@ export const menuburgerCom = () => {
       i = 0
       modalLogin()
       authentification()
+      refreshPage()
     }
   })
 }
