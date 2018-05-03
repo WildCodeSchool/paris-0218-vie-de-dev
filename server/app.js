@@ -46,14 +46,16 @@ app.get('/', (req, res) => {
   res.json(user)
 })
 
-app.get('/users', (req, res) => {
+app.get('/users', (req, res, next) => {
   db.getUsers()
     .then(users => res.json(users))
+    .catch(next)
 })
 
-app.get('/posts', (req, res) => {
+app.get('/posts', (req, res, next) => {
   db.getPosts()
     .then(posts => res.json(posts))
+    .catch(next)
 })
 
 app.post('/sign-in', (req, res, next) => {
@@ -62,17 +64,22 @@ app.post('/sign-in', (req, res, next) => {
       const user = users.find(u => req.body.name === u.name)
       // Error handling
       if (!user) {
-        return res.json({ error: 'User not found' })
+        const err = Error('User not found')
+        err.statusCode = 404
+        throw err
       }
 
       if (user.password !== req.body.password) {
-        return res.json({ error: 'Wrong password' })
+        const err = Error('Wrong password')
+        err.statusCode = 403
+        throw err
       }
 
       // else, set the user into the session
       req.session.user = user
       res.json(user)
     })
+    .catch(next)
 })
 
 app.get('/sign-out', (req, res, next) => {
@@ -124,7 +131,9 @@ app.post('/addUser', (req, res, next) => {
 
 app.use((err, req, res, next) => {
   if (err) {
-    res.json({ message: err.message })
+    res
+      .status(err.statusCode || 500)
+      .json({ data: err.data, error: err.message })
     console.error(err)
   }
 
