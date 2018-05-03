@@ -8,14 +8,9 @@ const db = require('./db.js')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const FileStore = require('session-file-store')(session)
-const comment1 = require('../mocks/comment/1.json')
-const comment2 = require('../mocks/comment/2.json')
 // ajout de routes notamment pour le post
 const routePost = require('./routes/postRoutes')
 // const users = [user1, user2, user3, user4]
-const comments = [ comment1, comment2 ]
-const usersNames = []
-const usersEmails = []
 const secret = 'vdd is great'
 
 const app = express()
@@ -59,10 +54,6 @@ app.get('/users', (req, res) => {
 app.get('/posts', (req, res) => {
   db.getPosts()
     .then(posts => res.json(posts))
-})
-
-app.get('/comments', (req, res) => {
-  res.json(comments)
 })
 
 app.post('/sign-in', (req, res, next) => {
