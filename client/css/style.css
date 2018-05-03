@@ -63,8 +63,7 @@ h1 {
 }
 
 :not(.signed_in) #sign_out_form,
-:not(.signed_in) #auth,
-:not(.signed_in) #auth2,
+
 :not(.signed_in) #sign_out_form2 {
   display: none;
 }

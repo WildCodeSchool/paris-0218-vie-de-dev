@@ -1,7 +1,5 @@
 import {newPosts} from '../modules/posts.js'
-import {createVoteYes} from '../modules/createVote.js'
-import {createVoteSalty} from '../modules/createVoteSalty.js'
-import {createVoteBad} from '../modules/createVoteBad.js'
+import {createVote} from '../modules/createVote.js'
 import { askComment } from '../modules/askComment.js'
 import { addCom } from '../modules/addCom.js'
 import {authentification} from '../modules/authentification.js'
@@ -20,9 +18,7 @@ window.fetch(`http://localhost:3000/postComment/${id}`)
     const postElement = document.getElementById('post_detail')
     postElement.innerHTML = post.map(newPosts).join('')
     console.log('post res :', post)
-    createVoteYes()
-    createVoteSalty()
-    createVoteBad()
+    createVote()
     authentification()
     modalLogin()
     menuburgerCom()
