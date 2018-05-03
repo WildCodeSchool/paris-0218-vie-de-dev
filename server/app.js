@@ -101,26 +101,24 @@ app.post('/addComments', (req, res, next) => {
     .catch(next)
 })
 
+const i18n = {
+  name: 'PSEUDO',
+  email: 'E-MAIL'
+}
+
 app.post('/addUser', (req, res, next) => {
-  db.getUsers()
-    .then(users => {
-      for (let elem of users) {
-        usersEmails.push(elem.email)
+  if (!req.body.email || !req.body.name || !req.body.password) {
+    return next(Error('Un ou plusieurs champs non remplis'))
+  }
+  db.addUser(req.body)
+    .then(() => res.json('ok'))
+    .catch(err => {
+      if (err.code === 'ER_DUP_ENTRY') {
+        const key = err.message.split(/for key '(.+)'/)[1]
+        err.message = `${i18n[key]} déjà pris`
+        err.data = { key }
       }
-      for (let elem of users) {
-        usersNames.push(elem.name)
-      }
-      if (usersNames.includes(req.body.name)) {
-        return res.json({ error: 'Le nom existe deja' })
-      } else if (usersEmails.includes(req.body.email)) {
-        return res.json({ error: `L'email existe deja` })
-      } else if (req.body.email === '' || req.body.name === '' || req.body.password === '') {
-        return res.json({ error: 'Un ou plusieurs champs non remplis' })
-      } else {
-        db.addUser(req.body)
-          .then(() => res.json('ok'))
-          .catch(next)
-      }
+      next(err)
     })
 })
 
