@@ -59,9 +59,10 @@ const selectVote = (params, table) =>
   exec(`SELECT * FROM ${table} WHERE userId = ? AND postId = ?`,
     [params.user, params.id])
 
-const countVote = (params, table) =>
-  exec(`SELECT postId as id, COUNT(userId) as nbVotes FROM ${table} WHERE postId = ? GROUP BY id `,
-    [params.id])
+const countVote = async (params, table) => (await exec(`SELECT
+  postId as id, COUNT(userId) as nbVotes
+  FROM ${table}
+  WHERE postId = ? GROUP BY id `, [params.id]))[0].nbVotes
 
 const getUsers = () => exec('SELECT * FROM user')
 const addUser = (params) => exec(`INSERT INTO user (name, email, password) VALUES (?, ?, ?)`, [params.name, params.email, params.password])
