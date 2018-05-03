@@ -78,7 +78,7 @@ const getPost = id =>
           SELECT id as userId , name
             FROM user
           ) tUser
-        ON tPost.userId = tUser.userId 
+        ON tPost.userId = tUser.userId
   `)
 
 const getCommentsOfPost = id =>

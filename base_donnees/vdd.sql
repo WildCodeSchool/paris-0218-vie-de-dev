@@ -61,7 +61,7 @@ CREATE TABLE comment (
 /*.......AJOUTER DES USERS POUR TEST.........*/
 
 INSERT INTO user (name, email, password)
-  VALUES ("Mikael Verdu", "mikael.verdu@gmail.com","azerty94"); 
+  VALUES ("Mikael Verdu", "mikael.verdu@gmail.com","azerty94");
 
 INSERT INTO user (name, email, password)
   VALUES ("Bogdan Ceu", "bogdanceu@yahoo.com","yolostyle93");
