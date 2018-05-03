@@ -21,6 +21,23 @@ export const authentification = () => {
     messageElement.textContent = res.error || ''
   }
 
+  const handleAuth2 = res => {
+    if (res.name) {
+      authElement.textContent = authElement2.textContent = `Bonjour ${res.name}`
+      modal.style.display = 'none'
+      document.body.classList.add('signed_in')
+    } else {
+      document.body.classList.remove('signed_in')
+      authElement.textContent = authElement2.textContent = 'Connectez-vous svp'
+    }
+
+    // handle errors
+    messageElement.textContent = res.error || ''
+    if (!res.error) {
+      window.location.reload()
+    }
+  }
+
   signInForm.addEventListener('submit', e => {
     e.preventDefault()
     const formData = new window.FormData(e.target)
@@ -37,7 +54,7 @@ export const authentification = () => {
       body: JSON.stringify(credentials)
     })
       .then(res => res.json())
-      .then(handleAuth)
+      .then(handleAuth2)
   })
 
   const handleSignOut = e => {
