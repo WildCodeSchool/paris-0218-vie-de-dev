@@ -67,13 +67,11 @@ app.post('/sign-in', (req, res, next) => {
         err.statusCode = 404
         throw err
       }
-
       if (user.password !== req.body.password) {
         const err = Error('Wrong password')
         err.statusCode = 403
         throw err
       }
-
       // else, set the user into the session
       req.session.user = user
       res.json(user)
@@ -144,7 +142,7 @@ app.use((err, req, res, next) => {
     res
       .status(err.statusCode || 500)
       .json({ data: err.data, error: err.message })
-    console.error(err)
+    return console.error(err)
   }
 
   next(err)
