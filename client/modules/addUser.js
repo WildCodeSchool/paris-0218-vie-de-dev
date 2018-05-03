@@ -1,12 +1,13 @@
 export const addUser = () => {
+  const messageElement2 = document.getElementById('message2')
+  const URLSearchParams = window.URLSearchParams
+  const name = document.getElementById('username_sub')
+  const email = document.getElementById('email_sub')
+  const password = document.getElementById('password_sub')
+  const fields = { name, email, password }
+
   document.getElementById('adduser').addEventListener('submit', event => {
     event.preventDefault()
-    const messageElement2 = document.getElementById('message2')
-    const URLSearchParams = window.URLSearchParams
-    const name = document.getElementById('username_sub')
-    const email = document.getElementById('email_sub')
-    const password = document.getElementById('password_sub')
-    const fields = { name, email, password }
 
     window.fetch('http://localhost:3000/addUser', {
       method: 'post',
