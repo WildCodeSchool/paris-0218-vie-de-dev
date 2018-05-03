@@ -17,24 +17,10 @@ router.use(bodyParser.urlencoded({extended: true}))
 
 router.post('/vote/:typeVote', (req, res, next) => {
   console.log('parametre URL POST:' + req.params.typeVote)
-  // test si user deja present dans array Vote (yes, bad ou salty)
-  db.selectVote(req.body, req.params.typeVote)
-    .then(result => {
-      if (result.length === 0) {
-        // user non present : addVote user dans table typeVote puis countVote sur table type Vote (mise à jour)
-        console.log('resultat SELECTVote : ', result)
-        res.header('Content-Type', 'application/json;charset=utf-8')
-        db.addVote(req.body, req.params.typeVote)
-          .then(result => db.countVote(req.body, req.params.typeVote)
-            .then(result => res.end(JSON.stringify(result))))
-          .catch(next)
-      } else {
-        // user deja dans array Vote : on renvoit le resultat de la requete countVote
-        res.header('Content-Type', 'application/json;charset=utf-8')
-        db.countVote(req.body, req.params.typeVote)
-          .then(result => res.end(JSON.stringify(result)))
-      }
-    })
+  db.addVote(req.body, req.params.typeVote)
+    .then(() => db.countVote(req.body, req.params.typeVote))
+    .then(result => res.json(result))
+    .catch(next)
 })
 router.post('/soumettre', (req, res, next) => {
   db.addPost(req.body)

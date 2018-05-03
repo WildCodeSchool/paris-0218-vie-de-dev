@@ -52,7 +52,7 @@ const addPost = (params) =>
   .catch(console.error) */
 
 const addVote = (params, table) =>
-  exec(`INSERT INTO ${table} (userId, postId) VALUES (?, ?)`,
+  exec(`REPLACE INTO ${table} (userId, postId) VALUES (?, ?)`,
     [params.user, params.id])
 
 const selectVote = (params, table) =>
