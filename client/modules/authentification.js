@@ -18,8 +18,7 @@ export const authentification = () => {
     }
 
     // handle errors
-    console.log(res.error)
-    messageElement.textContent = res.err || ''
+    messageElement.textContent = res.error || ''
   }
 
   signInForm.addEventListener('submit', e => {
