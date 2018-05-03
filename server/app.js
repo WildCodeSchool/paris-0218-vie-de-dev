@@ -10,7 +10,6 @@ const session = require('express-session')
 const FileStore = require('session-file-store')(session)
 // ajout de routes notamment pour le post
 const routePost = require('./routes/postRoutes')
-// const users = [user1, user2, user3, user4]
 const secret = 'vdd is great'
 
 const app = express()
