@@ -63,7 +63,6 @@ h1 {
 }
 
 :not(.signed_in) #sign_out_form,
-
 :not(.signed_in) #sign_out_form2 {
   display: none;
 }
@@ -208,6 +207,25 @@ button:hover {
   border: none;
   color: yellow;
 }
+ /* FOOTER Fixed bottom*/
+ main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* footer */
+
+footer{
+  margin-top: 40px;
+  height: 55px;
+  display: flex;
+
+  justify-content: center;
+
+  background-color: black;
+  color: white;
+}
 
 @media screen and (max-width:900px) {
   .commitBtn {
@@ -229,14 +247,14 @@ button:hover {
 
 #bouton_retour {
   position: fixed;
-  bottom: 3%;
+  bottom: 45px;
   right: 2%;
 }
 
 @media screen and (max-width:900px) {
   #bouton_retour {
     position: fixed;
-    bottom: 0%;
+    bottom: 45px;
   }
 }
 
@@ -418,6 +436,19 @@ button:hover {
 
   h1 {
     font-size: 1.7em;
+  }
+  footer{
+    margin-top: 30px;
+    height: 30px;
+    font-size: 1.0rem; 
+    display: flex;  
+    background-color: black;
+    color: white;
+  }
+  #bouton_retour {
+    position: fixed;
+    bottom: 25px;
+    right: 2%;
   }
 }
 
