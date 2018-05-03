@@ -13,17 +13,53 @@
 
 <body>
   <header id="main_menu" class="container">
+    <div id= "menu_ordi">
     <ul>
       <li><a href="#">Editer mes VDD</a></li>
-      <li><a href="#">Soumettre mes VDD</a></li>
-      <li><img src="pictures/logo_vdd.png" alt="logo"></li>
+      <li><a href="formulaire_post.html">Soumettre mes VDD</a></li>
+      <li><img id="logo" src="pictures/logo_vdd.png" alt="logo"></li>
       <li>
         <form action="#">
           <input type="text" id="search_btn">
         </form>
       </li>
-      <li><a href="#">Log in</a></li>
+      <li><a href="#" id="signup">Log in</a></li>
     </ul>
+    
+  </div>
+  <div id= "menu_tel">
+    
+    <button id="burger">&#9776;</button>
+    <ul id="burger_menu" >
+      <li class="nodisplay"><a href="#">Editer mes VDD</a></li>
+      <li class="nodisplay"><a href="formulaire_post.html">Soumettre mes VDD</a></li>
+      <li class="nodisplay">
+        <form action="#">
+          <input type="text" id="search_btn_tel">
+        </form>
+      </li>
+      <li><a href="#" id="signupsm">Log in</a></li>
+    </ul>
+    <img src="pictures/logo_vdd.png" alt="logo" class="logo">
+  </div>
+
+  <!--MODAL-->
+  <div id="modal">
+    <div id="modal_content">
+      <p id="close_modal">X</p>
+      <form action="POST">
+        <label for="username" id="user_label">Nom d'utilisateur:</label><br>
+        <input type="text" name="username" id="username"><br>
+        <label for="password" id="password_label">Mot de passe:</label><br>
+        <input type="password" name="password" id="password"><br>
+        <button type="submit" id="submit_form">Envoyer</button>
+        <p>nouveau ici?<span id="subscribe"> Rejoins-nous !</span></p>
+      </form>
+    </div>
+  </div>
+  <!--END MODAL-->
+
+
   <nav class="main_navbar">
     <button type="button" value="news" id="news_sort">News</button>
     <button type="button" value="top" id="top_sort">Top</button>
@@ -43,6 +79,7 @@
 
 
   <script type="module" src="js/script.js"></script>
+  <script src="modules/modalLogin.js"></script>
 </body>
 
 </html>
