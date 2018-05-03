@@ -99,6 +99,8 @@ INSERT INTO post (userId, content)
 INSERT INTO post (userId, content)
   VALUES ("6","Il y a deux sortes de gens : ceux qui comprennent la notion de récursivité et ceux qui ne comprennent pas qu’il y a deux sortes de gens : ceux qui comprennent la notion de récursivité et ceux qui ne comprennent pas qu’il y a deux sortes de gens : ceux qui comprennent la notion de récursivité et ceux qui ne comprennent pas qu’il y a deux sortes de gens...");
 
+INSERT INTO post (userId, content)
+  VALUES ("6","A quoi sert Internet Explorer ? A télécharger Google Chrome...");
 
 /*.....AJOUTER DE COMMENTAIRE POUR TEST........*/
 
