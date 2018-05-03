@@ -40,21 +40,16 @@ export const authentification = () => {
       .then(handleAuth)
   })
 
-  signOutForm.addEventListener('submit', e => {
+  const handleSignOut = e => {
     e.preventDefault()
 
     window.fetch('http://localhost:3000/sign-out', { 'credentials': 'include' })
       .then(res => res.json())
       .then(handleAuth)
-  })
+  }
 
-  signOutForm2.addEventListener('submit', e => {
-    e.preventDefault()
-
-    window.fetch('http://localhost:3000/sign-out', { 'credentials': 'include' })
-      .then(res => res.json())
-      .then(handleAuth)
-  })
+  signOutForm.addEventListener('submit', handleSignOut)
+  signOutForm2.addEventListener('submit', handleSignOut)
 
   window.fetch('http://localhost:3000/', { 'credentials': 'include' })
     .then(res => res.json())
