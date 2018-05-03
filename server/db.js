@@ -15,32 +15,38 @@ const getPosts = () => exec(`
   SELECT * FROM (
     SELECT * FROM (
       SELECT * FROM (
-        SELECT * FROM post
+        SELECT * FROM (
+          SELECT * FROM post
+            LEFT JOIN (
+              SELECT postId, COUNT(userId) as commit
+              FROM comment
+              GROUP BY postId
+              ) t10
+              ON post.id = t10.postId) tpost
+              LEFT JOIN (
+                SELECT postId AS postIdyes, COUNT(userId) AS yes
+                FROM yesVotes
+                GROUP BY postId
+              ) t2
+              ON tpost.id = t2.postIdyes) t3
+            LEFT JOIN (
+              SELECT postId AS postIdsalty, COUNT(userId) AS salty
+              FROM saltyVotes
+              GROUP BY postId
+            ) t4
+            ON t3.id = t4.postIdsalty) t5
+          LEFT JOIN (
+            SELECT postId as postIdbad , COUNT(userId) AS bad
+            FROM badVotes
+            GROUP BY postId
+          ) t6
+          ON t5.id = t6.postIdbad) t7
         LEFT JOIN (
-          SELECT postId AS postIdyes, COUNT(userId) AS yes
-          FROM yesVotes
-          GROUP BY postId
-        ) t2
-        ON post.id = t2.postIdyes) t3
-      LEFT JOIN (
-        SELECT postId AS postIdsalty, COUNT(userId) AS salty
-        FROM saltyVotes
-        GROUP BY postId
-      ) t4
-      ON t3.id = t4.postIdsalty) t5
-    LEFT JOIN (
-      SELECT postId as postIdbad , COUNT(userId) AS bad
-      FROM badVotes
-      GROUP BY postId
-    ) t6
-    ON t5.id = t6.postIdbad) t7
-  LEFT JOIN (
-    SELECT id as userId , name
-    FROM user
-  ) t8
-  ON t7.userId = t8.userId
+          SELECT id as userId , name
+          FROM user
+        ) t8
+        ON t7.userId = t8.userId
   `)
-
 // requete SQL pour ajouter un post
 const addPost = (params) =>
   exec('INSERT INTO post (userId, content) VALUES (?, ?)',
