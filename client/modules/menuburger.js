@@ -11,9 +11,9 @@ export const menuburger = () => {
         <li><input type="text" id="search_btn_tel"></li>
         <li><a href="#" id="signupsm">Log in</a></li>
         <li><div id="auth" style="color :white"></div>
-          <form id="sign_out_form2" style="display: none">
               <input type="submit" value="logout">
             </form>
+          <form id="sign_out_form2">
         </li>
         `
       i = 1

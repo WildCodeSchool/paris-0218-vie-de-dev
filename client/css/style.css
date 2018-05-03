@@ -49,12 +49,7 @@ h1 {
   height: 200px;
 }
 
-#search_btn {
-  padding: 3px 0;
-  max-width: 80%;
-  border-radius: 10px;
-}
-
+#search_btn,
 #search_btn_tel {
   padding: 3px 0;
   max-width: 80%;
@@ -62,21 +57,37 @@ h1 {
 }
 
 /*.......CSS AUTHENTIFICATION....*/
-#auth2 {
-  color:white;
-}
+#auth2,
 #auth {
-  color:white;
+  color: white;
 }
-#sign_out_form {
+
+:not(.signed_in) #sign_out_form,
+:not(.signed_in) #auth,
+:not(.signed_in) #auth2,
+:not(.signed_in) #sign_out_form2 {
   display: none;
 }
-#sign_out_form2 {
-  display: none;
+
+:not(.signed_in) #signup,
+:not(.signed_in) #signupsm,
+:not(.signed_in) #sign_in_form {
+  display : block;
 }
-#sign_in_form {
+
+.signed_in #signup,
+.signed_in #signupsm,
+.signed_in #sign_in_form {
   display : none;
 }
+.signed_in #sign_out_form,
+.signed_in #auth,
+.signed_in #auth2,
+.signed_in #sign_out_form2 {
+  display: block;
+}
+
+
 #message {
   color: red;
 }

@@ -6,21 +6,19 @@ export const authentification = () => {
   const signOutForm = document.getElementById('sign_out_form')
   const signOutForm2 = document.getElementById('sign_out_form2')
   const modal = document.getElementById('modal')
-  const loginbutton = document.getElementById('signup')
-  const loginbutton2 = document.getElementById('signupsm')
+
   const handleAuth = res => {
-    const name = res.name
-    authElement.innerHTML = name ? `Bonjour ${name}` : 'Not connected, please login'
-    authElement2.innerHTML = name ? `Bonjour ${name}` : 'Not connected, please login'
-    if (name) modal.style.display = 'none'
-    signInForm.style.display = name ? 'none' : 'block'
-    signOutForm.style.display = name ? 'block' : 'none'
-    signOutForm2.style.display = name ? 'block' : 'none'
-    loginbutton.style.display = name ? 'none' : 'block'
-    loginbutton2.style.display = name ? 'none' : 'block'
+    if (res.name) {
+      authElement.textContent = authElement2.textContent = `Bonjour ${res.name}`
+      modal.style.display = 'none'
+      document.body.classList.add('signed_in')
+    } else {
+      document.body.classList.remove('signed_in')
+      authElement.textContent = authElement2.textContent = 'Connectez-vous svp'
+    }
 
     // handle errors
-    messageElement.innerHTML = res.error || ''
+    messageElement.textContent = res.error || ''
   }
 
   signInForm.addEventListener('submit', e => {
