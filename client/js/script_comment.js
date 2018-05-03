@@ -5,7 +5,7 @@ import { addCom } from '../modules/addCom.js'
 import {authentification} from '../modules/authentification.js'
 import {modalLogin} from '../modules/modalLogin.js'
 import {menuburgerCom} from '../modules/menuburger.js'
-
+import {refreshPage} from '../modules/refreshPage.js'
 /* global URLSearchParams */
 
 const params = new URLSearchParams(window.location.search)
@@ -22,6 +22,7 @@ window.fetch(`http://localhost:3000/postComment/${id}`)
     authentification()
     modalLogin()
     menuburgerCom()
+    refreshPage()
   })
 
 // recupere les com lié au post dans la db
