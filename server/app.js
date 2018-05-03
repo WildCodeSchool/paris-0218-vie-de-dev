@@ -96,8 +96,8 @@ app.get('/comments/:postId', (req, res, next) => {
 
 app.post('/addComments', (req, res, next) => {
   db.addComment(req.body)
-    .then(() => db.getCommentsOfPost(req.body.postId)
-      .then(res => res.end(JSON.stringify(res))))
+    .then(() => db.getCommentsOfPost(req.body.postId))
+    .then(res => res.end(JSON.stringify(res)))
     .catch(next)
 })
 
