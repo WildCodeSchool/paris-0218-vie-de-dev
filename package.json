@@ -17,7 +17,6 @@
     "http-server": "^0.11.1",
     "mysql2": "^1.5.3",
     "nodemon": "^1.17.2",
-    "npm": "^6.0.0",
     "session-file-store": "^1.2.0",
     "snazzy": "^7.1.1",
     "standard": "^11.0.1",
