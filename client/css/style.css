@@ -146,6 +146,11 @@ h1 {
   border: 2px solid rgb(255, 255, 0);
   color: rgb(255, 255, 0);
 }
+.color-1 button {
+  background-color: black;
+  border: 2px solid rgb(255, 255, 0);
+  color: rgb(255, 255, 0);
+}
 
 .color-1 .votes p {
   background-color: black;
@@ -162,6 +167,11 @@ h1 {
   color: rgb(250, 250, 250);
 }
 .color-2 .boutons button {
+  background-color: black;
+  border: 2px solid rgb(250, 250, 250);
+  color: rgb(250, 250, 250);
+}
+.color-2 button {
   background-color: black;
   border: 2px solid rgb(250, 250, 250);
   color: rgb(250, 250, 250);
