@@ -125,8 +125,9 @@ h1 {
 }
 .logout{
   background-color:rgb(0, 217, 40) ;
-  color: white;
+  color:black;
   margin-top: 20px;
+  
 }
 
 /** posts colors -----**/
