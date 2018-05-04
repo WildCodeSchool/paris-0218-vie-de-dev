@@ -270,6 +270,16 @@ footer{
     border-right: 13px solid green;
     border-bottom: 6.5px solid transparent;
   }
+  .salty {
+    padding-left: 20px;
+  }
+  .bad {
+    padding-left: 20px;
+  }
+  .compteurCommit {
+    margin-right: 40px !important;
+    margin-left:2px !important;
+  }
 }
 
 
