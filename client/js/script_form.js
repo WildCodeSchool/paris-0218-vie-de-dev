@@ -25,7 +25,7 @@ document.getElementById('add_post').addEventListener('submit', event => {
           .then(res => window.location.replace('/'))
       } else {
         document.getElementById('add_post').innerHTML = `
-        <textarea id="new_post" name="new_post" placeholder="Tu n'as pas le droit de poster si tu n'est pas connecté !"></textarea><br>
+        <textarea id="new_post" name="new_post" placeholder="Tu n'as pas le droit de poster si tu n'es pas connecté !"></textarea><br>
         <button id="bouton" type="submit">VALIDER</button>
       `
       }
