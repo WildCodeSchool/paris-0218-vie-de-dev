@@ -123,7 +123,7 @@ const checkFields = fields => (req, res, next) => {
 }
 
 app.post('/addUser',
-  checkFields([ 'email', 'name', 'password' ]),
+  checkFields([ 'name', 'password', 'email' ]),
   (req, res, next) => {
     db.addUser(req.body)
       .then(() => res.json('ok'))

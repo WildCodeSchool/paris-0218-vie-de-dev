@@ -123,6 +123,12 @@ h1 {
 .divposts p {
   white-space: pre-wrap;
 }
+.logout{
+  background-color:rgb(0, 217, 40) ;
+  color:black;
+  margin-top: 20px;
+  
+}
 
 /** posts colors -----**/
 

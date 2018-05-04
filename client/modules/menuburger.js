@@ -13,7 +13,7 @@ export const menuburger = () => {
         <li><a href="#" id="signupsm">Log in</a></li>
         <li><div id="auth" style="color :white"></div>
           <form id="sign_out_form2">
-            <input type="submit" value="logout">
+            <input type="submit" value="logout" class="logout">
           </form>
         </li>
         `
@@ -30,7 +30,7 @@ export const menuburger = () => {
         <li class="nodisplay"><a href="#" id="signupsm">Log in</a></li>
         <li class="nodisplay"><div id="auth" style="color :white"></div>
         <form id="sign_out_form2">
-          <input type="submit" value="logout">
+          <input type="submit" value="logout" class="logout">
         </form>
     </li>
         `
@@ -52,7 +52,7 @@ export const menuburgerCom = () => {
         <li><a href="#" id="signupsm">Log in</a></li>
         <li><div id="auth" style="color :white"></div>
           <form id="sign_out_form2">
-              <input type="submit" value="logout">
+              <input type="submit" value="logout" class="logout">
           </form>
         </li>
         `
@@ -67,7 +67,7 @@ export const menuburgerCom = () => {
         <li class="nodisplay"><a href="#" id="signupsm">Log in</a></li>
         <li class="nodisplay"><div id="auth" style="color :white"></div>
           <form id="sign_out_form2">
-            <input type="submit" value="logout">
+            <input type="submit" value="logout" class="logout">
           </form>
         </li>
         `
