@@ -1,10 +1,14 @@
+DROP DATABASE IF EXISTS VDD;
 CREATE DATABASE VDD;
+CREATE USER IF NOT EXISTS 'server'@'localhost';
+GRANT ALL PRIVILEGES ON VDD.* To 'server'@'localhost' IDENTIFIED BY 'vddISDope';
 USE VDD;
+
 CREATE TABLE user (
   id INT NOT NULL AUTO_INCREMENT,
-  name VARCHAR(64),
-  email VARCHAR(254),
-  password VARCHAR(254),
+  name VARCHAR(64) NOT NULL UNIQUE,
+  email VARCHAR(254) NOT NULL UNIQUE,
+  password VARCHAR(254) NOT NULL,
   createAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id)
 ) ENGINE=INNODB;
@@ -57,7 +61,7 @@ CREATE TABLE comment (
 /*.......AJOUTER DES USERS POUR TEST.........*/
 
 INSERT INTO user (name, email, password)
-  VALUES ("Mikael Verdu", "mikael.verdu@gmail.com","azerty94"); 
+  VALUES ("Mikael Verdu", "mikael.verdu@gmail.com","azerty94");
 
 INSERT INTO user (name, email, password)
   VALUES ("Bogdan Ceu", "bogdanceu@yahoo.com","yolostyle93");
@@ -95,6 +99,8 @@ INSERT INTO post (userId, content)
 INSERT INTO post (userId, content)
   VALUES ("6","Il y a deux sortes de gens : ceux qui comprennent la notion de récursivité et ceux qui ne comprennent pas qu’il y a deux sortes de gens : ceux qui comprennent la notion de récursivité et ceux qui ne comprennent pas qu’il y a deux sortes de gens : ceux qui comprennent la notion de récursivité et ceux qui ne comprennent pas qu’il y a deux sortes de gens...");
 
+INSERT INTO post (userId, content)
+  VALUES ("6","A quoi sert Internet Explorer ? A télécharger Google Chrome...");
 
 /*.....AJOUTER DE COMMENTAIRE POUR TEST........*/
 

@@ -2,19 +2,23 @@
   "private": true,
   "scripts": {
     "client": "http-server client",
-    "server": "nodemon server --ignore client",
+    "server": "nodemon server --ignore client --ignore server/sessions",
     "test": "echo 'no tests'",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
     "lint:js": "standard | snazzy",
     "lint:css": "stylelint 'client/style/**/*.css'",
-    "lint:html": "htmllint 'client/**/*.html'"
+    "lint:html": "htmllint 'client/**/*.html'",
+    "postinstall": "cd server && npm install && echo 'You must init mysql (ex `mysql -u root < base_donnees/VDD_DUMP.sql`)'"
   },
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.3",
+    "express-session": "^1.15.6",
     "htmllint-cli": "0.0.6",
     "http-server": "^0.11.1",
     "mysql2": "^1.5.3",
     "nodemon": "^1.17.2",
+    "session-file-store": "^1.2.0",
     "snazzy": "^7.1.1",
     "standard": "^11.0.1",
     "stylelint": "^9.1.3",

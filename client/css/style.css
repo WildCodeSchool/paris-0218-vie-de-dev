@@ -49,16 +49,48 @@ h1 {
   height: 200px;
 }
 
-#search_btn {
+#search_btn,
+#search_btn_tel {
   padding: 3px 0;
   max-width: 80%;
   border-radius: 10px;
 }
 
-#search_btn_tel {
-  padding: 3px 0;
-  max-width: 80%;
-  border-radius: 10px;
+/*.......CSS AUTHENTIFICATION....*/
+#auth2,
+#auth {
+  color: white;
+}
+
+:not(.signed_in) #sign_out_form,
+:not(.signed_in) #sign_out_form2 {
+  display: none;
+}
+
+:not(.signed_in) #signup,
+:not(.signed_in) #signupsm,
+:not(.signed_in) #sign_in_form {
+  display : block;
+}
+
+.signed_in #signup,
+.signed_in #signupsm,
+.signed_in #sign_in_form {
+  display : none;
+}
+.signed_in #sign_out_form,
+.signed_in #auth,
+.signed_in #auth2,
+.signed_in #sign_out_form2 {
+  display: block;
+}
+
+
+#message {
+  color: red;
+}
+#message2 {
+  color: red;
 }
 
 .main_navbar {
@@ -91,36 +123,72 @@ h1 {
 .divposts p {
   white-space: pre-wrap;
 }
+.logout{
+  background-color:rgb(0, 217, 40) ;
+  color:black;
+  margin-top: 20px;
+  
+}
 
 /** posts colors -----**/
 
-.color-0 .divposts{
+.color-0 .divposts {
   background-color: rgba(109, 33, 79, 0.3);
   border: 2px solid rgb(0, 217, 40);
   color: rgb(0, 217, 40);
 }
 
-.color-0 .line{
+.color-0 .line {
   border-bottom: 1px solid rgb(0, 220, 40);
 }
 
-.color-1 .divposts{
+.color-1 .divposts {
   background-color: rgb(0, 0, 255);
   border: 2px solid rgb(255, 255, 0);
   color: rgb(255, 255, 0);
 }
+.color-1 .boutons button {
+  background-color: black;
+  border: 2px solid rgb(255, 255, 0);
+  color: rgb(255, 255, 0);
+}
+.color-1 button {
+  background-color: black;
+  border: 2px solid rgb(255, 255, 0);
+  color: rgb(255, 255, 0);
+}
 
-.color-1 .line{
+.color-1 .votes p {
+  background-color: black;
+  border: 2px solid rgb(255, 255, 0);
+  color: rgb(255, 255, 0);
+}
+.color-1 .line {
   border-bottom: 1px solid rgb(255, 255, 0);
 }
 
-.color-2 .divposts{
+.color-2 .divposts {
   background-color: rgb(0, 40, 120);
   border: 2px solid rgb(250, 250, 250);
   color: rgb(250, 250, 250);
 }
+.color-2 .boutons button {
+  background-color: black;
+  border: 2px solid rgb(250, 250, 250);
+  color: rgb(250, 250, 250);
+}
+.color-2 button {
+  background-color: black;
+  border: 2px solid rgb(250, 250, 250);
+  color: rgb(250, 250, 250);
+}
+.color-2 .votes p {
+  background-color: black;
+  border: 2px solid rgb(250, 250, 250);
+  color: rgb(250, 250, 250);
+}
 
-.color-2 .line{
+.color-2 .line {
   border-bottom: 1px solid rgb(250, 250, 250);
 }
 
@@ -145,24 +213,116 @@ button:hover {
   color: #00D927;
 }
 
+/* BOUTON COMMIT */
+
+.commitBtn {
+  width: 120px;
+  height: 60px;
+  background-color: green !important;
+  position: relative;
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+  border-style: none;
+  outline: none;
+}
+
+.commitBtn:before {
+  content:"";
+  position: absolute;
+  right: 100%;
+  top: 18px;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-right: 26px solid green !important;
+  border-bottom: 13px solid transparent;
+}
+
+.commitBtn:hover {
+  border: none;
+  color: yellow;
+}
+ /* FOOTER Fixed bottom*/
+ main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* footer */
+
+footer{
+  margin-top: 40px;
+  height: 55px;
+  display: flex;
+
+  justify-content: center;
+
+  background-color: black;
+  color: white;
+}
+
+@media screen and (max-width:900px) {
+  .commitBtn {
+    width: 70px;
+    right: 6%;
+    font-size: 70%;
+
+  }
+  .commitBtn:before {
+    top: 22px;
+    border-top: 6.5px solid transparent;
+    border-right: 13px solid green;
+    border-bottom: 6.5px solid transparent;
+  }
+  .salty {
+    padding-left: 20px;
+  }
+  .bad {
+    padding-left: 20px;
+  }
+  .compteurCommit {
+    margin-right: 40px !important;
+    margin-left:2px !important;
+  }
+}
+
+
+/* BOUTON RETOUR */
+
+#bouton_retour {
+  position: fixed;
+  bottom: 45px;
+  right: 2%;
+}
+
+@media screen and (max-width:900px) {
+  #bouton_retour {
+    position: fixed;
+    bottom: 45px;
+  }
+}
+
+
 .yesBtn:hover {
-  color: rgb(0, 217, 39);
+  color: rgb(0, 217, 39) !important;
   border: 2px solid rgb(255, 234, 42);
-  background-color: rgba(0, 217, 39, 0.2);
+  background-color: rgba(0, 217, 39, 0.2) !important;
   text-shadow: #fff 1px 1px, #fff -1px 1px, #fff -1px -1px, #fff 1px -1px;
 }
 
 .saltyBtn:hover {
-  color: #FE36DD;
+  color: #FE36DD !important;
   border: 2px solid rgb(255, 234, 42);
-  background-color: rgba(254, 54, 221, 0.2);
+  background-color: rgba(254, 54, 221, 0.2) !important;
   text-shadow: #fff 1px 1px, #fff -1px 1px, #fff -1px -1px, #fff 1px -1px;
 }
 
 .badBtn:hover {
-  color: #f00;
+  color: #f00 !important;
   border: 2px solid rgb(255, 234, 42);
-  background-color: rgba(240, 15, 0, 0.2);
+  background-color: rgba(240, 15, 0, 0.2) !important;
   text-shadow: #fff 1px 1px, #fff -1px 1px, #fff -1px -1px, #fff 1px -1px;
 }
 
@@ -197,11 +357,22 @@ button:hover {
   background-color: black;
 }
 
+.compteurCommit {
+  margin-left: 55px;
+  margin-right: 75px;
+  color: #fff;
+  border: 1px solid #00D927;
+  box-shadow: 1px 1px 2px #555;
+  padding: 5px;
+  background-color: green !important;
+}
+
 /* animation clignotement */
 
 .blink {
   animation: Test 1s infinite;
 }
+
 
 @keyframes Test {
   0% {
@@ -223,50 +394,40 @@ button:hover {
     margin: 0px;
     font-size: 0.5em;
   }
-  
   .main_navbar {
     padding: 10px 5px 10px 5px;
   }
-
   /*suppression marge des posts sur tel*/
   .divposts {
     width: 90%;
   }
-
   .boutons {
     width: 100%;
   }
-
   .boutons button {
     padding: 10px 10px;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
   }
-
   .votes {
     width: 100%;
   }
-
   .compteur {
     margin: auto;
   }
-
   /*mise en forme du menu sur tel*/
   #menu_ordi {
     display: none;
   }
-
   #menu_tel {
     display: flex;
     justify-content: space-around;
     background-color: #6d214f;
   }
-
   #burger {
     display: none;
   }
-
   #menu_tel ul {
     display: flex;
     flex-direction: column;
@@ -274,23 +435,19 @@ button:hover {
     padding-left: 0px;
     margin-left: 120px;
   }
-
   #menu_tel ul li {
     margin: auto;
     width: 100%;
     padding-left: 5px;
     margin-left: 0px;
   }
-
   .logo {
     margin-right: 120px;
   }
-
   /*modal*/
-  #modal_content {
+  #modal_content, #modal_content_sub {
     min-width: 80%;
   }
-
 }
 
 /*ajout de quelques regles  supplémentaire sur le menu pour petit tel */
@@ -299,31 +456,49 @@ button:hover {
   #menu_tel img {
     height: 30vw;
   }
-
   #menu_tel ul {
     font-size: 15px;
     margin-left: 0px;
   }
-
   #menu_tel ul li {
     font-size: 12px;
   }
-
   .nodisplay {
     display: none;
   }
-
   #burger {
     height: 30px;
     margin-top: 10%;
     margin-left: 80px;
     display: block;
   }
-
-  #modal_content {
+  #modal_content, #modal_content_sub {
     min-width: 80%;
   }
+
+  #username_sub, #password_sub, #email_sub {
+    max-width: 200px;
+  }
+
+  h1 {
+    font-size: 1.7em;
+  }
+  footer{
+    margin-top: 30px;
+    height: 30px;
+    font-size: 1.0rem; 
+    display: flex;  
+    background-color: black;
+    color: white;
+  }
+  #bouton_retour {
+    position: fixed;
+    bottom: 25px;
+    right: 2%;
+  }
 }
+
+
 
 /*Modal Login*/
 
@@ -369,11 +544,12 @@ button:hover {
 }
 
 #submit_form:hover {
-  background-color: #00D927 ;
+  background-color: #00D927;
   color: #000;
 }
 
-#username, #password {
+#username,
+#password {
   margin: 20px 0px;
   padding: 10px 0px;
   border-radius: 5px;
@@ -381,15 +557,15 @@ button:hover {
   background-color: #222;
   color: #00D927;
   font-size: 2rem;
+  max-width: 100%;
 }
 
 #username {
   margin-bottom: 40px;
 }
 
-
-
-#user_label, #password_label {
+#user_label,
+#password_label {
   font-size: 2rem;
   color: #fff;
 }
@@ -407,6 +583,59 @@ button:hover {
   cursor: pointer;
 }
 
+#subscribe a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/*FORMULAIRE*/
+
+/* NAME EMALIL PASSWORD */
+
+#modal_content_sub {
+  /* display: block; */
+  position: relative;
+  border: 5px solid #00D927;
+  border-radius: 5px;
+  background-color: #000;
+  width: 40%;
+  margin: 3% auto;
+  padding: 10px 20px 20px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+#submit_form_sub {
+  padding: 10px 20px;
+  color: #fff;
+}
+
+#submit_form_sub:hover {
+  background-color: #00D927;
+  color: #000;
+}
+
+#username_sub,
+#password_sub,
+#email_sub {
+  margin: 20px 0px;
+  padding: 10px 0px;
+  border-radius: 5px;
+  border-color: #00D927;
+  background-color: #222;
+  color: #00D927;
+  font-size: 2rem;
+}
 
 
+#user_label_sub,
+#password_label_sub,
+#email_label {
+  font-size: 2rem;
+  color: #fff;
+}
+
+#inscription_title_sub {
+  color: #fff;
+}
 

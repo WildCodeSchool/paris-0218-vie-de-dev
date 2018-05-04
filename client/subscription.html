@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Une description de la page..." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vie de Dev</title>
+  <link rel="icon" href="pictures/favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header id="main_menu" class="container">
+        <div id= "menu_ordi">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="formulaire_post.html">Soumettre mes VDD</a></li>
+          <li><img id="logo" src="pictures/logo_vdd.png" alt="logo"></li>
+          <li><input type="text" id="search_btn"></li>
+          <li><a href="#" id="signup">Log in</a></li>
+          <li><div id="auth2"></div>
+              <form id="sign_out_form">
+                  <input type="submit" value="logout" class="logout">
+                </form>
+          </li>
+        </ul>
+        
+      </div>
+      <div id= "menu_tel">
+        
+        <button id="burger">&#9776;</button>
+        <ul id="burger_menu" >
+          <li class="nodisplay"><a href="#">Editer mes VDD</a></li>
+          <li class="nodisplay"><a href="formulaire_post.html">Soumettre mes VDD</a></li>
+          <li class="nodisplay"><input type="text" id="search_btn_tel"></li>
+          <li class="nodisplay"><a href="#" id="signupsm">Log in</a></li>
+          <li class="nodisplay"><div id="auth"></div>
+            <form id="sign_out_form2">
+                <input type="submit" value="logout" class="logout">
+              </form>
+        </li>
+        </ul>
+        <img src="pictures/logo_vdd.png" alt="logo" class="logo" id="minilogo">
+      </div>
+    
+      <!--MODAL-->
+      <div id="modal">
+        
+        <div id="modal_content">
+          <p id="close_modal">X</p>
+          
+          <form  id="sign_in_form">
+            <label for="username" id="user_label">Pseudo:</label><br>
+            <input type="text" name="name" id="username"><br>
+            <label for="password" id="password_label">Mot de passe:</label><br>
+            <input type="password" name="password" id="password"><br>
+            <button type="submit" id="submit_form">Envoyer</button>
+            <p>nouveau ici?<span id="subscribe"><a href="subscription.html">Rejoins-nous !</a></span></p>
+          </form>
+          
+          <div id="message"></div>
+        </div>
+        
+      </div>
+      <!--END MODAL-->
+    
+  </header>
+
+  <!--MODAL-->
+  <div id="container_sub">
+    <div id="modal_content_sub">
+      <h1 id="inscription_title_sub">Inscription</h1>
+      <form action="POST" id="adduser">
+        <label for="username" id="user_label_sub">PSEUDO:</label><br>
+        <input type="text" name="username" id="username_sub"><br>
+        <label for="password" id="password_label_sub">MOT DE PASSE:</label><br>
+        <input type="password" name="password" id="password_sub"><br>
+
+        <label for="email_sub" id="email_label">ADRESSE E-MAIL</label><br>
+        <input type="email" name="email" id="email_sub"><br>
+        <button type="submit" id="submit_form_sub">S'inscrire</button>
+      </form>
+      <div id="message2"></div>
+    </div>
+  </div>
+  <!--END MODAL-->
+
+
+
+
+
+
+  <script type="module" src="js/subscription.js"></script>
+  
+</body>
+
+</html>

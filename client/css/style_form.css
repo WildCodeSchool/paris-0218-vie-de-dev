@@ -1,122 +1,554 @@
 /** FONTS **/
+
 @import url(../fonts/stylesheet.css);
 
-body {
-  font-family: 'commodore', sans-serif;
-  background-color: #200917;
+
+
+
+
+/** CSS **/
+
+@import url(normalize.css);
+
+
+
+
+/*@import url(milligram.min.css);*/
+
+@import url(responsive.css);
+@import url(common.css);
+
+
+
+
+/* HEADER */
+
+h1 {
+    color: black;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 20px;
 }
 
-form {
-  background: no-repeat url("../pictures/formPost_background.png");
-  position: relative;
-  padding-bottom: 100%;
-  background-size: 50%;
-  left: 25%;
-  right: 25%;
-  /*border: 1px solid green;*/
+#main_menu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    /*justify-content: space-between;*/
+    background-color: #6d214f;
+    margin-top: 0;
+}
+
+#menu_tel {
+    display: none;
+}
+
+#main_menu ul li {
+    width: 100%;
+    padding: 5px;
+}
+
+#main_menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    text-shadow: #000 1px 1px, #000 -1px 1px, #000 -1px -1px, #000 1px -1px;
+}
+
+#main_menu ul li a:hover {
+    color: #00D927;
+}
+
+#main_menu img {
+    height: 200px;
+}
+
+#burger {
+    background-color: black;
+    color: white;
+    border: 2px solid #00D927;
+    margin: 20px;
+    outline: none;
+}
+
+#burger:hover {
+    border: 2px solid #fff;
+    box-shadow: 1px 1px 10px #555;
+    color: #00D927;
+}
+
+
+
+
+/*.......CSS AUTHENTIFICATION....*/
+#auth2,
+#auth {
+  color: white;
+}
+
+:not(.signed_in) #sign_out_form,
+:not(.signed_in) #sign_out_form2 {
+  display: none;
+}
+
+:not(.signed_in) #signup,
+:not(.signed_in) #signupsm,
+:not(.signed_in) #sign_in_form {
+  display : block;
+}
+
+.signed_in #signup,
+.signed_in #signupsm,
+.signed_in #sign_in_form {
+  display : none;
+}
+.signed_in #sign_out_form,
+.signed_in #auth,
+.signed_in #auth2,
+.signed_in #sign_out_form2 {
+  display: block;
+}
+
+
+#message {
+  color: red;
+}
+#message2 {
+  color: red;
+}
+
+
+.main_navbar {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    padding: 20px 10px 20px 10px;
+}
+
+.main_navbar button {
+    padding: 5px;
+    margin: auto;
+    border-radius: 5px;
+    width: 12vw;
+}
+/* FOOTER Fixed bottom*/
+main {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  /* footer */
+  
+  footer{
+    margin-top: 40px;
+    height: 55px;
+    display: flex;
+  
+    justify-content: center;
+  
+    background-color: black;
+    color: white;
+  }
+  
+
+@media screen and (max-width:900px) {
+    .main_navbar button {
+        padding: 2px;
+        margin: 0px;
+        font-size: 0.5em;
+    }
+    .main_navbar {
+        padding: 10px 5px 10px 5px;
+    }
+
+    /*mise en forme du menu sur tel*/
+    #menu_ordi {
+        display: none;
+    }
+    #menu_tel {
+        display: flex;
+        justify-content: space-around;
+        background-color: #6d214f;
+    }
+    #burger {
+        display: none;
+    }
+    #menu_tel ul {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        padding-left: 0px;
+        margin-left: 120px;
+    }
+    #menu_tel ul li {
+        margin: auto;
+        width: 100%;
+        padding-left: 5px;
+        margin-left: 0px;
+    }
+    .logo {
+        margin-right: 120px;
+    }
+    /*modal*/
+    #modal_content,
+    #modal_content_sub {
+        min-width: 80%;
+    }
+}
+
+
+
+/*ajout de quelques regles  supplémentaire sur le menu pour petit tel */
+
+@media screen and (max-width:500px) {
+    #menu_tel img {
+        height: 30vw;
+    }
+    #menu_tel ul {
+        font-size: 15px;
+        margin-left: 0px;
+    }
+    #menu_tel ul li {
+        font-size: 12px;
+    }
+    .nodisplay {
+        display: none;
+    }
+    #burger {
+        height: 30px;
+        margin-top: 10%;
+        margin-left: 80px;
+        display: block;
+    }
+    #modal_content,
+    #modal_content_sub {
+        min-width: 80%;
+    }
+
+    #username_sub,
+    #password_sub,
+    #email_sub {
+        max-width: 200px;
+    }
+
+    h1 {
+        font-size: 1.7em;
+    }
+    footer{
+        margin-top: 30px;
+        height: 30px;
+        font-size: 1.0rem; 
+        display: flex;  
+        background-color: black;
+        color: white;
+      }
+}
+
+
+
+/*Modal Login*/
+
+#modal {
+    z-index: 999;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5)
+}
+
+#modal_content {
+    /* display: block; */
+    position: relative;
+    border: 5px solid #00D927;
+    border-radius: 5px;
+    background-color: #000;
+    width: 40%;
+    margin: 10% auto;
+    padding: 80px 20px 20px 20px;
+    color: #fff;
+    text-align: center;
+}
+
+#close_modal {
+    position: absolute;
+    font-size: 1.8em;
+    right: 15px;
+    top: -25px;
+    cursor: pointer;
+}
+
+#close_modal:hover {
+    color: #fff;
+}
+
+#submit_form {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: 2px solid #00D927;
+    margin: 20px;
+}
+
+#submit_form:hover {
+    background-color: #00D927;
+    border: 2px solid #fff;
+    box-shadow: 1px 1px 10px #555;
+    color: #000;
+}
+
+#username,
+#password {
+    margin: 20px 0px;
+    padding: 10px 0px;
+    border-radius: 5px;
+    border-color: #00D927;
+    background-color: #222;
+    color: #00D927;
+    font-size: 2rem;
+    max-width: 100%;
+}
+
+#username {
+    margin-bottom: 40px;
+}
+
+#user_label,
+#password_label {
+    font-size: 2rem;
+    color: #fff;
+}
+
+#subscribe {
+    font-size: 2rem;
+    font-style: italic;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #fff;
+}
+
+#subscribe:hover {
+    color: #00D927;
+    border-bottom: 2px solid #00D927;
+    cursor: pointer;
+}
+
+#subscribe a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+
+/* NAME EMALIL PASSWORD */
+
+#modal_content_sub {
+    /* display: block; */
+    position: relative;
+    border: 5px solid #00D927;
+    border-radius: 5px;
+    background-color: #000;
+    width: 40%;
+    margin: 3% auto;
+    padding: 10px 20px 20px 20px;
+    color: #fff;
+    text-align: center;
+}
+
+#submit_form_sub {
+    padding: 10px 20px;
+    color: #fff;
+}
+
+#submit_form_sub:hover {
+    background-color: #00D927;
+    color: #000;
+}
+
+#username_sub,
+#password_sub,
+#email_sub {
+    margin: 20px 0px;
+    padding: 10px 0px;
+    border-radius: 5px;
+    border-color: #00D927;
+    background-color: #222;
+    color: #00D927;
+    font-size: 2rem;
+}
+
+
+#user_label_sub,
+#password_label_sub,
+#email_label {
+    font-size: 2rem;
+    color: #fff;
+}
+
+#inscription_title_sub {
+    color: #fff;
+}
+
+
+
+
+/*FORMULAIRE*/
+
+body {
+    font-family: 'commodore', sans-serif;
+    background-color: #200917;
+}
+
+#add_post {
+    background: no-repeat url("../pictures/formPost_background.png");
+    position: relative;
+    padding-bottom: 60%;
+    background-size: 66%;
+    margin-left: 25%;
 }
 
 #new_post {
-  position: absolute;
-  background-color: transparent;
-  color: green;
-  height: 24%;
-  width: 33%;
-  top: 7%;
-  left: 8%;
-  outline: none;
-  resize: none;
-  /*border: 1px solid red;*/
-  border: transparent;
-  font-size: 1.5vw;
-  font-family: 'commodore', sans-serif;
-}
-
-button {
-  position: absolute;
-  top: 38%;
-  left: 17.5%;
-  background-color: transparent;
-  border: transparent;
-  /*border: 1px solid green;*/
-  color: grey;
-  font-family: 'commodore', sans-serif;
-  font-size: 1vw;
-  padding: 0.7% 3% 0.7% 3%;
-}
-
-button:hover {
-  color: green;
-}
-
-/* SMARTPHONE S  */
-@media screen and (max-width: 321px) {
-  button {
-    top: 36.3%;
-  }
-}
-
-/* SMARTPHONE M  */
-@media screen and (min-width: 321px) and (max-width: 376px) {
-  button {
-    top: 36.5%;
-  }
-}
-
-/* SMARTPHONE L  */
-@media screen and (min-width: 376px) and (max-width: 426px) {
-  button {
-    top: 36.8%;
-  }
-}
-
-/* TABLET  */
-@media screen and (min-width: 426px) and (max-width: 769px) {
-  button {
-    top: 37.5%;
-  }
-}
-
-/* TABLET L  */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  button {
-    top: 37.8%;
-  }
-}
-
-
-/*media queries bouton menu*/
-@media screen and (max-width:720px) {
-  form {
-    background-size: 90%;
-    left :5%;
-    right:5%;
-  }
-
-  #new_post {
     position: absolute;
-    height: 40%;
-    width: 62%;
+    background-color: transparent;
+    color: green;
+    height: 39%;
+    width: 45.5%;
     top: 12%;
-    left: 12%;
+    left: 10.5%;
     outline: none;
     resize: none;
     /*border: 1px solid red;*/
     border: transparent;
-    font-size: 3vw;
-  }
+    font-size: 1.5vw;
+    font-family: 'commodore', sans-serif;
+}
 
-  button {
+#bouton {
     position: absolute;
-    top: 67%;
-    left: 35%;
+    top: 62.5%;
+    left: 25%;
+    background-color: transparent;
+    border: transparent;
     /*border: 1px solid green;*/
-    font-size: 2vw;
-  }
+    color: grey;
+    font-family: 'commodore', sans-serif;
+    font-size: 1vw;
+    padding: 0.7% 3% 0.7% 3%;
+}
+
+#bouton:hover {
+    color: green;
 }
 
 
-  
 
 
 
+/* SMARTPHONE S  */
+
+@media screen and (max-width: 321px) {
+    #bouton {
+        top: 64.5%;
+    }
+}
+
+
+
+
+
+/* SMARTPHONE M  */
+
+@media screen and (min-width: 321px) and (max-width: 376px) {
+    #bouton {
+        top: 64.5%;
+    }
+}
+
+
+
+
+
+/* SMARTPHONE L  */
+
+@media screen and (min-width: 376px) and (max-width: 426px) {
+    #bouton {
+        top: 65.5%;
+    }
+}
+
+
+
+
+
+/* TABLET  */
+
+@media screen and (min-width: 426px) and (max-width: 769px) {
+    #bouton {
+        top: 67.3%;
+    }
+}
+
+
+
+
+
+/* TABLET L  */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #bouton {
+        top: 68.5%;
+    }
+}
+
+
+
+/* PLUS GRAND */
+
+@media screen and (min-width: 1024px) and (max-width: 1300px) {
+    #bouton {
+        top: 61.5%;
+    }
+}
+
+
+
+
+
+
+/*media queries bouton menu*/
+
+@media screen and (max-width: 1024px) {
+    #add_post {
+        margin-left: 5%;
+        margin-right: 5%;
+        background-size: 100%;
+        padding-bottom: 100%;
+    }
+
+    #new_post {
+        position: absolute;
+        height: 40%;
+        width: 67.5%;
+        top: 12%;
+        left: 14%;
+        outline: none;
+        resize: none;
+        /*border: 1px solid red;*/
+        border: transparent;
+        font-size: 3vw;
+    }
+
+    #bouton {
+        position: absolute;
+        left: 37%;
+        background-color: transparent;
+        border: transparent;
+        /*border: 1px solid green;*/
+        color: grey;
+        font-family: 'commodore', sans-serif;
+        font-size: 1.5vw;
+        padding: 0.7% 3% 0.7% 3%;
+    }
+}
